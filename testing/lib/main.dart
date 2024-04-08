@@ -1,19 +1,21 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'My App',
       initialRoute: '/A',
       routes: {
-        '/A': (context) => PageA(),
-        '/B': (context) => PageB(),
-        '/C': (context) => PageC(),
+        '/A': (context) => const PageA(),
+        '/B': (context) => const PageB(),
+        '/C': (context) => const PageC(),
       },
     );
   }
@@ -26,6 +28,8 @@ class YandexColors {
 }
 
 class PageA extends StatelessWidget {
+  const PageA({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,6 +50,8 @@ class PageA extends StatelessWidget {
 }
 
 class PageB extends StatelessWidget {
+  const PageB({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -77,9 +83,10 @@ class PageB extends StatelessWidget {
 }
 
 class PageC extends StatelessWidget {
+  const PageC({super.key});
+
   @override
   Widget build(BuildContext context) {
-    Column
     return Scaffold(
       appBar: AppBar(
         title: const Text('Page C'),

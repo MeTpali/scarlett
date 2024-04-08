@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 
-
 import 'package:web_scraper/web_scraper.dart';
 
-void main() => runApp(WebScraperApp());
+void main() => runApp(const WebScraperApp());
 
 class WebScraperApp extends StatefulWidget {
+  const WebScraperApp({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _WebScraperAppState createState() => _WebScraperAppState();
 }
 
@@ -49,11 +51,11 @@ class _WebScraperAppState extends State<WebScraperApp> {
       ),
       home: Scaffold(
           appBar: AppBar(
-            title: Text('Product Catalog'),
+            title: const Text('Product Catalog'),
           ),
           body: SafeArea(
               child: productNames == null
-                  ? Center(
+                  ? const Center(
                       child:
                           CircularProgressIndicator(), // Loads Circular Loading Animation
                     )
@@ -71,14 +73,13 @@ class _WebScraperAppState extends State<WebScraperApp> {
                               child: Column(
                                 children: <Widget>[
                                   Container(
+                                    margin: const EdgeInsets.only(bottom: 10.0),
                                     child: Text(
                                         productDescriptions[index]['title']),
-                                    margin: EdgeInsets.only(bottom: 10.0),
                                   ),
                                   InkWell(
-                                    onTap: () {
-                                    },
-                                    child: Text(
+                                    onTap: () {},
+                                    child: const Text(
                                       'View Product',
                                       style: TextStyle(color: Colors.blue),
                                     ),
