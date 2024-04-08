@@ -2,39 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'topg_theme_data.dart';
 
-class TopGTheme extends InheritedTheme {
-  final TopGThemeData data;
-
-  const TopGTheme({
-    required this.data,
-    required super.child,
-    super.key,
-  });
-
-  static TopGThemeData of(BuildContext context) {
-    final TopGTheme? topgTheme =
-        context.dependOnInheritedWidgetOfExactType<TopGTheme>();
-    final TopGThemeData? topgThemeData = topgTheme?.data;
-
-    if (topgThemeData == null) {
-      throw FlutterError(
-        'TopGTheme operation requested with a context that does not include a TopGTheme.\n'
-        'The context used to get theme from the TopGTheme must be that of a '
-        'widget that is a descendant of a TopG widget.',
-      );
-    }
-
-    return topgThemeData;
-  }
-
-  @override
-  bool updateShouldNotify(TopGTheme oldWidget) => data != oldWidget.data;
-
-  @override
-  Widget wrap(BuildContext context, Widget child) =>
-      TopGTheme(data: data, child: child);
-}
-
+/// Injects [TopGTheme] components and themes library and allow switch theme modes
 class TopG extends StatefulWidget {
   final Widget child;
   const TopG({required this.child, super.key});
@@ -69,4 +37,39 @@ class _TopGState extends State<TopG> {
   Widget build(BuildContext context) {
     return TopGTheme(data: data, child: widget.child);
   }
+}
+
+/// Injects [TopGTheme] components and themes library.
+/// Use [TopG] to enable theme mode switch.
+class TopGTheme extends InheritedTheme {
+  final TopGThemeData data;
+
+  const TopGTheme({
+    required this.data,
+    required super.child,
+    super.key,
+  });
+
+  static TopGThemeData of(BuildContext context) {
+    final TopGTheme? topgTheme =
+        context.dependOnInheritedWidgetOfExactType<TopGTheme>();
+    final TopGThemeData? topgThemeData = topgTheme?.data;
+
+    if (topgThemeData == null) {
+      throw FlutterError(
+        'TopGTheme operation requested with a context that does not include a TopGTheme.\n'
+        'The context used to get theme from the TopGTheme must be that of a '
+        'widget that is a descendant of a TopG widget.',
+      );
+    }
+
+    return topgThemeData;
+  }
+
+  @override
+  bool updateShouldNotify(TopGTheme oldWidget) => data != oldWidget.data;
+
+  @override
+  Widget wrap(BuildContext context, Widget child) =>
+      TopGTheme(data: data, child: child);
 }
