@@ -1,5 +1,9 @@
 include: package:extra_pedantic/analysis_options.yaml
 
+analyzer:
+  language:
+    strict-raw-types: false
+
 linter:
   rules:
     # avoid_print: false  # Uncomment to disable the `avoid_print` rule

@@ -1,9 +1,9 @@
-name: topg
-description: "TopG components library."
+name: i18n
+description: "Localization package."
 
 publish_to: 'none'
 
-version: 1.0.0+1
+version: 1.0.0
 
 environment:
   sdk: '>=3.3.1 <4.0.0'
@@ -12,9 +12,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  
+  flutter_localizations:
+    sdk: flutter
 
-  freezed: ^2.5.0
-  freezed_annotation: ^2.4.1
   cupertino_icons: ^1.0.6
   extra_pedantic: ^4.0.0
 
@@ -27,6 +28,5 @@ dev_dependencies:
 
 
 flutter:
-
-
   uses-material-design: true
+  generate: true

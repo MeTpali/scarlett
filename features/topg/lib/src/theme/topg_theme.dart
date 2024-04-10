@@ -17,6 +17,8 @@ class TopG extends StatefulWidget {
         'widget that is a descendant of a TopG widget.',
       );
     }
+
+    topgState.toggleTheme();
   }
 
   @override
@@ -34,9 +36,10 @@ class _TopGState extends State<TopG> {
       });
 
   @override
-  Widget build(BuildContext context) {
-    return TopGTheme(data: data, child: widget.child);
-  }
+  Widget build(BuildContext context) => TopGTheme(
+        data: data,
+        child: widget.child,
+      );
 }
 
 /// Injects [TopGTheme] components and themes library.
