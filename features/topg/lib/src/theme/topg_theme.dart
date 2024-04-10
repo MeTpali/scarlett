@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 
+import 'theme_modes.dart';
+import 'topg_provider.dart';
 import 'topg_theme_data.dart';
 
 /// Injects [TopGTheme] components and themes library and allow switch theme modes
+/// Should invoke init() before runapp to initialize shared preferences
 class TopG extends StatefulWidget {
   final Widget child;
   const TopG({required this.child, super.key});
@@ -21,19 +24,32 @@ class TopG extends StatefulWidget {
     topgState.toggleTheme();
   }
 
+  static Future<void> init() async {
+    await TopGProvider.init();
+  }
+
   @override
   State<TopG> createState() => _TopGState();
 }
 
 class _TopGState extends State<TopG> {
-  TopGThemeData data = const TopGThemeData.light();
+  late TopGThemeData data;
 
-  void toggleTheme() => setState(() {
-        data = data.map<TopGThemeData>(
-          light: (_) => const TopGThemeData.dark(),
-          dark: (_) => const TopGThemeData.light(),
-        );
-      });
+  @override
+  void initState() {
+    super.initState();
+    data = TopGProvider.getThemeMode().resolveTheme();
+  }
+
+  Future<void> toggleTheme() async {
+    setState(() {
+      data = data.map<TopGThemeData>(
+        light: (_) => const TopGThemeData.dark(),
+        dark: (_) => const TopGThemeData.light(),
+      );
+    });
+    await TopGProvider.setTheme(data.mode);
+  }
 
   @override
   Widget build(BuildContext context) => TopGTheme(
