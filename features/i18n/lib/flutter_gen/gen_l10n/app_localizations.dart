@@ -93,17 +93,6 @@ abstract class AppLocalizations {
     Locale('ru')
   ];
 
-  /// AppBar title
-  ///
-  /// In en, this message translates to:
-  /// **'Flutter i18n Demo'**
-  String get appTitle;
-
-  /// How many times the button has been pushed
-  ///
-  /// In en, this message translates to:
-  /// **'You have pushed the button this many times:'**
-  String get pushCount;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

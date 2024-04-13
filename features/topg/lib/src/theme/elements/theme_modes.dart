@@ -1,4 +1,4 @@
-import 'topg_theme_data.dart';
+import '../topg_theme_data.dart';
 
 enum TopGMode { light, dark }
 

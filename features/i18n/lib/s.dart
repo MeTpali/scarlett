@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+
+import 'flutter_gen/gen_l10n/app_localizations.dart';
+
+export 'flutter_gen/gen_l10n/app_localizations.dart';
 
 class S {
   static const defaultLocale = en;
@@ -13,6 +16,7 @@ class S {
   static const supportedLocales = [en, ru];
 
   static const List<LocalizationsDelegate> localizationDelegates = [
+    AppLocalizations.delegate,
     GlobalWidgetsLocalizations.delegate,
     GlobalMaterialLocalizations.delegate,
     GlobalCupertinoLocalizations.delegate,

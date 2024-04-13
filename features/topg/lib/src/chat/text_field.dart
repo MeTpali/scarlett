@@ -17,7 +17,7 @@ class ChatTextField extends StatelessWidget {
                     border: InputBorder.none,
                     labelText: 'Сообщение',
                   ),
-                )
+                ),
               ],
             ),
           ),

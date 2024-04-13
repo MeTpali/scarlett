@@ -1,4 +1,4 @@
 library i18n;
 
-export 'l10n/s.dart';
-export 'l10n/scarlett_localizations.dart';
+export 's.dart';
+export 'scarlett_localizations.dart';

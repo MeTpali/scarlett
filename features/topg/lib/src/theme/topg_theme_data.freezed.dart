@@ -17,22 +17,23 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$TopGThemeData {
   TopGMode get mode => throw _privateConstructorUsedError;
+  ColorScheme get colorScheme => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(TopGMode mode) light,
-    required TResult Function(TopGMode mode) dark,
+    required TResult Function(TopGMode mode, ColorScheme colorScheme) light,
+    required TResult Function(TopGMode mode, ColorScheme colorScheme) dark,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(TopGMode mode)? light,
-    TResult? Function(TopGMode mode)? dark,
+    TResult? Function(TopGMode mode, ColorScheme colorScheme)? light,
+    TResult? Function(TopGMode mode, ColorScheme colorScheme)? dark,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(TopGMode mode)? light,
-    TResult Function(TopGMode mode)? dark,
+    TResult Function(TopGMode mode, ColorScheme colorScheme)? light,
+    TResult Function(TopGMode mode, ColorScheme colorScheme)? dark,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -67,7 +68,7 @@ abstract class $TopGThemeDataCopyWith<$Res> {
           TopGThemeData value, $Res Function(TopGThemeData) then) =
       _$TopGThemeDataCopyWithImpl<$Res, TopGThemeData>;
   @useResult
-  $Res call({TopGMode mode});
+  $Res call({TopGMode mode, ColorScheme colorScheme});
 }
 
 /// @nodoc
@@ -84,12 +85,17 @@ class _$TopGThemeDataCopyWithImpl<$Res, $Val extends TopGThemeData>
   @override
   $Res call({
     Object? mode = null,
+    Object? colorScheme = null,
   }) {
     return _then(_value.copyWith(
       mode: null == mode
           ? _value.mode
           : mode // ignore: cast_nullable_to_non_nullable
               as TopGMode,
+      colorScheme: null == colorScheme
+          ? _value.colorScheme
+          : colorScheme // ignore: cast_nullable_to_non_nullable
+              as ColorScheme,
     ) as $Val);
   }
 }
@@ -102,7 +108,7 @@ abstract class _$$TopGThemeDataLightImplCopyWith<$Res>
       __$$TopGThemeDataLightImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({TopGMode mode});
+  $Res call({TopGMode mode, ColorScheme colorScheme});
 }
 
 /// @nodoc
@@ -117,12 +123,17 @@ class __$$TopGThemeDataLightImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? mode = null,
+    Object? colorScheme = null,
   }) {
     return _then(_$TopGThemeDataLightImpl(
       mode: null == mode
           ? _value.mode
           : mode // ignore: cast_nullable_to_non_nullable
               as TopGMode,
+      colorScheme: null == colorScheme
+          ? _value.colorScheme
+          : colorScheme // ignore: cast_nullable_to_non_nullable
+              as ColorScheme,
     ));
   }
 }
@@ -130,15 +141,19 @@ class __$$TopGThemeDataLightImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$TopGThemeDataLightImpl implements _TopGThemeDataLight {
-  const _$TopGThemeDataLightImpl({this.mode = TopGMode.light});
+  const _$TopGThemeDataLightImpl(
+      {this.mode = TopGMode.light, this.colorScheme = TopGColorScheme.light});
 
   @override
   @JsonKey()
   final TopGMode mode;
+  @override
+  @JsonKey()
+  final ColorScheme colorScheme;
 
   @override
   String toString() {
-    return 'TopGThemeData.light(mode: $mode)';
+    return 'TopGThemeData.light(mode: $mode, colorScheme: $colorScheme)';
   }
 
   @override
@@ -146,11 +161,13 @@ class _$TopGThemeDataLightImpl implements _TopGThemeDataLight {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$TopGThemeDataLightImpl &&
-            (identical(other.mode, mode) || other.mode == mode));
+            (identical(other.mode, mode) || other.mode == mode) &&
+            (identical(other.colorScheme, colorScheme) ||
+                other.colorScheme == colorScheme));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, mode);
+  int get hashCode => Object.hash(runtimeType, mode, colorScheme);
 
   @JsonKey(ignore: true)
   @override
@@ -162,30 +179,30 @@ class _$TopGThemeDataLightImpl implements _TopGThemeDataLight {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(TopGMode mode) light,
-    required TResult Function(TopGMode mode) dark,
+    required TResult Function(TopGMode mode, ColorScheme colorScheme) light,
+    required TResult Function(TopGMode mode, ColorScheme colorScheme) dark,
   }) {
-    return light(mode);
+    return light(mode, colorScheme);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(TopGMode mode)? light,
-    TResult? Function(TopGMode mode)? dark,
+    TResult? Function(TopGMode mode, ColorScheme colorScheme)? light,
+    TResult? Function(TopGMode mode, ColorScheme colorScheme)? dark,
   }) {
-    return light?.call(mode);
+    return light?.call(mode, colorScheme);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(TopGMode mode)? light,
-    TResult Function(TopGMode mode)? dark,
+    TResult Function(TopGMode mode, ColorScheme colorScheme)? light,
+    TResult Function(TopGMode mode, ColorScheme colorScheme)? dark,
     required TResult orElse(),
   }) {
     if (light != null) {
-      return light(mode);
+      return light(mode, colorScheme);
     }
     return orElse();
   }
@@ -223,11 +240,14 @@ class _$TopGThemeDataLightImpl implements _TopGThemeDataLight {
 }
 
 abstract class _TopGThemeDataLight implements TopGThemeData {
-  const factory _TopGThemeDataLight({final TopGMode mode}) =
-      _$TopGThemeDataLightImpl;
+  const factory _TopGThemeDataLight(
+      {final TopGMode mode,
+      final ColorScheme colorScheme}) = _$TopGThemeDataLightImpl;
 
   @override
   TopGMode get mode;
+  @override
+  ColorScheme get colorScheme;
   @override
   @JsonKey(ignore: true)
   _$$TopGThemeDataLightImplCopyWith<_$TopGThemeDataLightImpl> get copyWith =>
@@ -242,7 +262,7 @@ abstract class _$$TopGThemeDataDarkImplCopyWith<$Res>
       __$$TopGThemeDataDarkImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({TopGMode mode});
+  $Res call({TopGMode mode, ColorScheme colorScheme});
 }
 
 /// @nodoc
@@ -257,12 +277,17 @@ class __$$TopGThemeDataDarkImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? mode = null,
+    Object? colorScheme = null,
   }) {
     return _then(_$TopGThemeDataDarkImpl(
       mode: null == mode
           ? _value.mode
           : mode // ignore: cast_nullable_to_non_nullable
               as TopGMode,
+      colorScheme: null == colorScheme
+          ? _value.colorScheme
+          : colorScheme // ignore: cast_nullable_to_non_nullable
+              as ColorScheme,
     ));
   }
 }
@@ -270,15 +295,19 @@ class __$$TopGThemeDataDarkImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$TopGThemeDataDarkImpl implements _TopGThemeDataDark {
-  const _$TopGThemeDataDarkImpl({this.mode = TopGMode.dark});
+  const _$TopGThemeDataDarkImpl(
+      {this.mode = TopGMode.dark, this.colorScheme = TopGColorScheme.dark});
 
   @override
   @JsonKey()
   final TopGMode mode;
+  @override
+  @JsonKey()
+  final ColorScheme colorScheme;
 
   @override
   String toString() {
-    return 'TopGThemeData.dark(mode: $mode)';
+    return 'TopGThemeData.dark(mode: $mode, colorScheme: $colorScheme)';
   }
 
   @override
@@ -286,11 +315,13 @@ class _$TopGThemeDataDarkImpl implements _TopGThemeDataDark {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$TopGThemeDataDarkImpl &&
-            (identical(other.mode, mode) || other.mode == mode));
+            (identical(other.mode, mode) || other.mode == mode) &&
+            (identical(other.colorScheme, colorScheme) ||
+                other.colorScheme == colorScheme));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, mode);
+  int get hashCode => Object.hash(runtimeType, mode, colorScheme);
 
   @JsonKey(ignore: true)
   @override
@@ -302,30 +333,30 @@ class _$TopGThemeDataDarkImpl implements _TopGThemeDataDark {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(TopGMode mode) light,
-    required TResult Function(TopGMode mode) dark,
+    required TResult Function(TopGMode mode, ColorScheme colorScheme) light,
+    required TResult Function(TopGMode mode, ColorScheme colorScheme) dark,
   }) {
-    return dark(mode);
+    return dark(mode, colorScheme);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(TopGMode mode)? light,
-    TResult? Function(TopGMode mode)? dark,
+    TResult? Function(TopGMode mode, ColorScheme colorScheme)? light,
+    TResult? Function(TopGMode mode, ColorScheme colorScheme)? dark,
   }) {
-    return dark?.call(mode);
+    return dark?.call(mode, colorScheme);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(TopGMode mode)? light,
-    TResult Function(TopGMode mode)? dark,
+    TResult Function(TopGMode mode, ColorScheme colorScheme)? light,
+    TResult Function(TopGMode mode, ColorScheme colorScheme)? dark,
     required TResult orElse(),
   }) {
     if (dark != null) {
-      return dark(mode);
+      return dark(mode, colorScheme);
     }
     return orElse();
   }
@@ -363,11 +394,14 @@ class _$TopGThemeDataDarkImpl implements _TopGThemeDataDark {
 }
 
 abstract class _TopGThemeDataDark implements TopGThemeData {
-  const factory _TopGThemeDataDark({final TopGMode mode}) =
-      _$TopGThemeDataDarkImpl;
+  const factory _TopGThemeDataDark(
+      {final TopGMode mode,
+      final ColorScheme colorScheme}) = _$TopGThemeDataDarkImpl;
 
   @override
   TopGMode get mode;
+  @override
+  ColorScheme get colorScheme;
   @override
   @JsonKey(ignore: true)
   _$$TopGThemeDataDarkImplCopyWith<_$TopGThemeDataDarkImpl> get copyWith =>

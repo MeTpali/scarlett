@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'theme_modes.dart';
+import 'elements/theme_modes.dart';
 import 'topg_provider.dart';
 import 'topg_theme_data.dart';
 
@@ -10,7 +10,7 @@ class TopG extends StatefulWidget {
   final Widget child;
   const TopG({required this.child, super.key});
 
-  static void toggleThemeOf(BuildContext context) {
+  static Future<void> toggleThemeOf(BuildContext context) async {
     final _TopGState? topgState = context.findAncestorStateOfType<_TopGState>();
 
     if (topgState == null) {
@@ -21,7 +21,7 @@ class TopG extends StatefulWidget {
       );
     }
 
-    topgState.toggleTheme();
+    await topgState.toggleTheme();
   }
 
   static Future<void> init() async {
