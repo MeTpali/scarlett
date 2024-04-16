@@ -1,6 +1,6 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
-import 'elements/theme_modes.dart';
+import 'theme_modes.dart';
 
 class TopGProvider {
   TopGProvider._();

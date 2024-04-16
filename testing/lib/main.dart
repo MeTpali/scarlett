@@ -36,6 +36,17 @@ class TestingScreen extends StatelessWidget {
   Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(
           title: const Text('Testing app'),
+          actions: [
+            SettingsButton(
+              onTap: () async {
+                await Navigator.of(context).push(
+                  MaterialPageRoute<SettingsView>(
+                    builder: (context) => const Placeholder(),
+                  ),
+                );
+              },
+            ),
+          ],
         ),
         body: Column(
           children: [
@@ -50,9 +61,7 @@ class TestingScreen extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 8),
               child: TextButton(
-                child: Text(
-                  S.of(context).localeName,
-                ),
+                child: const Text(''),
                 onPressed: () async {
                   await TopG.toggleThemeOf(context);
                   await ScarlettLocalization.switchLocaleOf(context);

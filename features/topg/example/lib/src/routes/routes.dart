@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:example/src/chat_screen.dart';
+
+import '../chat_screen.dart';
 
 part 'routes.gr.dart';
 

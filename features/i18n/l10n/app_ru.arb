@@ -1,3 +1,9 @@
 {
-    "@@locale": "ru"
+    "@@locale": "ru",
+    "localeFull": "Русский",
+    "settings": "Настройки",
+    "language": "Язык",
+    "lightTheme": "Светлая тема",
+    "darkTheme": "Тёмная тема",
+    "message": "Сообщение"
 }

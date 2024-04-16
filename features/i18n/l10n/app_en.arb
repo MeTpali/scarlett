@@ -1,3 +1,9 @@
 {
-    "@@locale": "en"
+    "@@locale": "en",
+    "localeFull": "English",
+    "settings": "Settings",
+    "language": "Language",
+    "lightTheme": "Light theme",
+    "darkTheme": "Dark theme",
+    "message": "Message"
 }

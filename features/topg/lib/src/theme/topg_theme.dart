@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'elements/theme_modes.dart';
+import 'theme_modes.dart';
 import 'topg_provider.dart';
 import 'topg_theme_data.dart';
 

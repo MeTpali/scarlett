@@ -13,8 +13,8 @@ class DarkLightButton extends StatelessWidget {
       dark: (_) => Icons.nightlight_round_outlined,
     );
     return ElevatedButton(
-      onPressed: () {
-        TopG.toggleThemeOf(context);
+      onPressed: () async {
+        await TopG.toggleThemeOf(context);
       },
       style: ElevatedButton.styleFrom(
         shape: const CircleBorder(),
