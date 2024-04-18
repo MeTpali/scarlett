@@ -1,5 +1,9 @@
 library topg;
 
+export 'src/chat/message.dart';
+export 'src/chat/message_model.dart';
+export 'src/chat/text_field.dart';
+export 'src/chat/view.dart';
 export 'src/settings/button.dart';
 export 'src/settings/settings_block.dart';
 export 'src/settings/settings_tyle.dart';

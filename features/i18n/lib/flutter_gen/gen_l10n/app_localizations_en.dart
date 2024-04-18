@@ -21,4 +21,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get message => 'Message';
+
+  @override
+  String get chat => 'Chat';
 }

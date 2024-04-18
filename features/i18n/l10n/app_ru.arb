@@ -5,5 +5,6 @@
     "language": "Язык",
     "lightTheme": "Светлая тема",
     "darkTheme": "Тёмная тема",
-    "message": "Сообщение"
+    "message": "Сообщение",
+    "chat": "Чат"
 }

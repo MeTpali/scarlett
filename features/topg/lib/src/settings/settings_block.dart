@@ -17,7 +17,7 @@ class SettingsBlock extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = TopGTheme.of(context);
-    final settingsTheme = theme.settingsTheme;
+    final settingsTheme = theme.settings;
     return Card(
       borderOnForeground: false,
       child: Column(
@@ -38,7 +38,7 @@ class SettingsBlock extends StatelessWidget {
             separatorBuilder: (BuildContext context, int index) {
               if (hasDivider && index != settingsList.length - 1) {
                 return Divider(
-                  indent: 67,
+                  indent: 56,
                   height: 0,
                   thickness: 0.5,
                   color: settingsTheme.dividerColor,

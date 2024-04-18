@@ -21,7 +21,7 @@ class SettingsTyle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = TopGTheme.of(context);
-    final settingsTheme = theme.settingsTheme;
+    final settingsTheme = theme.settings;
 
     final shape = lastInBlock
         ? const OutlineInputBorder(

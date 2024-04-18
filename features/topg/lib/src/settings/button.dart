@@ -9,7 +9,7 @@ class SettingsButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = TopGTheme.of(context);
-    final settingsTheme = theme.settingsTheme;
+    final settingsTheme = theme.settings;
     return IconButton(
       onPressed: onTap,
       icon: Icon(

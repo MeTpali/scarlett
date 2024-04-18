@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:i18n/i18n.dart';
 import 'package:topg/topg.dart';
 
+import 'src/di/di.dart';
 import 'src/routes/app_router/app_router.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  configureDependencies();
   await TopG.init();
   await ScarlettLocalization.init();
   runApp(const TopG(child: WebLaba2App()));

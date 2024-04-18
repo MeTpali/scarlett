@@ -9,6 +9,8 @@ abstract class TopGColors {
   static const Color blueCrayola = Color(0xFF2f71e8);
   static const Color cyanProcess = Color(0xFF29b9f0);
   static const Color frenchRose = Color(0xFFea558d);
+  static const Color softLightBlue = Color(0xFFD5E2FA);
+  static const Color softDarkBlue = Color(0xFF21262C);
 
   /// Components colors
   static const Color yRed = Color(0xFFF45239);
@@ -19,6 +21,18 @@ abstract class TopGColors {
   static const Color yLightGrey = Color(0xFFEBEBEB);
   static const Color yMidGrey = Color(0xFF767676);
   static const Color yDarkGrey = Color(0xFF5B5A56);
+}
+
+abstract class TopGGradients {
+  static const Gradient evenSoftLightBlue = LinearGradient(
+    colors: [TopGColors.softLightBlue, TopGColors.softLightBlue],
+  );
+  static const Gradient evenSoftDarkBlue = LinearGradient(
+    colors: [TopGColors.softDarkBlue, TopGColors.softDarkBlue],
+  );
+  static const Gradient crayolaFrench = LinearGradient(
+    colors: [TopGColors.blueCrayola, TopGColors.frenchRose],
+  );
 }
 
 abstract class TopGColorScheme {

@@ -21,4 +21,7 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get message => 'Сообщение';
+
+  @override
+  String get chat => 'Чат';
 }
