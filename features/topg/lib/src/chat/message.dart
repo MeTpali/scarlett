@@ -22,9 +22,17 @@ class Message extends StatelessWidget {
         ? chatTheme.youTimeColor
         : chatTheme.ilTimeColor;
 
-    final minutes = model.date.minute < 10
-        ? '0${model.date.minute}'
-        : model.date.minute.toString();
+    Widget? time = const SizedBox.shrink();
+    if (model.date != null) {
+      final minutes = model.date!.minute < 10
+          ? '0${model.date!.minute}'
+          : model.date!.minute.toString();
+
+      time = Text(
+        '${model.date!.hour}:$minutes',
+        style: TextStyle(color: timeColor),
+      );
+    }
 
     return DecoratedBox(
       decoration: BoxDecoration(
@@ -66,10 +74,7 @@ class Message extends StatelessWidget {
                 alignment: Alignment.centerRight,
                 child: Padding(
                   padding: const EdgeInsets.only(bottom: 5),
-                  child: Text(
-                    '${model.date.hour}:$minutes',
-                    style: TextStyle(color: timeColor),
-                  ),
+                  child: time,
                 ),
               )
             ],

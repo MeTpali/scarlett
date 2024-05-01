@@ -8,8 +8,8 @@ enum MessageAuthor { you, interlocutor }
 class MessageModel with _$MessageModel {
   const factory MessageModel({
     required MessageAuthor author,
-    required String? name,
     required String message,
-    required DateTime date,
+    required DateTime? date,
+    String? name,
   }) = _MessageModel;
 }

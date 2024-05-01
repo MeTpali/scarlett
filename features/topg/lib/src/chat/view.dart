@@ -11,11 +11,11 @@ class ChatView extends StatelessWidget {
   Widget build(BuildContext context) => ListView.separated(
         shrinkWrap: true,
         reverse: true,
-        itemCount: messageList.length,
-        separatorBuilder: (BuildContext context, int index) => const SizedBox(
-          height: 5,
+        itemCount: messageList.length + 1,
+        itemBuilder: (BuildContext context, int index) => const SizedBox(
+          height: 7,
         ),
-        itemBuilder: (BuildContext context, int index) {
+        separatorBuilder: (BuildContext context, int index) {
           Widget message = Message(model: messageList[index]);
           if (messageList[index].author == MessageAuthor.you) {
             message = Align(

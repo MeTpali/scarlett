@@ -17,6 +17,8 @@ dependencies:
 
   cupertino_icons: ^1.0.6
   extra_pedantic: ^4.0.0
+  smooth_compass: ^2.0.17
+  flutter_sensors: ^1.0.1
   topg:
     path: ../features/topg
   i18n:

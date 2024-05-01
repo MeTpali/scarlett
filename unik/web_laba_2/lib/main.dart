@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:i18n/i18n.dart';
 import 'package:topg/topg.dart';
 
@@ -10,7 +11,13 @@ void main() async {
   configureDependencies();
   await TopG.init();
   await ScarlettLocalization.init();
-  runApp(const TopG(child: WebLaba2App()));
+  runApp(
+    const ProviderScope(
+      child: TopG(
+        child: WebLaba2App(),
+      ),
+    ),
+  );
 }
 
 class WebLaba2App extends StatefulWidget {

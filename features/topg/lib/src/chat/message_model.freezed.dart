@@ -17,9 +17,9 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$MessageModel {
   MessageAuthor get author => throw _privateConstructorUsedError;
-  String? get name => throw _privateConstructorUsedError;
   String get message => throw _privateConstructorUsedError;
-  DateTime get date => throw _privateConstructorUsedError;
+  DateTime? get date => throw _privateConstructorUsedError;
+  String? get name => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $MessageModelCopyWith<MessageModel> get copyWith =>
@@ -33,7 +33,7 @@ abstract class $MessageModelCopyWith<$Res> {
       _$MessageModelCopyWithImpl<$Res, MessageModel>;
   @useResult
   $Res call(
-      {MessageAuthor author, String? name, String message, DateTime date});
+      {MessageAuthor author, String message, DateTime? date, String? name});
 }
 
 /// @nodoc
@@ -50,27 +50,27 @@ class _$MessageModelCopyWithImpl<$Res, $Val extends MessageModel>
   @override
   $Res call({
     Object? author = null,
-    Object? name = freezed,
     Object? message = null,
-    Object? date = null,
+    Object? date = freezed,
+    Object? name = freezed,
   }) {
     return _then(_value.copyWith(
       author: null == author
           ? _value.author
           : author // ignore: cast_nullable_to_non_nullable
               as MessageAuthor,
-      name: freezed == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
       message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
               as String,
-      date: null == date
+      date: freezed == date
           ? _value.date
           : date // ignore: cast_nullable_to_non_nullable
-              as DateTime,
+              as DateTime?,
+      name: freezed == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 }
@@ -84,7 +84,7 @@ abstract class _$$MessageModelImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {MessageAuthor author, String? name, String message, DateTime date});
+      {MessageAuthor author, String message, DateTime? date, String? name});
 }
 
 /// @nodoc
@@ -99,27 +99,27 @@ class __$$MessageModelImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? author = null,
-    Object? name = freezed,
     Object? message = null,
-    Object? date = null,
+    Object? date = freezed,
+    Object? name = freezed,
   }) {
     return _then(_$MessageModelImpl(
       author: null == author
           ? _value.author
           : author // ignore: cast_nullable_to_non_nullable
               as MessageAuthor,
-      name: freezed == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
       message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
               as String,
-      date: null == date
+      date: freezed == date
           ? _value.date
           : date // ignore: cast_nullable_to_non_nullable
-              as DateTime,
+              as DateTime?,
+      name: freezed == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -129,22 +129,22 @@ class __$$MessageModelImplCopyWithImpl<$Res>
 class _$MessageModelImpl implements _MessageModel {
   const _$MessageModelImpl(
       {required this.author,
-      required this.name,
       required this.message,
-      required this.date});
+      required this.date,
+      this.name});
 
   @override
   final MessageAuthor author;
   @override
-  final String? name;
-  @override
   final String message;
   @override
-  final DateTime date;
+  final DateTime? date;
+  @override
+  final String? name;
 
   @override
   String toString() {
-    return 'MessageModel(author: $author, name: $name, message: $message, date: $date)';
+    return 'MessageModel(author: $author, message: $message, date: $date, name: $name)';
   }
 
   @override
@@ -153,13 +153,13 @@ class _$MessageModelImpl implements _MessageModel {
         (other.runtimeType == runtimeType &&
             other is _$MessageModelImpl &&
             (identical(other.author, author) || other.author == author) &&
-            (identical(other.name, name) || other.name == name) &&
             (identical(other.message, message) || other.message == message) &&
-            (identical(other.date, date) || other.date == date));
+            (identical(other.date, date) || other.date == date) &&
+            (identical(other.name, name) || other.name == name));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, author, name, message, date);
+  int get hashCode => Object.hash(runtimeType, author, message, date, name);
 
   @JsonKey(ignore: true)
   @override
@@ -171,18 +171,18 @@ class _$MessageModelImpl implements _MessageModel {
 abstract class _MessageModel implements MessageModel {
   const factory _MessageModel(
       {required final MessageAuthor author,
-      required final String? name,
       required final String message,
-      required final DateTime date}) = _$MessageModelImpl;
+      required final DateTime? date,
+      final String? name}) = _$MessageModelImpl;
 
   @override
   MessageAuthor get author;
   @override
-  String? get name;
-  @override
   String get message;
   @override
-  DateTime get date;
+  DateTime? get date;
+  @override
+  String? get name;
   @override
   @JsonKey(ignore: true)
   _$$MessageModelImplCopyWith<_$MessageModelImpl> get copyWith =>

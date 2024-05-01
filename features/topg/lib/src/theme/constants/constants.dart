@@ -16,7 +16,7 @@ abstract class TopGColors {
   static const Color yRed = Color(0xFFF45239);
   static const Color yYellow = Color(0xFFFFC526);
   static const Color yGreen = Color(0xFF26BE6B);
-  static const Color violet = Color(0xFFD26DFB);
+  static const Color yViolet = Color(0xFFD26DFB);
   static const Color yBlue = Color(0xFF76B0FA);
   static const Color yLightGrey = Color(0xFFEBEBEB);
   static const Color yMidGrey = Color(0xFF767676);

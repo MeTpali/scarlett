@@ -16,7 +16,27 @@ class ChatTextField extends StatefulWidget {
 }
 
 class _ChatTextFieldState extends State<ChatTextField> {
-  String text = '';
+  late final TextEditingController controller;
+  bool canSend = false;
+
+  @override
+  void initState() {
+    super.initState();
+    controller = TextEditingController();
+    controller.addListener(_onListen);
+  }
+
+  void _onListen() {
+    if (controller.text.isEmpty) {
+      setState(() {
+        canSend = false;
+      });
+    } else {
+      setState(() {
+        canSend = true;
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -30,20 +50,19 @@ class _ChatTextFieldState extends State<ChatTextField> {
           children: [
             Expanded(
               child: TextField(
+                controller: controller,
                 decoration: InputDecoration(
                   border: const OutlineInputBorder(),
                   labelText: widget.labelText,
                 ),
-                onChanged: (value) => setState(() {
-                  text = value;
-                }),
               ),
             ),
             IconButton(
-              onPressed: text.isNotEmpty
+              onPressed: canSend
                   ? () {
                       FocusManager.instance.primaryFocus?.unfocus();
-                      widget.onSend(text);
+                      widget.onSend(controller.text);
+                      controller.clear();
                     }
                   : null,
               icon: const Icon(Icons.send),
@@ -55,5 +74,12 @@ class _ChatTextFieldState extends State<ChatTextField> {
         ),
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    controller.removeListener(() {});
+    controller.dispose();
+    super.dispose();
   }
 }

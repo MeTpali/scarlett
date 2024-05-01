@@ -134,6 +134,60 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Chat'**
   String get chat;
+
+  /// No description provided for @serverAddress.
+  ///
+  /// In en, this message translates to:
+  /// **'Server address'**
+  String get serverAddress;
+
+  /// No description provided for @connectToServer.
+  ///
+  /// In en, this message translates to:
+  /// **'Connect to server'**
+  String get connectToServer;
+
+  /// No description provided for @host.
+  ///
+  /// In en, this message translates to:
+  /// **'Host'**
+  String get host;
+
+  /// No description provided for @port.
+  ///
+  /// In en, this message translates to:
+  /// **'Port'**
+  String get port;
+
+  /// No description provided for @nickname.
+  ///
+  /// In en, this message translates to:
+  /// **'Nickname'**
+  String get nickname;
+
+  /// No description provided for @connectionSettings.
+  ///
+  /// In en, this message translates to:
+  /// **'Connection settings'**
+  String get connectionSettings;
+
+  /// No description provided for @noSavedMessages.
+  ///
+  /// In en, this message translates to:
+  /// **'No saved messages'**
+  String get noSavedMessages;
+
+  /// No description provided for @viewV.
+  ///
+  /// In en, this message translates to:
+  /// **'View'**
+  String get viewV;
+
+  /// No description provided for @savedMessages.
+  ///
+  /// In en, this message translates to:
+  /// **'Saved messages'**
+  String get savedMessages;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
