@@ -20,33 +20,34 @@ mixin _$TopGThemeData {
   ColorScheme get colorScheme => throw _privateConstructorUsedError;
   SettingsThemeData get settings => throw _privateConstructorUsedError;
   ChatThemeData get chat => throw _privateConstructorUsedError;
+  DotaThemeData get dota => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(TopGMode mode, ColorScheme colorScheme,
-            SettingsThemeData settings, ChatThemeData chat)
+            SettingsThemeData settings, ChatThemeData chat, DotaThemeData dota)
         light,
     required TResult Function(TopGMode mode, ColorScheme colorScheme,
-            SettingsThemeData settings, ChatThemeData chat)
+            SettingsThemeData settings, ChatThemeData chat, DotaThemeData dota)
         dark,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(TopGMode mode, ColorScheme colorScheme,
-            SettingsThemeData settings, ChatThemeData chat)?
+            SettingsThemeData settings, ChatThemeData chat, DotaThemeData dota)?
         light,
     TResult? Function(TopGMode mode, ColorScheme colorScheme,
-            SettingsThemeData settings, ChatThemeData chat)?
+            SettingsThemeData settings, ChatThemeData chat, DotaThemeData dota)?
         dark,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(TopGMode mode, ColorScheme colorScheme,
-            SettingsThemeData settings, ChatThemeData chat)?
+            SettingsThemeData settings, ChatThemeData chat, DotaThemeData dota)?
         light,
     TResult Function(TopGMode mode, ColorScheme colorScheme,
-            SettingsThemeData settings, ChatThemeData chat)?
+            SettingsThemeData settings, ChatThemeData chat, DotaThemeData dota)?
         dark,
     required TResult orElse(),
   }) =>
@@ -86,10 +87,12 @@ abstract class $TopGThemeDataCopyWith<$Res> {
       {TopGMode mode,
       ColorScheme colorScheme,
       SettingsThemeData settings,
-      ChatThemeData chat});
+      ChatThemeData chat,
+      DotaThemeData dota});
 
   $SettingsThemeDataCopyWith<$Res> get settings;
   $ChatThemeDataCopyWith<$Res> get chat;
+  $DotaThemeDataCopyWith<$Res> get dota;
 }
 
 /// @nodoc
@@ -109,6 +112,7 @@ class _$TopGThemeDataCopyWithImpl<$Res, $Val extends TopGThemeData>
     Object? colorScheme = null,
     Object? settings = null,
     Object? chat = null,
+    Object? dota = null,
   }) {
     return _then(_value.copyWith(
       mode: null == mode
@@ -127,6 +131,10 @@ class _$TopGThemeDataCopyWithImpl<$Res, $Val extends TopGThemeData>
           ? _value.chat
           : chat // ignore: cast_nullable_to_non_nullable
               as ChatThemeData,
+      dota: null == dota
+          ? _value.dota
+          : dota // ignore: cast_nullable_to_non_nullable
+              as DotaThemeData,
     ) as $Val);
   }
 
@@ -145,6 +153,14 @@ class _$TopGThemeDataCopyWithImpl<$Res, $Val extends TopGThemeData>
       return _then(_value.copyWith(chat: value) as $Val);
     });
   }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $DotaThemeDataCopyWith<$Res> get dota {
+    return $DotaThemeDataCopyWith<$Res>(_value.dota, (value) {
+      return _then(_value.copyWith(dota: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
@@ -159,12 +175,15 @@ abstract class _$$TopGThemeDataLightImplCopyWith<$Res>
       {TopGMode mode,
       ColorScheme colorScheme,
       SettingsThemeData settings,
-      ChatThemeData chat});
+      ChatThemeData chat,
+      DotaThemeData dota});
 
   @override
   $SettingsThemeDataCopyWith<$Res> get settings;
   @override
   $ChatThemeDataCopyWith<$Res> get chat;
+  @override
+  $DotaThemeDataCopyWith<$Res> get dota;
 }
 
 /// @nodoc
@@ -182,6 +201,7 @@ class __$$TopGThemeDataLightImplCopyWithImpl<$Res>
     Object? colorScheme = null,
     Object? settings = null,
     Object? chat = null,
+    Object? dota = null,
   }) {
     return _then(_$TopGThemeDataLightImpl(
       mode: null == mode
@@ -200,6 +220,10 @@ class __$$TopGThemeDataLightImplCopyWithImpl<$Res>
           ? _value.chat
           : chat // ignore: cast_nullable_to_non_nullable
               as ChatThemeData,
+      dota: null == dota
+          ? _value.dota
+          : dota // ignore: cast_nullable_to_non_nullable
+              as DotaThemeData,
     ));
   }
 }
@@ -211,7 +235,8 @@ class _$TopGThemeDataLightImpl implements _TopGThemeDataLight {
       {this.mode = TopGMode.light,
       this.colorScheme = TopGColorScheme.light,
       this.settings = const SettingsThemeData.light(),
-      this.chat = const ChatThemeData.light()});
+      this.chat = const ChatThemeData.light(),
+      this.dota = const DotaThemeData.light()});
 
   @override
   @JsonKey()
@@ -225,10 +250,13 @@ class _$TopGThemeDataLightImpl implements _TopGThemeDataLight {
   @override
   @JsonKey()
   final ChatThemeData chat;
+  @override
+  @JsonKey()
+  final DotaThemeData dota;
 
   @override
   String toString() {
-    return 'TopGThemeData.light(mode: $mode, colorScheme: $colorScheme, settings: $settings, chat: $chat)';
+    return 'TopGThemeData.light(mode: $mode, colorScheme: $colorScheme, settings: $settings, chat: $chat, dota: $dota)';
   }
 
   @override
@@ -241,12 +269,13 @@ class _$TopGThemeDataLightImpl implements _TopGThemeDataLight {
                 other.colorScheme == colorScheme) &&
             (identical(other.settings, settings) ||
                 other.settings == settings) &&
-            (identical(other.chat, chat) || other.chat == chat));
+            (identical(other.chat, chat) || other.chat == chat) &&
+            (identical(other.dota, dota) || other.dota == dota));
   }
 
   @override
   int get hashCode =>
-      Object.hash(runtimeType, mode, colorScheme, settings, chat);
+      Object.hash(runtimeType, mode, colorScheme, settings, chat, dota);
 
   @JsonKey(ignore: true)
   @override
@@ -259,41 +288,41 @@ class _$TopGThemeDataLightImpl implements _TopGThemeDataLight {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(TopGMode mode, ColorScheme colorScheme,
-            SettingsThemeData settings, ChatThemeData chat)
+            SettingsThemeData settings, ChatThemeData chat, DotaThemeData dota)
         light,
     required TResult Function(TopGMode mode, ColorScheme colorScheme,
-            SettingsThemeData settings, ChatThemeData chat)
+            SettingsThemeData settings, ChatThemeData chat, DotaThemeData dota)
         dark,
   }) {
-    return light(mode, colorScheme, settings, chat);
+    return light(mode, colorScheme, settings, chat, dota);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(TopGMode mode, ColorScheme colorScheme,
-            SettingsThemeData settings, ChatThemeData chat)?
+            SettingsThemeData settings, ChatThemeData chat, DotaThemeData dota)?
         light,
     TResult? Function(TopGMode mode, ColorScheme colorScheme,
-            SettingsThemeData settings, ChatThemeData chat)?
+            SettingsThemeData settings, ChatThemeData chat, DotaThemeData dota)?
         dark,
   }) {
-    return light?.call(mode, colorScheme, settings, chat);
+    return light?.call(mode, colorScheme, settings, chat, dota);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(TopGMode mode, ColorScheme colorScheme,
-            SettingsThemeData settings, ChatThemeData chat)?
+            SettingsThemeData settings, ChatThemeData chat, DotaThemeData dota)?
         light,
     TResult Function(TopGMode mode, ColorScheme colorScheme,
-            SettingsThemeData settings, ChatThemeData chat)?
+            SettingsThemeData settings, ChatThemeData chat, DotaThemeData dota)?
         dark,
     required TResult orElse(),
   }) {
     if (light != null) {
-      return light(mode, colorScheme, settings, chat);
+      return light(mode, colorScheme, settings, chat, dota);
     }
     return orElse();
   }
@@ -335,7 +364,8 @@ abstract class _TopGThemeDataLight implements TopGThemeData {
       {final TopGMode mode,
       final ColorScheme colorScheme,
       final SettingsThemeData settings,
-      final ChatThemeData chat}) = _$TopGThemeDataLightImpl;
+      final ChatThemeData chat,
+      final DotaThemeData dota}) = _$TopGThemeDataLightImpl;
 
   @override
   TopGMode get mode;
@@ -345,6 +375,8 @@ abstract class _TopGThemeDataLight implements TopGThemeData {
   SettingsThemeData get settings;
   @override
   ChatThemeData get chat;
+  @override
+  DotaThemeData get dota;
   @override
   @JsonKey(ignore: true)
   _$$TopGThemeDataLightImplCopyWith<_$TopGThemeDataLightImpl> get copyWith =>
@@ -363,12 +395,15 @@ abstract class _$$TopGThemeDataDarkImplCopyWith<$Res>
       {TopGMode mode,
       ColorScheme colorScheme,
       SettingsThemeData settings,
-      ChatThemeData chat});
+      ChatThemeData chat,
+      DotaThemeData dota});
 
   @override
   $SettingsThemeDataCopyWith<$Res> get settings;
   @override
   $ChatThemeDataCopyWith<$Res> get chat;
+  @override
+  $DotaThemeDataCopyWith<$Res> get dota;
 }
 
 /// @nodoc
@@ -386,6 +421,7 @@ class __$$TopGThemeDataDarkImplCopyWithImpl<$Res>
     Object? colorScheme = null,
     Object? settings = null,
     Object? chat = null,
+    Object? dota = null,
   }) {
     return _then(_$TopGThemeDataDarkImpl(
       mode: null == mode
@@ -404,6 +440,10 @@ class __$$TopGThemeDataDarkImplCopyWithImpl<$Res>
           ? _value.chat
           : chat // ignore: cast_nullable_to_non_nullable
               as ChatThemeData,
+      dota: null == dota
+          ? _value.dota
+          : dota // ignore: cast_nullable_to_non_nullable
+              as DotaThemeData,
     ));
   }
 }
@@ -415,7 +455,8 @@ class _$TopGThemeDataDarkImpl implements _TopGThemeDataDark {
       {this.mode = TopGMode.dark,
       this.colorScheme = TopGColorScheme.dark,
       this.settings = const SettingsThemeData.dark(),
-      this.chat = const ChatThemeData.dark()});
+      this.chat = const ChatThemeData.dark(),
+      this.dota = const DotaThemeData.dark()});
 
   @override
   @JsonKey()
@@ -429,10 +470,13 @@ class _$TopGThemeDataDarkImpl implements _TopGThemeDataDark {
   @override
   @JsonKey()
   final ChatThemeData chat;
+  @override
+  @JsonKey()
+  final DotaThemeData dota;
 
   @override
   String toString() {
-    return 'TopGThemeData.dark(mode: $mode, colorScheme: $colorScheme, settings: $settings, chat: $chat)';
+    return 'TopGThemeData.dark(mode: $mode, colorScheme: $colorScheme, settings: $settings, chat: $chat, dota: $dota)';
   }
 
   @override
@@ -445,12 +489,13 @@ class _$TopGThemeDataDarkImpl implements _TopGThemeDataDark {
                 other.colorScheme == colorScheme) &&
             (identical(other.settings, settings) ||
                 other.settings == settings) &&
-            (identical(other.chat, chat) || other.chat == chat));
+            (identical(other.chat, chat) || other.chat == chat) &&
+            (identical(other.dota, dota) || other.dota == dota));
   }
 
   @override
   int get hashCode =>
-      Object.hash(runtimeType, mode, colorScheme, settings, chat);
+      Object.hash(runtimeType, mode, colorScheme, settings, chat, dota);
 
   @JsonKey(ignore: true)
   @override
@@ -463,41 +508,41 @@ class _$TopGThemeDataDarkImpl implements _TopGThemeDataDark {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(TopGMode mode, ColorScheme colorScheme,
-            SettingsThemeData settings, ChatThemeData chat)
+            SettingsThemeData settings, ChatThemeData chat, DotaThemeData dota)
         light,
     required TResult Function(TopGMode mode, ColorScheme colorScheme,
-            SettingsThemeData settings, ChatThemeData chat)
+            SettingsThemeData settings, ChatThemeData chat, DotaThemeData dota)
         dark,
   }) {
-    return dark(mode, colorScheme, settings, chat);
+    return dark(mode, colorScheme, settings, chat, dota);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(TopGMode mode, ColorScheme colorScheme,
-            SettingsThemeData settings, ChatThemeData chat)?
+            SettingsThemeData settings, ChatThemeData chat, DotaThemeData dota)?
         light,
     TResult? Function(TopGMode mode, ColorScheme colorScheme,
-            SettingsThemeData settings, ChatThemeData chat)?
+            SettingsThemeData settings, ChatThemeData chat, DotaThemeData dota)?
         dark,
   }) {
-    return dark?.call(mode, colorScheme, settings, chat);
+    return dark?.call(mode, colorScheme, settings, chat, dota);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(TopGMode mode, ColorScheme colorScheme,
-            SettingsThemeData settings, ChatThemeData chat)?
+            SettingsThemeData settings, ChatThemeData chat, DotaThemeData dota)?
         light,
     TResult Function(TopGMode mode, ColorScheme colorScheme,
-            SettingsThemeData settings, ChatThemeData chat)?
+            SettingsThemeData settings, ChatThemeData chat, DotaThemeData dota)?
         dark,
     required TResult orElse(),
   }) {
     if (dark != null) {
-      return dark(mode, colorScheme, settings, chat);
+      return dark(mode, colorScheme, settings, chat, dota);
     }
     return orElse();
   }
@@ -539,7 +584,8 @@ abstract class _TopGThemeDataDark implements TopGThemeData {
       {final TopGMode mode,
       final ColorScheme colorScheme,
       final SettingsThemeData settings,
-      final ChatThemeData chat}) = _$TopGThemeDataDarkImpl;
+      final ChatThemeData chat,
+      final DotaThemeData dota}) = _$TopGThemeDataDarkImpl;
 
   @override
   TopGMode get mode;
@@ -549,6 +595,8 @@ abstract class _TopGThemeDataDark implements TopGThemeData {
   SettingsThemeData get settings;
   @override
   ChatThemeData get chat;
+  @override
+  DotaThemeData get dota;
   @override
   @JsonKey(ignore: true)
   _$$TopGThemeDataDarkImplCopyWith<_$TopGThemeDataDarkImpl> get copyWith =>

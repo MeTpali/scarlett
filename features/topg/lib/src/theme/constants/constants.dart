@@ -11,6 +11,8 @@ abstract class TopGColors {
   static const Color frenchRose = Color(0xFFea558d);
   static const Color softLightBlue = Color(0xFFD5E2FA);
   static const Color softDarkBlue = Color(0xFF21262C);
+  static const Color softLightRose = Color(0xFFFDF6F9);
+  static const Color softDarkRose = Color(0xFF2B2429);
 
   /// Components colors
   static const Color yRed = Color(0xFFF45239);
@@ -30,8 +32,20 @@ abstract class TopGGradients {
   static const Gradient evenSoftDarkBlue = LinearGradient(
     colors: [TopGColors.softDarkBlue, TopGColors.softDarkBlue],
   );
+  static const Gradient evenSoftLightRose = LinearGradient(
+    colors: [TopGColors.softLightBlue, TopGColors.softLightRose],
+  );
+  static const Gradient evenSoftDarkRose = LinearGradient(
+    colors: [TopGColors.softDarkBlue, TopGColors.softDarkRose],
+  );
   static const Gradient crayolaFrench = LinearGradient(
     colors: [TopGColors.blueCrayola, TopGColors.frenchRose],
+  );
+  static const Gradient softDarkCrayolaFrench = LinearGradient(
+    colors: [TopGColors.softDarkBlue, TopGColors.softDarkRose],
+  );
+  static const Gradient softLightCrayolaFrench = LinearGradient(
+    colors: [TopGColors.softLightBlue, TopGColors.softLightRose],
   );
 }
 

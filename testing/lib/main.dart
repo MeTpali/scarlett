@@ -68,6 +68,10 @@ class TestingScreen extends StatelessWidget {
                 },
               ),
             ),
+            Image.network(
+              'https://www.dotabuff.com/assets/heroes/dark-seer-be8d4bded6ce5e2eaab5dce2171c4d7486f9c20c880583ff8e22eab9c1176894.jpg',
+              scale: 1.5,
+            ),
           ],
         ),
       );

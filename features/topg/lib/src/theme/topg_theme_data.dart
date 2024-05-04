@@ -3,6 +3,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 import 'constants/constants.dart';
 import 'datas/chat_theme_data.dart';
+import 'datas/dota_theme_data.dart';
 import 'datas/settings_theme_data.dart';
 import 'theme_modes.dart';
 
@@ -15,6 +16,7 @@ class TopGThemeData with _$TopGThemeData {
     @Default(TopGColorScheme.light) ColorScheme colorScheme,
     @Default(SettingsThemeData.light()) SettingsThemeData settings,
     @Default(ChatThemeData.light()) ChatThemeData chat,
+    @Default(DotaThemeData.light()) DotaThemeData dota,
   }) = _TopGThemeDataLight;
 
   const factory TopGThemeData.dark({
@@ -22,5 +24,6 @@ class TopGThemeData with _$TopGThemeData {
     @Default(TopGColorScheme.dark) ColorScheme colorScheme,
     @Default(SettingsThemeData.dark()) SettingsThemeData settings,
     @Default(ChatThemeData.dark()) ChatThemeData chat,
+    @Default(DotaThemeData.dark()) DotaThemeData dota,
   }) = _TopGThemeDataDark;
 }
