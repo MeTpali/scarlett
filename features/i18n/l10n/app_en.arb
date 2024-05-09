@@ -15,5 +15,12 @@
     "connectionSettings": "Connection settings",
     "noSavedMessages": "No saved messages",
     "viewV": "View",
-    "savedMessages": "Saved messages"
+    "savedMessages": "Saved messages",
+    "authorization": "Authorization",
+    "registration": "Registration",
+    "logIn": "Log in",
+    "signUp": "Sign up",
+    "noAccountYet": "No account yet",
+    "login": "Login",
+    "password": "Password"
 }

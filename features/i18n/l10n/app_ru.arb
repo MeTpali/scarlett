@@ -15,5 +15,12 @@
     "connectionSettings": "Настройки подключения",
     "noSavedMessages": "Нет сохранённых сообщений",
     "viewV": "Посмотреть",
-    "savedMessages": "Сохранённые сообщения"
+    "savedMessages": "Сохранённые сообщения",
+    "authorization": "Авторизация",
+    "registration": "Регистрация",
+    "logIn": "Войти",
+    "signUp": "Зарегистрироваться",
+    "noAccountYet": "Ещё нет аккаунта",
+    "login": "Логин",
+    "password": "Пароль"
 }

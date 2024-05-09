@@ -51,4 +51,25 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get savedMessages => 'Сохранённые сообщения';
+
+  @override
+  String get authorization => 'Авторизация';
+
+  @override
+  String get registration => 'Регистрация';
+
+  @override
+  String get logIn => 'Войти';
+
+  @override
+  String get signUp => 'Зарегистрироваться';
+
+  @override
+  String get noAccountYet => 'Ещё нет аккаунта';
+
+  @override
+  String get login => 'Логин';
+
+  @override
+  String get password => 'Пароль';
 }

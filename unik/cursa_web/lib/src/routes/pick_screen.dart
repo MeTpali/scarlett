@@ -33,8 +33,18 @@ class PickScreen extends StatelessWidget {
             onLongPress: () {},
             onAdd: () {},
           ),
+          const SizedBox(height: 15),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 15),
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: MainButton(
+              title: const Text('Update'),
+              onPressed: () {},
+              type: TopGType.action,
+            ),
+          ),
+          const SizedBox(height: 15),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
             child: MainButton(
               title: const Text('Update'),
               onPressed: () {},
@@ -48,6 +58,13 @@ class PickScreen extends StatelessWidget {
 }
 
 final radiant = [
+  const HeroRateModel(
+    id: 'sex',
+    name: 'Keeper of the light',
+    rate: 90.2,
+    url:
+        'https://www.dotabuff.com/assets/heroes/abaddon-d92ae1c43fdd883ba8502775fcc9679028fcde28a8ef3bdea87e95024a61a480.jpg',
+  ),
   const HeroRateModel(
     id: 'sex',
     name: 'Keeper of the light',
