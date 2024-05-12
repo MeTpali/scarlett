@@ -45,7 +45,7 @@ class _ChangingScreenState extends State<ChangingScreen> {
               Expanded(
                 flex: 1,
                 child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 8),
+                  padding: const EdgeInsets.symmetric(horizontal: 8),
                   child: TextField(
                     controller: controller,
                     textAlign: TextAlign.center,
