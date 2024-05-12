@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:io';
 
 import 'package:auto_route/auto_route.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:i18n/s.dart';
@@ -51,10 +52,18 @@ class PhotoCheckScreen extends ConsumerWidget {
         children: [
           Expanded(
             child: photoCheckModel.maybeWhen(
-              photo: (path) => Image.file(
-                File(path),
-                fit: BoxFit.fill,
-              ),
+              photo: (path) {
+                if (kIsWeb) {
+                  return Image.network(
+                    path,
+                    fit: BoxFit.fill,
+                  );
+                }
+                return Image.file(
+                  File(path),
+                  fit: BoxFit.fill,
+                );
+              },
               orElse: () => const Placeholder(),
             ),
           ),
