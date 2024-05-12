@@ -9,7 +9,7 @@ const testCheckClient = Named('TestCheckClient');
 Dio createTestCheckClient(Log logger) {
   final Dio client = Dio(
     BaseOptions(
-      baseUrl: 'https://muramasa666.com/api/v1',
+      baseUrl: 'http://87.242.101.70:8088',
     ),
   )..interceptors.addAll([logInterceptor(logger)]);
 

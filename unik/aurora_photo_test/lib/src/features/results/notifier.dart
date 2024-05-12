@@ -11,9 +11,10 @@ class TestResultsNotifier extends StateNotifier<TestResultsModel> {
         super(const TestResultsModel.loading());
 
   Future<void> sendPhoto(String path) async {
-    // final response = await _testCheckService.sendPhoto(path);
-    // ignore: inference_failure_on_instance_creation
-    await Future.delayed(const Duration(seconds: 5));
+    final response = await _testCheckService.sendPhoto(path);
+    // await Future.delayed(const Duration(seconds: 5));
     state = const TestResultsModel.results();
   }
+
+  void toLoading() => state = const TestResultsModel.loading();
 }

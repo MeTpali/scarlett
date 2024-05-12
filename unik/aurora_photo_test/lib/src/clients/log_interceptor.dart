@@ -13,9 +13,9 @@ InterceptorsWrapper logInterceptor(Log logger) {
       logger.d(
         [
           'headers: ${options.headers}',
-          'path: ${prettifyJson(options.path)}',
-          'query: ${prettifyJson(options.queryParameters)}',
-          'data: ${prettifyJson(options.data)}',
+          'path: ${options.path}',
+          'query: ${options.queryParameters}',
+          'data: ${options.data}',
         ].join('\n'),
       );
       handler.next(options);
@@ -23,8 +23,8 @@ InterceptorsWrapper logInterceptor(Log logger) {
     onResponse: (response, handler) {
       logger.d(
         [
-          'path: ${prettifyJson(response.requestOptions.path)}',
-          'data: ${prettifyJson(response.data)}',
+          'path: ${response.requestOptions.path}',
+          'data: ${response.data}',
         ].join('\n'),
       );
       handler.next(response);
@@ -32,9 +32,9 @@ InterceptorsWrapper logInterceptor(Log logger) {
     onError: (exception, handler) {
       logger.e(
         [
-          'error: ${prettifyJson(exception.error)}',
-          'message: ${prettifyJson(exception.message)}',
-          'data: ${prettifyJson(exception.response?.data)}',
+          'error: ${exception.error}',
+          'message: ${exception.message}',
+          'data: ${exception.response?.data}',
         ].join('\n'),
       );
       handler.next(exception);
