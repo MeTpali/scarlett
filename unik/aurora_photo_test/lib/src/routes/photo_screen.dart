@@ -11,7 +11,6 @@ import '../di/photo_test_di.dart';
 import '../features/camera/flash_button.dart';
 import '../features/camera/info_button.dart';
 import '../features/camera/manager.dart';
-import '../features/camera/mask.dart';
 import '../features/camera/photo_button.dart';
 import '../features/log/log.dart';
 import '../features/photo_check/notifier.dart';
@@ -230,6 +229,7 @@ class _PhotoScreenState extends ConsumerState<PhotoScreen>
       (XFile? file) async {
         if (mounted) {
           if (file != null) {
+            getIt.get<Log>().d(file.path);
             photoCheckNotifier.checkPhoto(file.path);
             final camerasManager = getIt.get<CamerasManager>();
             camerasManager.turnOff();
