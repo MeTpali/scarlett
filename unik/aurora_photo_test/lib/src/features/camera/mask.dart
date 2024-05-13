@@ -1,22 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class CameraMask extends StatelessWidget {
   const CameraMask({super.key});
 
   @override
-  Widget build(BuildContext context) => const Expanded(
+  Widget build(BuildContext context) => Material(
+        clipBehavior: Clip.antiAlias,
+        color: Colors.transparent,
         child: ColorFiltered(
-          colorFilter: ColorFilter.mode(
-            Color.fromARGB(54, 0, 0, 0),
+          colorFilter: const ColorFilter.mode(
+            Colors.red,
             BlendMode.xor,
           ),
           child: Padding(
-            padding: EdgeInsets.all(20),
-            child: Material(
-              color: Color.fromARGB(54, 0, 0, 0),
-              borderRadius: BorderRadius.all(
-                Radius.circular(5),
-              ),
+            padding: EdgeInsets.all(30),
+            child: ColoredBox(
+              color: Colors.red,
             ),
           ),
         ),
