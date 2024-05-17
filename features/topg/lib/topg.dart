@@ -6,6 +6,7 @@ export 'src/chat/message_model.dart';
 export 'src/chat/text_field.dart';
 export 'src/chat/view.dart';
 export 'src/dota/rate_tile/rate_tile.dart';
+export 'src/scores/radial.dart';
 export 'src/settings/button.dart';
 export 'src/settings/settings_block.dart';
 export 'src/settings/settings_tyle.dart';

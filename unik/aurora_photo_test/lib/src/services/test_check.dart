@@ -20,10 +20,10 @@ class TestCheckService {
       ],
     });
 
-    final response = await _client.post<dynamic>(
-      '/upload',
-      data: data,
-    );
+    // final response = await _client.post<dynamic>(
+    //   '/upload',
+    //   data: data,
+    // );
 
     return TestCheckResponse();
   }

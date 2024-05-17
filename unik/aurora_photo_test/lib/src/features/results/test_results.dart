@@ -1,20 +1,98 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../di/photo_test_di.dart';
+import '../../models/test_results_model.dart';
+import '../../theme/constants/constants.dart';
+import '../../theme/constants/types.dart';
+import '../../theme/scores/radial.dart';
+import 'test_answer.dart';
 
-class TestResultsWidget extends ConsumerWidget {
-  const TestResultsWidget({super.key});
+class TestResultsWidget extends StatelessWidget {
+  final List<TestAnswerModel> answers;
+  final int correctAnswers;
+  final int incorrectAnswers;
+  const TestResultsWidget({
+    required this.answers,
+    required this.correctAnswers,
+    required this.incorrectAnswers,
+    super.key,
+  });
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final testResults = ref.watch(PhotoTestDi.testResultsProvider);
-    final result = testResults.map(
-      results: (_) => 'Успех',
-      loading: (_) => 'Загрузка',
-    );
-    return Center(
-      child: Text(result),
+  Widget build(BuildContext context) {
+    final percent = double.parse(
+        (correctAnswers / (correctAnswers + incorrectAnswers))
+            .toStringAsPrecision(2));
+    final score =
+        (correctAnswers / (correctAnswers + incorrectAnswers) * 100).round();
+
+    final fillColor = percent < 0.5
+        ? TopGColors.yRed
+        : percent < 0.85
+            ? TopGColors.yYellow
+            : TopGColors.yGreen;
+    return SingleChildScrollView(
+      child: Center(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 8),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              SizedBox(
+                height: 70,
+                width: 70,
+                child: Center(
+                  child: RadialScoreWidget(
+                    fillColor: Colors.transparent,
+                    freeColor: TopGType.regular.resolveColor(context),
+                    lineColor: fillColor,
+                    child: Text(
+                      '$score%',
+                      style: TextStyle(color: fillColor, fontSize: 20),
+                    ),
+                    lineWidth: 4,
+                    percent: percent,
+                  ),
+                ),
+              ),
+              const SizedBox(height: 5),
+              const TestResultRow(
+                cells: [
+                  Text(
+                    'Номер вопроса',
+                    textAlign: TextAlign.center,
+                  ),
+                  Text(
+                    'Выбранный ответ',
+                    textAlign: TextAlign.center,
+                  ),
+                  Text(
+                    'Правильный ответ',
+                    textAlign: TextAlign.center,
+                  ),
+                ],
+              ),
+              for (final answer in answers)
+                TestResultRow(
+                  cells: [
+                    Text(
+                      answer.question,
+                      textAlign: TextAlign.center,
+                    ),
+                    Text(
+                      answer.answer,
+                      textAlign: TextAlign.center,
+                    ),
+                    Text(
+                      answer.correctAnswer,
+                      textAlign: TextAlign.center,
+                    ),
+                  ],
+                ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }

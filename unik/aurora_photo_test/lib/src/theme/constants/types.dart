@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 
+import '../theme_modes.dart';
+import '../topg_theme.dart';
 import 'constants.dart';
 
 enum TopGType {
-  lightRegular,
-  darkRegular,
+  regular,
+  highlight,
+  stress,
   action,
   statistics,
   knowledge,
@@ -14,12 +17,24 @@ enum TopGType {
 }
 
 extension TopGTypeX on TopGType {
-  Color resolveColor() {
+  Color resolveColor(BuildContext context) {
+    final theme = TopGTheme.of(context);
     switch (this) {
-      case TopGType.lightRegular:
-        return TopGColors.yLightGrey;
-      case TopGType.darkRegular:
-        return TopGColors.yDarkGrey;
+      case TopGType.regular:
+        final regularColor = theme.mode == TopGMode.light
+            ? TopGColors.yLightGrey
+            : TopGColors.yDarkGrey;
+        return regularColor;
+      case TopGType.highlight:
+        final highlightColor = theme.mode == TopGMode.light
+            ? TopGColors.softLightBlue
+            : TopGColors.softDarkBlue;
+        return highlightColor;
+      case TopGType.stress:
+        final stressColor = theme.mode == TopGMode.light
+            ? TopGColors.softLightRose
+            : TopGColors.softDarkRose;
+        return stressColor;
       case TopGType.action:
         return TopGColors.yYellow;
       case TopGType.statistics:

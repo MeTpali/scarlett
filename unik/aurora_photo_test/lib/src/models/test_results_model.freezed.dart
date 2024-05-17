@@ -14,24 +14,59 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
+TestResultsModel _$TestResultsModelFromJson(Map<String, dynamic> json) {
+  switch (json['runtimeType']) {
+    case 'results':
+      return _ResultsTestResultsModel.fromJson(json);
+    case 'loading':
+      return _LoadingTestResultsModel.fromJson(json);
+    case 'bad':
+      return _BadTestResultsModel.fromJson(json);
+    case 'error':
+      return _ErrorTestResultsModel.fromJson(json);
+
+    default:
+      throw CheckedFromJsonException(json, 'runtimeType', 'TestResultsModel',
+          'Invalid union type "${json['runtimeType']}"!');
+  }
+}
+
 /// @nodoc
 mixin _$TestResultsModel {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() results,
+    required TResult Function(
+            @JsonKey(name: 'test') List<TestAnswerModel> answersList,
+            @JsonKey(name: 'total-correct-answers') int correctAnswers,
+            @JsonKey(name: 'total-incorrect-answers') int incorrectAnswers)
+        results,
     required TResult Function() loading,
+    required TResult Function() bad,
+    required TResult Function(String? message) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? results,
+    TResult? Function(
+            @JsonKey(name: 'test') List<TestAnswerModel> answersList,
+            @JsonKey(name: 'total-correct-answers') int correctAnswers,
+            @JsonKey(name: 'total-incorrect-answers') int incorrectAnswers)?
+        results,
     TResult? Function()? loading,
+    TResult? Function()? bad,
+    TResult? Function(String? message)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? results,
+    TResult Function(
+            @JsonKey(name: 'test') List<TestAnswerModel> answersList,
+            @JsonKey(name: 'total-correct-answers') int correctAnswers,
+            @JsonKey(name: 'total-incorrect-answers') int incorrectAnswers)?
+        results,
     TResult Function()? loading,
+    TResult Function()? bad,
+    TResult Function(String? message)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -39,21 +74,28 @@ mixin _$TestResultsModel {
   TResult map<TResult extends Object?>({
     required TResult Function(_ResultsTestResultsModel value) results,
     required TResult Function(_LoadingTestResultsModel value) loading,
+    required TResult Function(_BadTestResultsModel value) bad,
+    required TResult Function(_ErrorTestResultsModel value) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ResultsTestResultsModel value)? results,
     TResult? Function(_LoadingTestResultsModel value)? loading,
+    TResult? Function(_BadTestResultsModel value)? bad,
+    TResult? Function(_ErrorTestResultsModel value)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ResultsTestResultsModel value)? results,
     TResult Function(_LoadingTestResultsModel value)? loading,
+    TResult Function(_BadTestResultsModel value)? bad,
+    TResult Function(_ErrorTestResultsModel value)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -80,6 +122,11 @@ abstract class _$$ResultsTestResultsModelImplCopyWith<$Res> {
           _$ResultsTestResultsModelImpl value,
           $Res Function(_$ResultsTestResultsModelImpl) then) =
       __$$ResultsTestResultsModelImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'test') List<TestAnswerModel> answersList,
+      @JsonKey(name: 'total-correct-answers') int correctAnswers,
+      @JsonKey(name: 'total-incorrect-answers') int incorrectAnswers});
 }
 
 /// @nodoc
@@ -90,55 +137,142 @@ class __$$ResultsTestResultsModelImplCopyWithImpl<$Res>
       _$ResultsTestResultsModelImpl _value,
       $Res Function(_$ResultsTestResultsModelImpl) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? answersList = null,
+    Object? correctAnswers = null,
+    Object? incorrectAnswers = null,
+  }) {
+    return _then(_$ResultsTestResultsModelImpl(
+      answersList: null == answersList
+          ? _value._answersList
+          : answersList // ignore: cast_nullable_to_non_nullable
+              as List<TestAnswerModel>,
+      correctAnswers: null == correctAnswers
+          ? _value.correctAnswers
+          : correctAnswers // ignore: cast_nullable_to_non_nullable
+              as int,
+      incorrectAnswers: null == incorrectAnswers
+          ? _value.incorrectAnswers
+          : incorrectAnswers // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
 }
 
 /// @nodoc
-
+@JsonSerializable()
 class _$ResultsTestResultsModelImpl implements _ResultsTestResultsModel {
-  const _$ResultsTestResultsModelImpl();
+  const _$ResultsTestResultsModelImpl(
+      {@JsonKey(name: 'test') required final List<TestAnswerModel> answersList,
+      @JsonKey(name: 'total-correct-answers') required this.correctAnswers,
+      @JsonKey(name: 'total-incorrect-answers') required this.incorrectAnswers,
+      final String? $type})
+      : _answersList = answersList,
+        $type = $type ?? 'results';
+
+  factory _$ResultsTestResultsModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ResultsTestResultsModelImplFromJson(json);
+
+  final List<TestAnswerModel> _answersList;
+  @override
+  @JsonKey(name: 'test')
+  List<TestAnswerModel> get answersList {
+    if (_answersList is EqualUnmodifiableListView) return _answersList;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_answersList);
+  }
+
+  @override
+  @JsonKey(name: 'total-correct-answers')
+  final int correctAnswers;
+  @override
+  @JsonKey(name: 'total-incorrect-answers')
+  final int incorrectAnswers;
+
+  @JsonKey(name: 'runtimeType')
+  final String $type;
 
   @override
   String toString() {
-    return 'TestResultsModel.results()';
+    return 'TestResultsModel.results(answersList: $answersList, correctAnswers: $correctAnswers, incorrectAnswers: $incorrectAnswers)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ResultsTestResultsModelImpl);
+            other is _$ResultsTestResultsModelImpl &&
+            const DeepCollectionEquality()
+                .equals(other._answersList, _answersList) &&
+            (identical(other.correctAnswers, correctAnswers) ||
+                other.correctAnswers == correctAnswers) &&
+            (identical(other.incorrectAnswers, incorrectAnswers) ||
+                other.incorrectAnswers == incorrectAnswers));
   }
 
+  @JsonKey(ignore: true)
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_answersList),
+      correctAnswers,
+      incorrectAnswers);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ResultsTestResultsModelImplCopyWith<_$ResultsTestResultsModelImpl>
+      get copyWith => __$$ResultsTestResultsModelImplCopyWithImpl<
+          _$ResultsTestResultsModelImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() results,
+    required TResult Function(
+            @JsonKey(name: 'test') List<TestAnswerModel> answersList,
+            @JsonKey(name: 'total-correct-answers') int correctAnswers,
+            @JsonKey(name: 'total-incorrect-answers') int incorrectAnswers)
+        results,
     required TResult Function() loading,
+    required TResult Function() bad,
+    required TResult Function(String? message) error,
   }) {
-    return results();
+    return results(answersList, correctAnswers, incorrectAnswers);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? results,
+    TResult? Function(
+            @JsonKey(name: 'test') List<TestAnswerModel> answersList,
+            @JsonKey(name: 'total-correct-answers') int correctAnswers,
+            @JsonKey(name: 'total-incorrect-answers') int incorrectAnswers)?
+        results,
     TResult? Function()? loading,
+    TResult? Function()? bad,
+    TResult? Function(String? message)? error,
   }) {
-    return results?.call();
+    return results?.call(answersList, correctAnswers, incorrectAnswers);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? results,
+    TResult Function(
+            @JsonKey(name: 'test') List<TestAnswerModel> answersList,
+            @JsonKey(name: 'total-correct-answers') int correctAnswers,
+            @JsonKey(name: 'total-incorrect-answers') int incorrectAnswers)?
+        results,
     TResult Function()? loading,
+    TResult Function()? bad,
+    TResult Function(String? message)? error,
     required TResult orElse(),
   }) {
     if (results != null) {
-      return results();
+      return results(answersList, correctAnswers, incorrectAnswers);
     }
     return orElse();
   }
@@ -148,6 +282,8 @@ class _$ResultsTestResultsModelImpl implements _ResultsTestResultsModel {
   TResult map<TResult extends Object?>({
     required TResult Function(_ResultsTestResultsModel value) results,
     required TResult Function(_LoadingTestResultsModel value) loading,
+    required TResult Function(_BadTestResultsModel value) bad,
+    required TResult Function(_ErrorTestResultsModel value) error,
   }) {
     return results(this);
   }
@@ -157,6 +293,8 @@ class _$ResultsTestResultsModelImpl implements _ResultsTestResultsModel {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ResultsTestResultsModel value)? results,
     TResult? Function(_LoadingTestResultsModel value)? loading,
+    TResult? Function(_BadTestResultsModel value)? bad,
+    TResult? Function(_ErrorTestResultsModel value)? error,
   }) {
     return results?.call(this);
   }
@@ -166,6 +304,8 @@ class _$ResultsTestResultsModelImpl implements _ResultsTestResultsModel {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ResultsTestResultsModel value)? results,
     TResult Function(_LoadingTestResultsModel value)? loading,
+    TResult Function(_BadTestResultsModel value)? bad,
+    TResult Function(_ErrorTestResultsModel value)? error,
     required TResult orElse(),
   }) {
     if (results != null) {
@@ -173,10 +313,34 @@ class _$ResultsTestResultsModelImpl implements _ResultsTestResultsModel {
     }
     return orElse();
   }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$ResultsTestResultsModelImplToJson(
+      this,
+    );
+  }
 }
 
 abstract class _ResultsTestResultsModel implements TestResultsModel {
-  const factory _ResultsTestResultsModel() = _$ResultsTestResultsModelImpl;
+  const factory _ResultsTestResultsModel(
+      {@JsonKey(name: 'test') required final List<TestAnswerModel> answersList,
+      @JsonKey(name: 'total-correct-answers') required final int correctAnswers,
+      @JsonKey(name: 'total-incorrect-answers')
+      required final int incorrectAnswers}) = _$ResultsTestResultsModelImpl;
+
+  factory _ResultsTestResultsModel.fromJson(Map<String, dynamic> json) =
+      _$ResultsTestResultsModelImpl.fromJson;
+
+  @JsonKey(name: 'test')
+  List<TestAnswerModel> get answersList;
+  @JsonKey(name: 'total-correct-answers')
+  int get correctAnswers;
+  @JsonKey(name: 'total-incorrect-answers')
+  int get incorrectAnswers;
+  @JsonKey(ignore: true)
+  _$$ResultsTestResultsModelImplCopyWith<_$ResultsTestResultsModelImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -198,9 +362,16 @@ class __$$LoadingTestResultsModelImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
-
+@JsonSerializable()
 class _$LoadingTestResultsModelImpl implements _LoadingTestResultsModel {
-  const _$LoadingTestResultsModelImpl();
+  const _$LoadingTestResultsModelImpl({final String? $type})
+      : $type = $type ?? 'loading';
+
+  factory _$LoadingTestResultsModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$LoadingTestResultsModelImplFromJson(json);
+
+  @JsonKey(name: 'runtimeType')
+  final String $type;
 
   @override
   String toString() {
@@ -214,14 +385,21 @@ class _$LoadingTestResultsModelImpl implements _LoadingTestResultsModel {
             other is _$LoadingTestResultsModelImpl);
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() results,
+    required TResult Function(
+            @JsonKey(name: 'test') List<TestAnswerModel> answersList,
+            @JsonKey(name: 'total-correct-answers') int correctAnswers,
+            @JsonKey(name: 'total-incorrect-answers') int incorrectAnswers)
+        results,
     required TResult Function() loading,
+    required TResult Function() bad,
+    required TResult Function(String? message) error,
   }) {
     return loading();
   }
@@ -229,8 +407,14 @@ class _$LoadingTestResultsModelImpl implements _LoadingTestResultsModel {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? results,
+    TResult? Function(
+            @JsonKey(name: 'test') List<TestAnswerModel> answersList,
+            @JsonKey(name: 'total-correct-answers') int correctAnswers,
+            @JsonKey(name: 'total-incorrect-answers') int incorrectAnswers)?
+        results,
     TResult? Function()? loading,
+    TResult? Function()? bad,
+    TResult? Function(String? message)? error,
   }) {
     return loading?.call();
   }
@@ -238,8 +422,14 @@ class _$LoadingTestResultsModelImpl implements _LoadingTestResultsModel {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? results,
+    TResult Function(
+            @JsonKey(name: 'test') List<TestAnswerModel> answersList,
+            @JsonKey(name: 'total-correct-answers') int correctAnswers,
+            @JsonKey(name: 'total-incorrect-answers') int incorrectAnswers)?
+        results,
     TResult Function()? loading,
+    TResult Function()? bad,
+    TResult Function(String? message)? error,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -253,6 +443,8 @@ class _$LoadingTestResultsModelImpl implements _LoadingTestResultsModel {
   TResult map<TResult extends Object?>({
     required TResult Function(_ResultsTestResultsModel value) results,
     required TResult Function(_LoadingTestResultsModel value) loading,
+    required TResult Function(_BadTestResultsModel value) bad,
+    required TResult Function(_ErrorTestResultsModel value) error,
   }) {
     return loading(this);
   }
@@ -262,6 +454,8 @@ class _$LoadingTestResultsModelImpl implements _LoadingTestResultsModel {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ResultsTestResultsModel value)? results,
     TResult? Function(_LoadingTestResultsModel value)? loading,
+    TResult? Function(_BadTestResultsModel value)? bad,
+    TResult? Function(_ErrorTestResultsModel value)? error,
   }) {
     return loading?.call(this);
   }
@@ -271,6 +465,8 @@ class _$LoadingTestResultsModelImpl implements _LoadingTestResultsModel {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ResultsTestResultsModel value)? results,
     TResult Function(_LoadingTestResultsModel value)? loading,
+    TResult Function(_BadTestResultsModel value)? bad,
+    TResult Function(_ErrorTestResultsModel value)? error,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -278,8 +474,534 @@ class _$LoadingTestResultsModelImpl implements _LoadingTestResultsModel {
     }
     return orElse();
   }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$LoadingTestResultsModelImplToJson(
+      this,
+    );
+  }
 }
 
 abstract class _LoadingTestResultsModel implements TestResultsModel {
   const factory _LoadingTestResultsModel() = _$LoadingTestResultsModelImpl;
+
+  factory _LoadingTestResultsModel.fromJson(Map<String, dynamic> json) =
+      _$LoadingTestResultsModelImpl.fromJson;
+}
+
+/// @nodoc
+abstract class _$$BadTestResultsModelImplCopyWith<$Res> {
+  factory _$$BadTestResultsModelImplCopyWith(_$BadTestResultsModelImpl value,
+          $Res Function(_$BadTestResultsModelImpl) then) =
+      __$$BadTestResultsModelImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$BadTestResultsModelImplCopyWithImpl<$Res>
+    extends _$TestResultsModelCopyWithImpl<$Res, _$BadTestResultsModelImpl>
+    implements _$$BadTestResultsModelImplCopyWith<$Res> {
+  __$$BadTestResultsModelImplCopyWithImpl(_$BadTestResultsModelImpl _value,
+      $Res Function(_$BadTestResultsModelImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$BadTestResultsModelImpl implements _BadTestResultsModel {
+  const _$BadTestResultsModelImpl({final String? $type})
+      : $type = $type ?? 'bad';
+
+  factory _$BadTestResultsModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$BadTestResultsModelImplFromJson(json);
+
+  @JsonKey(name: 'runtimeType')
+  final String $type;
+
+  @override
+  String toString() {
+    return 'TestResultsModel.bad()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$BadTestResultsModelImpl);
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(
+            @JsonKey(name: 'test') List<TestAnswerModel> answersList,
+            @JsonKey(name: 'total-correct-answers') int correctAnswers,
+            @JsonKey(name: 'total-incorrect-answers') int incorrectAnswers)
+        results,
+    required TResult Function() loading,
+    required TResult Function() bad,
+    required TResult Function(String? message) error,
+  }) {
+    return bad();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(
+            @JsonKey(name: 'test') List<TestAnswerModel> answersList,
+            @JsonKey(name: 'total-correct-answers') int correctAnswers,
+            @JsonKey(name: 'total-incorrect-answers') int incorrectAnswers)?
+        results,
+    TResult? Function()? loading,
+    TResult? Function()? bad,
+    TResult? Function(String? message)? error,
+  }) {
+    return bad?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(
+            @JsonKey(name: 'test') List<TestAnswerModel> answersList,
+            @JsonKey(name: 'total-correct-answers') int correctAnswers,
+            @JsonKey(name: 'total-incorrect-answers') int incorrectAnswers)?
+        results,
+    TResult Function()? loading,
+    TResult Function()? bad,
+    TResult Function(String? message)? error,
+    required TResult orElse(),
+  }) {
+    if (bad != null) {
+      return bad();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_ResultsTestResultsModel value) results,
+    required TResult Function(_LoadingTestResultsModel value) loading,
+    required TResult Function(_BadTestResultsModel value) bad,
+    required TResult Function(_ErrorTestResultsModel value) error,
+  }) {
+    return bad(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_ResultsTestResultsModel value)? results,
+    TResult? Function(_LoadingTestResultsModel value)? loading,
+    TResult? Function(_BadTestResultsModel value)? bad,
+    TResult? Function(_ErrorTestResultsModel value)? error,
+  }) {
+    return bad?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_ResultsTestResultsModel value)? results,
+    TResult Function(_LoadingTestResultsModel value)? loading,
+    TResult Function(_BadTestResultsModel value)? bad,
+    TResult Function(_ErrorTestResultsModel value)? error,
+    required TResult orElse(),
+  }) {
+    if (bad != null) {
+      return bad(this);
+    }
+    return orElse();
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$BadTestResultsModelImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _BadTestResultsModel implements TestResultsModel {
+  const factory _BadTestResultsModel() = _$BadTestResultsModelImpl;
+
+  factory _BadTestResultsModel.fromJson(Map<String, dynamic> json) =
+      _$BadTestResultsModelImpl.fromJson;
+}
+
+/// @nodoc
+abstract class _$$ErrorTestResultsModelImplCopyWith<$Res> {
+  factory _$$ErrorTestResultsModelImplCopyWith(
+          _$ErrorTestResultsModelImpl value,
+          $Res Function(_$ErrorTestResultsModelImpl) then) =
+      __$$ErrorTestResultsModelImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String? message});
+}
+
+/// @nodoc
+class __$$ErrorTestResultsModelImplCopyWithImpl<$Res>
+    extends _$TestResultsModelCopyWithImpl<$Res, _$ErrorTestResultsModelImpl>
+    implements _$$ErrorTestResultsModelImplCopyWith<$Res> {
+  __$$ErrorTestResultsModelImplCopyWithImpl(_$ErrorTestResultsModelImpl _value,
+      $Res Function(_$ErrorTestResultsModelImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? message = freezed,
+  }) {
+    return _then(_$ErrorTestResultsModelImpl(
+      message: freezed == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$ErrorTestResultsModelImpl implements _ErrorTestResultsModel {
+  const _$ErrorTestResultsModelImpl({this.message, final String? $type})
+      : $type = $type ?? 'error';
+
+  factory _$ErrorTestResultsModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ErrorTestResultsModelImplFromJson(json);
+
+  @override
+  final String? message;
+
+  @JsonKey(name: 'runtimeType')
+  final String $type;
+
+  @override
+  String toString() {
+    return 'TestResultsModel.error(message: $message)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ErrorTestResultsModelImpl &&
+            (identical(other.message, message) || other.message == message));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, message);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ErrorTestResultsModelImplCopyWith<_$ErrorTestResultsModelImpl>
+      get copyWith => __$$ErrorTestResultsModelImplCopyWithImpl<
+          _$ErrorTestResultsModelImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(
+            @JsonKey(name: 'test') List<TestAnswerModel> answersList,
+            @JsonKey(name: 'total-correct-answers') int correctAnswers,
+            @JsonKey(name: 'total-incorrect-answers') int incorrectAnswers)
+        results,
+    required TResult Function() loading,
+    required TResult Function() bad,
+    required TResult Function(String? message) error,
+  }) {
+    return error(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(
+            @JsonKey(name: 'test') List<TestAnswerModel> answersList,
+            @JsonKey(name: 'total-correct-answers') int correctAnswers,
+            @JsonKey(name: 'total-incorrect-answers') int incorrectAnswers)?
+        results,
+    TResult? Function()? loading,
+    TResult? Function()? bad,
+    TResult? Function(String? message)? error,
+  }) {
+    return error?.call(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(
+            @JsonKey(name: 'test') List<TestAnswerModel> answersList,
+            @JsonKey(name: 'total-correct-answers') int correctAnswers,
+            @JsonKey(name: 'total-incorrect-answers') int incorrectAnswers)?
+        results,
+    TResult Function()? loading,
+    TResult Function()? bad,
+    TResult Function(String? message)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(message);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_ResultsTestResultsModel value) results,
+    required TResult Function(_LoadingTestResultsModel value) loading,
+    required TResult Function(_BadTestResultsModel value) bad,
+    required TResult Function(_ErrorTestResultsModel value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_ResultsTestResultsModel value)? results,
+    TResult? Function(_LoadingTestResultsModel value)? loading,
+    TResult? Function(_BadTestResultsModel value)? bad,
+    TResult? Function(_ErrorTestResultsModel value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_ResultsTestResultsModel value)? results,
+    TResult Function(_LoadingTestResultsModel value)? loading,
+    TResult Function(_BadTestResultsModel value)? bad,
+    TResult Function(_ErrorTestResultsModel value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$ErrorTestResultsModelImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _ErrorTestResultsModel implements TestResultsModel {
+  const factory _ErrorTestResultsModel({final String? message}) =
+      _$ErrorTestResultsModelImpl;
+
+  factory _ErrorTestResultsModel.fromJson(Map<String, dynamic> json) =
+      _$ErrorTestResultsModelImpl.fromJson;
+
+  String? get message;
+  @JsonKey(ignore: true)
+  _$$ErrorTestResultsModelImplCopyWith<_$ErrorTestResultsModelImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+TestAnswerModel _$TestAnswerModelFromJson(Map<String, dynamic> json) {
+  return _TestAnswerModel.fromJson(json);
+}
+
+/// @nodoc
+mixin _$TestAnswerModel {
+  @JsonKey(name: 'question')
+  String get question => throw _privateConstructorUsedError;
+  @JsonKey(name: 'answer')
+  String get answer => throw _privateConstructorUsedError;
+  @JsonKey(name: 'correct-answer')
+  String get correctAnswer => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $TestAnswerModelCopyWith<TestAnswerModel> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $TestAnswerModelCopyWith<$Res> {
+  factory $TestAnswerModelCopyWith(
+          TestAnswerModel value, $Res Function(TestAnswerModel) then) =
+      _$TestAnswerModelCopyWithImpl<$Res, TestAnswerModel>;
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'question') String question,
+      @JsonKey(name: 'answer') String answer,
+      @JsonKey(name: 'correct-answer') String correctAnswer});
+}
+
+/// @nodoc
+class _$TestAnswerModelCopyWithImpl<$Res, $Val extends TestAnswerModel>
+    implements $TestAnswerModelCopyWith<$Res> {
+  _$TestAnswerModelCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? question = null,
+    Object? answer = null,
+    Object? correctAnswer = null,
+  }) {
+    return _then(_value.copyWith(
+      question: null == question
+          ? _value.question
+          : question // ignore: cast_nullable_to_non_nullable
+              as String,
+      answer: null == answer
+          ? _value.answer
+          : answer // ignore: cast_nullable_to_non_nullable
+              as String,
+      correctAnswer: null == correctAnswer
+          ? _value.correctAnswer
+          : correctAnswer // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$TestAnswerModelImplCopyWith<$Res>
+    implements $TestAnswerModelCopyWith<$Res> {
+  factory _$$TestAnswerModelImplCopyWith(_$TestAnswerModelImpl value,
+          $Res Function(_$TestAnswerModelImpl) then) =
+      __$$TestAnswerModelImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'question') String question,
+      @JsonKey(name: 'answer') String answer,
+      @JsonKey(name: 'correct-answer') String correctAnswer});
+}
+
+/// @nodoc
+class __$$TestAnswerModelImplCopyWithImpl<$Res>
+    extends _$TestAnswerModelCopyWithImpl<$Res, _$TestAnswerModelImpl>
+    implements _$$TestAnswerModelImplCopyWith<$Res> {
+  __$$TestAnswerModelImplCopyWithImpl(
+      _$TestAnswerModelImpl _value, $Res Function(_$TestAnswerModelImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? question = null,
+    Object? answer = null,
+    Object? correctAnswer = null,
+  }) {
+    return _then(_$TestAnswerModelImpl(
+      question: null == question
+          ? _value.question
+          : question // ignore: cast_nullable_to_non_nullable
+              as String,
+      answer: null == answer
+          ? _value.answer
+          : answer // ignore: cast_nullable_to_non_nullable
+              as String,
+      correctAnswer: null == correctAnswer
+          ? _value.correctAnswer
+          : correctAnswer // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$TestAnswerModelImpl implements _TestAnswerModel {
+  const _$TestAnswerModelImpl(
+      {@JsonKey(name: 'question') required this.question,
+      @JsonKey(name: 'answer') required this.answer,
+      @JsonKey(name: 'correct-answer') required this.correctAnswer});
+
+  factory _$TestAnswerModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$TestAnswerModelImplFromJson(json);
+
+  @override
+  @JsonKey(name: 'question')
+  final String question;
+  @override
+  @JsonKey(name: 'answer')
+  final String answer;
+  @override
+  @JsonKey(name: 'correct-answer')
+  final String correctAnswer;
+
+  @override
+  String toString() {
+    return 'TestAnswerModel(question: $question, answer: $answer, correctAnswer: $correctAnswer)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$TestAnswerModelImpl &&
+            (identical(other.question, question) ||
+                other.question == question) &&
+            (identical(other.answer, answer) || other.answer == answer) &&
+            (identical(other.correctAnswer, correctAnswer) ||
+                other.correctAnswer == correctAnswer));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, question, answer, correctAnswer);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$TestAnswerModelImplCopyWith<_$TestAnswerModelImpl> get copyWith =>
+      __$$TestAnswerModelImplCopyWithImpl<_$TestAnswerModelImpl>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$TestAnswerModelImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _TestAnswerModel implements TestAnswerModel {
+  const factory _TestAnswerModel(
+      {@JsonKey(name: 'question') required final String question,
+      @JsonKey(name: 'answer') required final String answer,
+      @JsonKey(name: 'correct-answer')
+      required final String correctAnswer}) = _$TestAnswerModelImpl;
+
+  factory _TestAnswerModel.fromJson(Map<String, dynamic> json) =
+      _$TestAnswerModelImpl.fromJson;
+
+  @override
+  @JsonKey(name: 'question')
+  String get question;
+  @override
+  @JsonKey(name: 'answer')
+  String get answer;
+  @override
+  @JsonKey(name: 'correct-answer')
+  String get correctAnswer;
+  @override
+  @JsonKey(ignore: true)
+  _$$TestAnswerModelImplCopyWith<_$TestAnswerModelImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

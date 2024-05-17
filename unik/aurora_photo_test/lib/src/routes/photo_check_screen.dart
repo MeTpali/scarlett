@@ -79,7 +79,7 @@ class PhotoCheckScreen extends ConsumerWidget {
                       unawaited(camerasManager.getAvailableCameras());
                       unawaited(context.router.maybePop());
                     },
-                    type: TopGType.lightRegular,
+                    type: TopGType.regular,
                   ),
                 ),
                 const SizedBox(width: 15),

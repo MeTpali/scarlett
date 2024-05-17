@@ -17,9 +17,9 @@ class AppRouter extends _$AppRouter {
   List<AutoRoute> get routes => [
         AutoRoute(page: SettingsRoute.page),
         AutoRoute(page: CameraRoute.page),
-        AutoRoute(page: PhotoRoute.page),
+        AutoRoute(page: PhotoRoute.page, initial: true),
         AutoRoute(page: PhotoCheckRoute.page),
         AutoRoute(page: TestResultsRoute.page),
-        AutoRoute(page: ErrorRoute.page, initial: true),
+        AutoRoute(page: ErrorRoute.page),
       ];
 }
