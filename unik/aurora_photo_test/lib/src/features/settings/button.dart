@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../theme/constants/constants.dart';
 import '../../theme/topg_theme.dart';
 
 class SettingsButton extends StatelessWidget {
@@ -12,9 +13,10 @@ class SettingsButton extends StatelessWidget {
     final settingsTheme = theme.settings;
     return IconButton(
       onPressed: onTap,
-      icon: Icon(
-        Icons.settings,
-        color: settingsTheme.buttonColor,
+      icon: const Icon(
+        Icons.more_vert,
+        size: 40,
+        color: TopGColors.yLightGrey,
       ),
     );
   }

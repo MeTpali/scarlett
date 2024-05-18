@@ -21,7 +21,6 @@ class PhotoButton extends StatelessWidget {
         ),
         child: MaterialButton(
           onPressed: onPressed,
-          color: TopGColors.yLightGrey,
           shape: const CircleBorder(),
         ),
       );

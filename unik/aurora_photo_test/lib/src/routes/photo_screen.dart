@@ -101,41 +101,12 @@ class _PhotoScreenState extends ConsumerState<PhotoScreen>
     final photoCheckNotifier =
         ref.watch(PhotoTestDi.photoCheckProvider.notifier);
     return Scaffold(
-      backgroundColor: Colors.black,
+      extendBodyBehindAppBar: true,
+      backgroundColor: const Color.fromARGB(255, 69, 83, 209),
       appBar: AppBar(
-        backgroundColor: Colors.black,
+        backgroundColor: const Color.fromARGB(255, 69, 83, 209),
         elevation: 0,
-        centerTitle: true,
-        leading: InfoButton(
-          onPressed: () {
-            unawaited(
-              showDialog(
-                context: context,
-                builder: (context) => AlertDialog(
-                  title: const Text('''Я влюбился в твою маму
-Она совсем как ты, только может сделать похавать
-Она совсем как ты, только получает зарплату
-Она совсем как ты, я скоро стану твоим папой'''),
-                  actions: [
-                    TextButton(
-                      onPressed: () {
-                        Navigator.of(context).pop();
-                      },
-                      child: const Text('Ок'),
-                    ),
-                  ],
-                ),
-              ),
-            );
-          },
-        ),
-        actions: [
-          SettingsButton(
-            onTap: () async {
-              await context.router.push(const SettingsRoute());
-            },
-          )
-        ],
+        toolbarHeight: 28,
       ),
       body: Column(
         mainAxisSize: MainAxisSize.min,
@@ -143,53 +114,61 @@ class _PhotoScreenState extends ConsumerState<PhotoScreen>
           Expanded(
             child: Container(
               decoration: const BoxDecoration(
-                color: Colors.black,
+                color: Color.fromARGB(255, 69, 83, 209),
               ),
-              child: Center(
-                child: _cameraPreviewWidget(),
-              ),
+              child: _cameraPreviewWidget(),
             ),
           ),
           const SizedBox(height: 10),
-          Stack(
-            children: [
-              Align(
-                alignment: AlignmentDirectional.center,
-                child: Padding(
-                  padding: const EdgeInsets.only(bottom: 5),
-                  child: SizedBox(
-                    height: 60,
-                    width: 60,
-                    child: PhotoButton(
-                      onPressed: controller != null &&
-                              controller!.value.isInitialized &&
-                              !controller!.value.isRecordingVideo
-                          ? () async => onTakePictureButtonPressed(
-                              context, photoCheckNotifier)
-                          : null,
+          Padding(
+            padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
+            child: Stack(
+              children: [
+                Align(
+                  alignment: AlignmentDirectional.center,
+                  child: Padding(
+                    padding: const EdgeInsets.only(bottom: 5),
+                    child: SizedBox(
+                      child: PhotoButton(
+                        onPressed: controller != null &&
+                                controller!.value.isInitialized &&
+                                !controller!.value.isRecordingVideo
+                            ? () async => onTakePictureButtonPressed(
+                                context, photoCheckNotifier)
+                            : null,
+                      ),
                     ),
                   ),
                 ),
-              ),
-              Align(
-                alignment: AlignmentDirectional.topStart,
-                child: FlashButton(
-                  flashMode: flashMode,
-                  onPressed:
-                      controller != null && controller!.value.isInitialized
-                          ? () async {
-                              if (flashMode == FlashMode.always) {
-                                flashMode = FlashMode.off;
-                              } else {
-                                flashMode = FlashMode.always;
-                              }
-                              await controller!.setFlashMode(flashMode);
+                Align(
+                  alignment: AlignmentDirectional.centerStart,
+                  child: FlashButton(
+                    flashMode: flashMode,
+                    onPressed: controller != null &&
+                            controller!.value.isInitialized &&
+                            !controller!.value.isRecordingVideo
+                        ? () async {
+                            if (flashMode == FlashMode.always) {
+                              flashMode = FlashMode.off;
+                            } else {
+                              flashMode = FlashMode.always;
                             }
-                          : null,
+                            await controller!.setFlashMode(flashMode);
+                          }
+                        : null,
+                  ),
                 ),
-              ),
-            ],
-          ),
+                Align(
+                  alignment: AlignmentDirectional.centerEnd,
+                  child: SettingsButton(
+                    onTap: () async {
+                      await context.router.push(const SettingsRoute());
+                    },
+                  ),
+                )
+              ],
+            ),
+          )
         ],
       ),
     );

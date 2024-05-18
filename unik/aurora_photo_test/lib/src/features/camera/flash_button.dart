@@ -31,6 +31,7 @@ class FlashButton extends StatelessWidget {
   Widget build(BuildContext context) => IconButton(
         onPressed: onPressed,
         icon: Icon(
+          size: 40,
           flashMode.resolveIcon(),
           color: TopGColors.yLightGrey,
         ),
