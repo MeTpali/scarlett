@@ -16,6 +16,7 @@ import '../features/log/log.dart';
 import '../features/photo_check/notifier.dart';
 import '../features/settings/button.dart';
 import '../models/device_camera_model.dart';
+import '../theme/topg_theme.dart';
 import 'app_router/app_router.dart';
 
 @RoutePage()
@@ -100,11 +101,13 @@ class _PhotoScreenState extends ConsumerState<PhotoScreen>
   Widget build(BuildContext context) {
     final photoCheckNotifier =
         ref.watch(PhotoTestDi.photoCheckProvider.notifier);
+    final theme = TopGTheme.of(context);
+    final settingsTheme = theme.settings;
     return Scaffold(
       extendBodyBehindAppBar: true,
-      backgroundColor: const Color.fromARGB(255, 69, 83, 209),
+      backgroundColor: settingsTheme.backgroundColor,
       appBar: AppBar(
-        backgroundColor: const Color.fromARGB(255, 69, 83, 209),
+        backgroundColor: settingsTheme.backgroundColor,
         elevation: 0,
         toolbarHeight: 28,
       ),

@@ -14,6 +14,33 @@ class AppLocalizationsEn extends AppLocalizations {
   String get language => 'Language';
 
   @override
+  String get theme => 'Theme';
+
+  @override
+  String get light => 'Light';
+
+  @override
+  String get dark => 'Dark';
+
+  @override
+  String get result => 'Result';
+
+  @override
+  String get error => 'Error';
+
+  @override
+  String get tryAgain => 'Try again';
+
+  @override
+  String get questionNumber => 'Question number';
+
+  @override
+  String get selectedAnswer => 'Selected answer';
+
+  @override
+  String get rightAnswer => 'Right answer';
+
+  @override
   String get lightTheme => 'Light theme';
 
   @override

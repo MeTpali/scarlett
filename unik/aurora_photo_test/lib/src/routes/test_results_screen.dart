@@ -8,6 +8,7 @@ import '../di/photo_test_di.dart';
 import '../features/results/test_parameters_widget.dart';
 import '../features/results/test_results.dart';
 import '../features/settings/button.dart';
+import '../theme/topg_theme.dart';
 import 'app_router/app_router.dart';
 
 @RoutePage()
@@ -19,9 +20,12 @@ class TestResultsScreen extends ConsumerWidget {
     final testResultNotifier =
         ref.watch(PhotoTestDi.testResultsProvider.notifier);
     final testResults = ref.watch(PhotoTestDi.testResultsProvider);
+    final theme = TopGTheme.of(context);
+    final settingsTheme = theme.settings;
     return Scaffold(
+      backgroundColor: settingsTheme.backgroundColor,
       appBar: AppBar(
-        title: Text('Результаты'),
+        backgroundColor: settingsTheme.backgroundColor,
         centerTitle: true,
         leading: IconButton(
           onPressed: () {

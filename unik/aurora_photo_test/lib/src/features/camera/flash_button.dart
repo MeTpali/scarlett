@@ -1,7 +1,7 @@
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 
-import '../../theme/constants/constants.dart';
+import '../../theme/topg_theme.dart';
 
 extension FlashModeX on FlashMode {
   IconData resolveIcon() {
@@ -28,12 +28,17 @@ class FlashButton extends StatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) => IconButton(
-        onPressed: onPressed,
-        icon: Icon(
-          size: 40,
-          flashMode.resolveIcon(),
-          color: TopGColors.yLightGrey,
-        ),
-      );
+  Widget build(BuildContext context) {
+    final theme = TopGTheme.of(context);
+    final settingsTheme = theme.settings;
+
+    return IconButton(
+      onPressed: onPressed,
+      icon: Icon(
+        size: 40,
+        flashMode.resolveIcon(),
+        color: settingsTheme.buttonColor,
+      ),
+    );
+  }
 }

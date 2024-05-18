@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../theme/constants/types.dart';
+import '../../theme/topg_theme.dart';
 
 class TestTableRow extends StatelessWidget {
   final List<Widget> cells;
@@ -30,19 +31,23 @@ class TestTableCellWrapper extends StatelessWidget {
   });
 
   @override
-  Widget build(BuildContext context) => Expanded(
-        child: SizedBox(
-          height: 40,
-          child: DecoratedBox(
-            decoration: BoxDecoration(
-              border: Border.all(),
-              color: type.resolveColor(context),
-            ),
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 2, vertical: 1),
-              child: Center(child: child),
-            ),
+  Widget build(BuildContext context) {
+    final theme = TopGTheme.of(context);
+    final settingsTheme = theme.settings;
+
+    return Expanded(
+      child: SizedBox(
+        height: 40,
+        child: DecoratedBox(
+          decoration: BoxDecoration(
+            color: settingsTheme.tableColor,
+          ),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 2, vertical: 1),
+            child: Center(child: child),
           ),
         ),
-      );
+      ),
+    );
+  }
 }

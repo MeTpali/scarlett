@@ -111,6 +111,60 @@ abstract class AppLocalizations {
   /// **'Language'**
   String get language;
 
+  /// No description provided for @theme.
+  ///
+  /// In en, this message translates to:
+  /// **'Theme'**
+  String get theme;
+
+  /// No description provided for @light.
+  ///
+  /// In en, this message translates to:
+  /// **'Light'**
+  String get light;
+
+  /// No description provided for @dark.
+  ///
+  /// In en, this message translates to:
+  /// **'Dark'**
+  String get dark;
+
+  /// No description provided for @result.
+  ///
+  /// In en, this message translates to:
+  /// **'Result'**
+  String get result;
+
+  /// No description provided for @error.
+  ///
+  /// In en, this message translates to:
+  /// **'Error'**
+  String get error;
+
+  /// No description provided for @tryAgain.
+  ///
+  /// In en, this message translates to:
+  /// **'Try again'**
+  String get tryAgain;
+
+  /// No description provided for @questionNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Question number'**
+  String get questionNumber;
+
+  /// No description provided for @selectedAnswer.
+  ///
+  /// In en, this message translates to:
+  /// **'Selected answer'**
+  String get selectedAnswer;
+
+  /// No description provided for @rightAnswer.
+  ///
+  /// In en, this message translates to:
+  /// **'Right answer'**
+  String get rightAnswer;
+
   /// No description provided for @lightTheme.
   ///
   /// In en, this message translates to:

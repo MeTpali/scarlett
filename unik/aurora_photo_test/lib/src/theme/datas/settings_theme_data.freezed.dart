@@ -17,6 +17,7 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$SettingsThemeData {
   Color get buttonColor => throw _privateConstructorUsedError;
+  Color get tableColor => throw _privateConstructorUsedError;
   Color get blockTitleColor => throw _privateConstructorUsedError;
   Color get blockColor => throw _privateConstructorUsedError;
   Color get iconColor => throw _privateConstructorUsedError;
@@ -26,6 +27,7 @@ mixin _$SettingsThemeData {
   TResult when<TResult extends Object?>({
     required TResult Function(
             Color buttonColor,
+            Color tableColor,
             Color blockTitleColor,
             Color blockColor,
             Color iconColor,
@@ -34,6 +36,7 @@ mixin _$SettingsThemeData {
         light,
     required TResult Function(
             Color buttonColor,
+            Color tableColor,
             Color blockTitleColor,
             Color blockColor,
             Color iconColor,
@@ -46,6 +49,7 @@ mixin _$SettingsThemeData {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(
             Color buttonColor,
+            Color tableColor,
             Color blockTitleColor,
             Color blockColor,
             Color iconColor,
@@ -54,6 +58,7 @@ mixin _$SettingsThemeData {
         light,
     TResult? Function(
             Color buttonColor,
+            Color tableColor,
             Color blockTitleColor,
             Color blockColor,
             Color iconColor,
@@ -64,11 +69,23 @@ mixin _$SettingsThemeData {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Color buttonColor, Color blockTitleColor, Color blockColor,
-            Color iconColor, Color backgroundColor, Color dividerColor)?
+    TResult Function(
+            Color buttonColor,
+            Color tableColor,
+            Color blockTitleColor,
+            Color blockColor,
+            Color iconColor,
+            Color backgroundColor,
+            Color dividerColor)?
         light,
-    TResult Function(Color buttonColor, Color blockTitleColor, Color blockColor,
-            Color iconColor, Color backgroundColor, Color dividerColor)?
+    TResult Function(
+            Color buttonColor,
+            Color tableColor,
+            Color blockTitleColor,
+            Color blockColor,
+            Color iconColor,
+            Color backgroundColor,
+            Color dividerColor)?
         dark,
     required TResult orElse(),
   }) =>
@@ -106,6 +123,7 @@ abstract class $SettingsThemeDataCopyWith<$Res> {
   @useResult
   $Res call(
       {Color buttonColor,
+      Color tableColor,
       Color blockTitleColor,
       Color blockColor,
       Color iconColor,
@@ -127,6 +145,7 @@ class _$SettingsThemeDataCopyWithImpl<$Res, $Val extends SettingsThemeData>
   @override
   $Res call({
     Object? buttonColor = null,
+    Object? tableColor = null,
     Object? blockTitleColor = null,
     Object? blockColor = null,
     Object? iconColor = null,
@@ -137,6 +156,10 @@ class _$SettingsThemeDataCopyWithImpl<$Res, $Val extends SettingsThemeData>
       buttonColor: null == buttonColor
           ? _value.buttonColor
           : buttonColor // ignore: cast_nullable_to_non_nullable
+              as Color,
+      tableColor: null == tableColor
+          ? _value.tableColor
+          : tableColor // ignore: cast_nullable_to_non_nullable
               as Color,
       blockTitleColor: null == blockTitleColor
           ? _value.blockTitleColor
@@ -173,6 +196,7 @@ abstract class _$$SettingsThemeDataLightImplCopyWith<$Res>
   @useResult
   $Res call(
       {Color buttonColor,
+      Color tableColor,
       Color blockTitleColor,
       Color blockColor,
       Color iconColor,
@@ -193,6 +217,7 @@ class __$$SettingsThemeDataLightImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? buttonColor = null,
+    Object? tableColor = null,
     Object? blockTitleColor = null,
     Object? blockColor = null,
     Object? iconColor = null,
@@ -203,6 +228,10 @@ class __$$SettingsThemeDataLightImplCopyWithImpl<$Res>
       buttonColor: null == buttonColor
           ? _value.buttonColor
           : buttonColor // ignore: cast_nullable_to_non_nullable
+              as Color,
+      tableColor: null == tableColor
+          ? _value.tableColor
+          : tableColor // ignore: cast_nullable_to_non_nullable
               as Color,
       blockTitleColor: null == blockTitleColor
           ? _value.blockTitleColor
@@ -232,16 +261,20 @@ class __$$SettingsThemeDataLightImplCopyWithImpl<$Res>
 
 class _$SettingsThemeDataLightImpl implements _SettingsThemeDataLight {
   const _$SettingsThemeDataLightImpl(
-      {this.buttonColor = TopGColors.quickSilver,
+      {this.buttonColor = TopGColors.blackFogra,
+      this.tableColor = TopGColors.white,
       this.blockTitleColor = TopGColors.blueCrayola,
       this.blockColor = TopGColors.white,
       this.iconColor = TopGColors.quickSilver,
-      this.backgroundColor = TopGColors.white,
+      this.backgroundColor = const Color.fromARGB(255, 178, 185, 248),
       this.dividerColor = TopGColors.quickSilver});
 
   @override
   @JsonKey()
   final Color buttonColor;
+  @override
+  @JsonKey()
+  final Color tableColor;
   @override
   @JsonKey()
   final Color blockTitleColor;
@@ -260,7 +293,7 @@ class _$SettingsThemeDataLightImpl implements _SettingsThemeDataLight {
 
   @override
   String toString() {
-    return 'SettingsThemeData.light(buttonColor: $buttonColor, blockTitleColor: $blockTitleColor, blockColor: $blockColor, iconColor: $iconColor, backgroundColor: $backgroundColor, dividerColor: $dividerColor)';
+    return 'SettingsThemeData.light(buttonColor: $buttonColor, tableColor: $tableColor, blockTitleColor: $blockTitleColor, blockColor: $blockColor, iconColor: $iconColor, backgroundColor: $backgroundColor, dividerColor: $dividerColor)';
   }
 
   @override
@@ -270,6 +303,8 @@ class _$SettingsThemeDataLightImpl implements _SettingsThemeDataLight {
             other is _$SettingsThemeDataLightImpl &&
             (identical(other.buttonColor, buttonColor) ||
                 other.buttonColor == buttonColor) &&
+            (identical(other.tableColor, tableColor) ||
+                other.tableColor == tableColor) &&
             (identical(other.blockTitleColor, blockTitleColor) ||
                 other.blockTitleColor == blockTitleColor) &&
             (identical(other.blockColor, blockColor) ||
@@ -283,8 +318,8 @@ class _$SettingsThemeDataLightImpl implements _SettingsThemeDataLight {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, buttonColor, blockTitleColor,
-      blockColor, iconColor, backgroundColor, dividerColor);
+  int get hashCode => Object.hash(runtimeType, buttonColor, tableColor,
+      blockTitleColor, blockColor, iconColor, backgroundColor, dividerColor);
 
   @JsonKey(ignore: true)
   @override
@@ -298,6 +333,7 @@ class _$SettingsThemeDataLightImpl implements _SettingsThemeDataLight {
   TResult when<TResult extends Object?>({
     required TResult Function(
             Color buttonColor,
+            Color tableColor,
             Color blockTitleColor,
             Color blockColor,
             Color iconColor,
@@ -306,6 +342,7 @@ class _$SettingsThemeDataLightImpl implements _SettingsThemeDataLight {
         light,
     required TResult Function(
             Color buttonColor,
+            Color tableColor,
             Color blockTitleColor,
             Color blockColor,
             Color iconColor,
@@ -313,8 +350,8 @@ class _$SettingsThemeDataLightImpl implements _SettingsThemeDataLight {
             Color dividerColor)
         dark,
   }) {
-    return light(buttonColor, blockTitleColor, blockColor, iconColor,
-        backgroundColor, dividerColor);
+    return light(buttonColor, tableColor, blockTitleColor, blockColor,
+        iconColor, backgroundColor, dividerColor);
   }
 
   @override
@@ -322,6 +359,7 @@ class _$SettingsThemeDataLightImpl implements _SettingsThemeDataLight {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(
             Color buttonColor,
+            Color tableColor,
             Color blockTitleColor,
             Color blockColor,
             Color iconColor,
@@ -330,6 +368,7 @@ class _$SettingsThemeDataLightImpl implements _SettingsThemeDataLight {
         light,
     TResult? Function(
             Color buttonColor,
+            Color tableColor,
             Color blockTitleColor,
             Color blockColor,
             Color iconColor,
@@ -337,24 +376,36 @@ class _$SettingsThemeDataLightImpl implements _SettingsThemeDataLight {
             Color dividerColor)?
         dark,
   }) {
-    return light?.call(buttonColor, blockTitleColor, blockColor, iconColor,
-        backgroundColor, dividerColor);
+    return light?.call(buttonColor, tableColor, blockTitleColor, blockColor,
+        iconColor, backgroundColor, dividerColor);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Color buttonColor, Color blockTitleColor, Color blockColor,
-            Color iconColor, Color backgroundColor, Color dividerColor)?
+    TResult Function(
+            Color buttonColor,
+            Color tableColor,
+            Color blockTitleColor,
+            Color blockColor,
+            Color iconColor,
+            Color backgroundColor,
+            Color dividerColor)?
         light,
-    TResult Function(Color buttonColor, Color blockTitleColor, Color blockColor,
-            Color iconColor, Color backgroundColor, Color dividerColor)?
+    TResult Function(
+            Color buttonColor,
+            Color tableColor,
+            Color blockTitleColor,
+            Color blockColor,
+            Color iconColor,
+            Color backgroundColor,
+            Color dividerColor)?
         dark,
     required TResult orElse(),
   }) {
     if (light != null) {
-      return light(buttonColor, blockTitleColor, blockColor, iconColor,
-          backgroundColor, dividerColor);
+      return light(buttonColor, tableColor, blockTitleColor, blockColor,
+          iconColor, backgroundColor, dividerColor);
     }
     return orElse();
   }
@@ -394,6 +445,7 @@ class _$SettingsThemeDataLightImpl implements _SettingsThemeDataLight {
 abstract class _SettingsThemeDataLight implements SettingsThemeData {
   const factory _SettingsThemeDataLight(
       {final Color buttonColor,
+      final Color tableColor,
       final Color blockTitleColor,
       final Color blockColor,
       final Color iconColor,
@@ -402,6 +454,8 @@ abstract class _SettingsThemeDataLight implements SettingsThemeData {
 
   @override
   Color get buttonColor;
+  @override
+  Color get tableColor;
   @override
   Color get blockTitleColor;
   @override
@@ -429,6 +483,7 @@ abstract class _$$SettingsThemeDataDarkImplCopyWith<$Res>
   @useResult
   $Res call(
       {Color buttonColor,
+      Color tableColor,
       Color blockTitleColor,
       Color blockColor,
       Color iconColor,
@@ -448,6 +503,7 @@ class __$$SettingsThemeDataDarkImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? buttonColor = null,
+    Object? tableColor = null,
     Object? blockTitleColor = null,
     Object? blockColor = null,
     Object? iconColor = null,
@@ -458,6 +514,10 @@ class __$$SettingsThemeDataDarkImplCopyWithImpl<$Res>
       buttonColor: null == buttonColor
           ? _value.buttonColor
           : buttonColor // ignore: cast_nullable_to_non_nullable
+              as Color,
+      tableColor: null == tableColor
+          ? _value.tableColor
+          : tableColor // ignore: cast_nullable_to_non_nullable
               as Color,
       blockTitleColor: null == blockTitleColor
           ? _value.blockTitleColor
@@ -487,16 +547,20 @@ class __$$SettingsThemeDataDarkImplCopyWithImpl<$Res>
 
 class _$SettingsThemeDataDarkImpl implements _SettingsThemeDataDark {
   const _$SettingsThemeDataDarkImpl(
-      {this.buttonColor = TopGColors.quickSilver,
+      {this.buttonColor = TopGColors.white,
+      this.tableColor = const Color.fromARGB(156, 55, 83, 111),
       this.blockTitleColor = TopGColors.blueCrayola,
       this.blockColor = TopGColors.eerieBlack,
       this.iconColor = TopGColors.quickSilver,
-      this.backgroundColor = TopGColors.eerieBlack,
+      this.backgroundColor = const Color.fromARGB(255, 69, 83, 209),
       this.dividerColor = TopGColors.quickSilver});
 
   @override
   @JsonKey()
   final Color buttonColor;
+  @override
+  @JsonKey()
+  final Color tableColor;
   @override
   @JsonKey()
   final Color blockTitleColor;
@@ -515,7 +579,7 @@ class _$SettingsThemeDataDarkImpl implements _SettingsThemeDataDark {
 
   @override
   String toString() {
-    return 'SettingsThemeData.dark(buttonColor: $buttonColor, blockTitleColor: $blockTitleColor, blockColor: $blockColor, iconColor: $iconColor, backgroundColor: $backgroundColor, dividerColor: $dividerColor)';
+    return 'SettingsThemeData.dark(buttonColor: $buttonColor, tableColor: $tableColor, blockTitleColor: $blockTitleColor, blockColor: $blockColor, iconColor: $iconColor, backgroundColor: $backgroundColor, dividerColor: $dividerColor)';
   }
 
   @override
@@ -525,6 +589,8 @@ class _$SettingsThemeDataDarkImpl implements _SettingsThemeDataDark {
             other is _$SettingsThemeDataDarkImpl &&
             (identical(other.buttonColor, buttonColor) ||
                 other.buttonColor == buttonColor) &&
+            (identical(other.tableColor, tableColor) ||
+                other.tableColor == tableColor) &&
             (identical(other.blockTitleColor, blockTitleColor) ||
                 other.blockTitleColor == blockTitleColor) &&
             (identical(other.blockColor, blockColor) ||
@@ -538,8 +604,8 @@ class _$SettingsThemeDataDarkImpl implements _SettingsThemeDataDark {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, buttonColor, blockTitleColor,
-      blockColor, iconColor, backgroundColor, dividerColor);
+  int get hashCode => Object.hash(runtimeType, buttonColor, tableColor,
+      blockTitleColor, blockColor, iconColor, backgroundColor, dividerColor);
 
   @JsonKey(ignore: true)
   @override
@@ -553,6 +619,7 @@ class _$SettingsThemeDataDarkImpl implements _SettingsThemeDataDark {
   TResult when<TResult extends Object?>({
     required TResult Function(
             Color buttonColor,
+            Color tableColor,
             Color blockTitleColor,
             Color blockColor,
             Color iconColor,
@@ -561,6 +628,7 @@ class _$SettingsThemeDataDarkImpl implements _SettingsThemeDataDark {
         light,
     required TResult Function(
             Color buttonColor,
+            Color tableColor,
             Color blockTitleColor,
             Color blockColor,
             Color iconColor,
@@ -568,7 +636,7 @@ class _$SettingsThemeDataDarkImpl implements _SettingsThemeDataDark {
             Color dividerColor)
         dark,
   }) {
-    return dark(buttonColor, blockTitleColor, blockColor, iconColor,
+    return dark(buttonColor, tableColor, blockTitleColor, blockColor, iconColor,
         backgroundColor, dividerColor);
   }
 
@@ -577,6 +645,7 @@ class _$SettingsThemeDataDarkImpl implements _SettingsThemeDataDark {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(
             Color buttonColor,
+            Color tableColor,
             Color blockTitleColor,
             Color blockColor,
             Color iconColor,
@@ -585,6 +654,7 @@ class _$SettingsThemeDataDarkImpl implements _SettingsThemeDataDark {
         light,
     TResult? Function(
             Color buttonColor,
+            Color tableColor,
             Color blockTitleColor,
             Color blockColor,
             Color iconColor,
@@ -592,24 +662,36 @@ class _$SettingsThemeDataDarkImpl implements _SettingsThemeDataDark {
             Color dividerColor)?
         dark,
   }) {
-    return dark?.call(buttonColor, blockTitleColor, blockColor, iconColor,
-        backgroundColor, dividerColor);
+    return dark?.call(buttonColor, tableColor, blockTitleColor, blockColor,
+        iconColor, backgroundColor, dividerColor);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Color buttonColor, Color blockTitleColor, Color blockColor,
-            Color iconColor, Color backgroundColor, Color dividerColor)?
+    TResult Function(
+            Color buttonColor,
+            Color tableColor,
+            Color blockTitleColor,
+            Color blockColor,
+            Color iconColor,
+            Color backgroundColor,
+            Color dividerColor)?
         light,
-    TResult Function(Color buttonColor, Color blockTitleColor, Color blockColor,
-            Color iconColor, Color backgroundColor, Color dividerColor)?
+    TResult Function(
+            Color buttonColor,
+            Color tableColor,
+            Color blockTitleColor,
+            Color blockColor,
+            Color iconColor,
+            Color backgroundColor,
+            Color dividerColor)?
         dark,
     required TResult orElse(),
   }) {
     if (dark != null) {
-      return dark(buttonColor, blockTitleColor, blockColor, iconColor,
-          backgroundColor, dividerColor);
+      return dark(buttonColor, tableColor, blockTitleColor, blockColor,
+          iconColor, backgroundColor, dividerColor);
     }
     return orElse();
   }
@@ -649,6 +731,7 @@ class _$SettingsThemeDataDarkImpl implements _SettingsThemeDataDark {
 abstract class _SettingsThemeDataDark implements SettingsThemeData {
   const factory _SettingsThemeDataDark(
       {final Color buttonColor,
+      final Color tableColor,
       final Color blockTitleColor,
       final Color blockColor,
       final Color iconColor,
@@ -657,6 +740,8 @@ abstract class _SettingsThemeDataDark implements SettingsThemeData {
 
   @override
   Color get buttonColor;
+  @override
+  Color get tableColor;
   @override
   Color get blockTitleColor;
   @override

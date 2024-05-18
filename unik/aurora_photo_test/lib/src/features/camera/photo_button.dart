@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../theme/constants/constants.dart';
+import '../../theme/topg_theme.dart';
 
 class PhotoButton extends StatelessWidget {
   final VoidCallback? onPressed;
@@ -10,18 +10,23 @@ class PhotoButton extends StatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) => Container(
-        padding: const EdgeInsets.all(3),
-        decoration: BoxDecoration(
-          border: Border.all(
-            color: TopGColors.yLightGrey,
-            width: 3,
-          ),
-          shape: BoxShape.circle,
+  Widget build(BuildContext context) {
+    final theme = TopGTheme.of(context);
+    final settingsTheme = theme.settings;
+
+    return Container(
+      padding: const EdgeInsets.all(3),
+      decoration: BoxDecoration(
+        border: Border.all(
+          color: settingsTheme.buttonColor,
+          width: 3,
         ),
-        child: MaterialButton(
-          onPressed: onPressed,
-          shape: const CircleBorder(),
-        ),
-      );
+        shape: BoxShape.circle,
+      ),
+      child: MaterialButton(
+        onPressed: onPressed,
+        shape: const CircleBorder(),
+      ),
+    );
+  }
 }

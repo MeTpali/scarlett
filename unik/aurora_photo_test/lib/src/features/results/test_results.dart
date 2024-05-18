@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:i18n/i18n.dart';
 
 import '../../models/test_results_model.dart';
 import '../../theme/constants/constants.dart';
-import '../../theme/constants/types.dart';
-import '../../theme/scores/radial.dart';
 import 'test_table.dart';
 
 class TestResultsWidget extends StatelessWidget {
@@ -30,6 +29,7 @@ class TestResultsWidget extends StatelessWidget {
         : percent < 0.85
             ? TopGColors.yYellow
             : TopGColors.yGreen;
+
     return SingleChildScrollView(
       child: Center(
         child: Padding(
@@ -38,36 +38,35 @@ class TestResultsWidget extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              SizedBox(
-                height: 70,
-                width: 70,
-                child: Center(
-                  child: RadialScoreWidget(
-                    fillColor: Colors.transparent,
-                    freeColor: TopGType.regular.resolveColor(context),
-                    lineColor: fillColor,
-                    child: Text(
-                      '$score%',
-                      style: TextStyle(color: fillColor, fontSize: 20),
+              Center(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      '${S.of(context).result}:',
+                      style: const TextStyle(fontSize: 30),
                     ),
-                    lineWidth: 4,
-                    percent: percent,
-                  ),
+                    const SizedBox(width: 10),
+                    Text(
+                      '$score%',
+                      style: TextStyle(color: fillColor, fontSize: 30),
+                    ),
+                  ],
                 ),
               ),
               const SizedBox(height: 5),
-              const TestTableRow(
+              TestTableRow(
                 cells: [
                   Text(
-                    'Номер вопроса',
+                    '${S.of(context).questionNumber}',
                     textAlign: TextAlign.center,
                   ),
                   Text(
-                    'Выбранный ответ',
+                    '${S.of(context).selectedAnswer}',
                     textAlign: TextAlign.center,
                   ),
                   Text(
-                    'Правильный ответ',
+                    '${S.of(context).rightAnswer}',
                     textAlign: TextAlign.center,
                   ),
                 ],

@@ -61,7 +61,7 @@ class SettingsScreen extends StatelessWidget {
             ],
           ),
           SettingsBlock(
-            title: "Дополнительные",
+            title: 'Дополнительные',
             hasDivider: true,
             settingsList: [
               // Смена темы
