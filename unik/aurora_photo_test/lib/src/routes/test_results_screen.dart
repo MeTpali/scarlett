@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:i18n/s.dart';
 
 import '../di/photo_test_di.dart';
 import '../features/results/test_parameters_widget.dart';
@@ -27,38 +28,57 @@ class TestResultsScreen extends ConsumerWidget {
       appBar: AppBar(
         backgroundColor: settingsTheme.backgroundColor,
         centerTitle: true,
-        leading: IconButton(
-          onPressed: () {
-            testResultNotifier.toLoading();
-            unawaited(context.router.maybePop());
-          },
-          icon: const Icon(Icons.chevron_left),
-        ),
-        actions: [
-          SettingsButton(
-            onTap: () async {
-              await context.router.push(const SettingsRoute());
-            },
+        automaticallyImplyLeading: false,
+      ),
+      body: Column(
+        children: [
+          Expanded(
+              child: Center(
+            child: testResults.map(
+              results: (results) => TestResultsWidget(
+                answers: results.answersList,
+                correctAnswers: results.correctAnswers,
+                incorrectAnswers: results.incorrectAnswers,
+              ),
+              loading: (_) => const Center(child: CircularProgressIndicator()),
+              error: (error) => Padding(
+                  padding: const EdgeInsets.fromLTRB(10, 10, 20, 10),
+                  child: Text('${S.of(context).error}: ${error.message}')),
+              bad: (_) => Center(child: Text(S.of(context).tryAgain)),
+              parameters: (_) => const Center(
+                child: TestParametersWidget(),
+              ),
+            ),
+          )),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
+            child: Stack(
+              children: [
+                Align(
+                  alignment: AlignmentDirectional.centerStart,
+                  child: IconButton(
+                    onPressed: () {
+                      unawaited(context.router.maybePop());
+                    },
+                    icon: Icon(
+                      size: 40,
+                      Icons.chevron_left,
+                      color: settingsTheme.buttonColor,
+                    ),
+                  ),
+                ),
+                Align(
+                  alignment: Alignment.centerRight,
+                  child: SettingsButton(
+                    onTap: () async {
+                      await context.router.push(const SettingsRoute());
+                    },
+                  ),
+                )
+              ],
+            ),
           )
         ],
-      ),
-      body: testResults.map(
-        results: (results) => TestResultsWidget(
-          answers: results.answersList,
-          correctAnswers: results.correctAnswers,
-          incorrectAnswers: results.incorrectAnswers,
-        ),
-        loading: (_) => const Center(child: CircularProgressIndicator()),
-        error: (error) => Center(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15),
-            child: Text('Ошибка: ${error.message}'),
-          ),
-        ),
-        bad: (_) => const Center(child: Text('Перефотографируйте')),
-        parameters: (_) => const Center(
-          child: TestParametersWidget(),
-        ),
       ),
     );
   }

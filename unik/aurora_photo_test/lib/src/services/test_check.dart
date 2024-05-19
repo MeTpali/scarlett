@@ -38,8 +38,7 @@ class TestCheckService {
       // ignore: avoid_catches_without_on_clauses
     } catch (e) {
       return const TestResultsModel.error(
-        message:
-            'Упс. Кажется фотография получилась не очень удачной. Попробуйте перефотографировать:)',
+        message: 'Неудачное фото. Пожалуйста, попробуйте снова',
       );
     }
     return TestResultsModel.fromJson(response);

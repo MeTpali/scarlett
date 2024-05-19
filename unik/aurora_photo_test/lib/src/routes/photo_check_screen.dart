@@ -5,14 +5,12 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:i18n/s.dart';
 
 import '../di/di.dart';
 import '../di/photo_test_di.dart';
 import '../features/camera/manager.dart';
-import '../features/main_button/main_button.dart';
 import '../features/settings/button.dart';
-import '../theme/constants/types.dart';
+import '../theme/topg_theme.dart';
 import 'app_router/app_router.dart';
 
 @RoutePage()
@@ -24,30 +22,15 @@ class PhotoCheckScreen extends ConsumerWidget {
     final photoCheckModel = ref.watch(PhotoTestDi.photoCheckProvider);
     final testResultsNotifier =
         ref.watch(PhotoTestDi.testResultsProvider.notifier);
+    final theme = TopGTheme.of(context);
+    final settingsTheme = theme.settings;
 
-    final sendButtonType = photoCheckModel.maybeMap(
-      orElse: () => TopGType.disabled,
-      photo: (_) => TopGType.action,
-    );
     return Scaffold(
+      backgroundColor: settingsTheme.backgroundColor,
       appBar: AppBar(
-        title: Text(S.of(context).connectionSettings),
-        centerTitle: true,
-        leading: IconButton(
-          onPressed: () {
-            final camerasManager = getIt.get<CamerasManager>();
-            unawaited(camerasManager.getAvailableCameras());
-            unawaited(context.router.maybePop());
-          },
-          icon: const Icon(Icons.chevron_left),
-        ),
-        actions: [
-          SettingsButton(
-            onTap: () async {
-              await context.router.push(const SettingsRoute());
-            },
-          )
-        ],
+        backgroundColor: settingsTheme.backgroundColor,
+        toolbarHeight: 28,
+        automaticallyImplyLeading: false,
       ),
       body: Column(
         mainAxisSize: MainAxisSize.min,
@@ -70,24 +53,27 @@ class PhotoCheckScreen extends ConsumerWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 15),
-            child: Row(
+            padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
+            child: Stack(
               children: [
-                Expanded(
-                  child: MainButton(
-                    title: const Text('Переделать'),
+                Align(
+                  alignment: AlignmentDirectional.centerStart,
+                  child: IconButton(
                     onPressed: () {
                       final camerasManager = getIt.get<CamerasManager>();
                       unawaited(camerasManager.getAvailableCameras());
                       unawaited(context.router.maybePop());
                     },
-                    type: TopGType.regular,
+                    icon: Icon(
+                      size: 40,
+                      Icons.change_circle,
+                      color: settingsTheme.buttonColor,
+                    ),
                   ),
                 ),
-                const SizedBox(width: 15),
-                Expanded(
-                  child: MainButton(
-                    title: const Text('Продолжить'),
+                Align(
+                  alignment: AlignmentDirectional.center,
+                  child: IconButton(
                     onPressed: photoCheckModel.maybeMap(
                       orElse: () => () {},
                       photo: (photo) => () {
@@ -97,9 +83,21 @@ class PhotoCheckScreen extends ConsumerWidget {
                         );
                       },
                     ),
-                    type: sendButtonType,
+                    icon: Icon(
+                      size: 40,
+                      Icons.send,
+                      color: settingsTheme.buttonColor,
+                    ),
                   ),
                 ),
+                Align(
+                  alignment: AlignmentDirectional.centerEnd,
+                  child: SettingsButton(
+                    onTap: () async {
+                      await context.router.push(const SettingsRoute());
+                    },
+                  ),
+                )
               ],
             ),
           ),

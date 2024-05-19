@@ -141,6 +141,30 @@ abstract class AppLocalizations {
   /// **'Error'**
   String get error;
 
+  /// No description provided for @invalidPhoto.
+  ///
+  /// In en, this message translates to:
+  /// **'Bad photo. Please try again'**
+  String get invalidPhoto;
+
+  /// No description provided for @send.
+  ///
+  /// In en, this message translates to:
+  /// **'Send'**
+  String get send;
+
+  /// No description provided for @testAdding.
+  ///
+  /// In en, this message translates to:
+  /// **'Test adding'**
+  String get testAdding;
+
+  /// No description provided for @addTest.
+  ///
+  /// In en, this message translates to:
+  /// **'Add test'**
+  String get addTest;
+
   /// No description provided for @tryAgain.
   ///
   /// In en, this message translates to:
@@ -152,6 +176,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Question number'**
   String get questionNumber;
+
+  /// No description provided for @testNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Test number'**
+  String get testNumber;
 
   /// No description provided for @selectedAnswer.
   ///

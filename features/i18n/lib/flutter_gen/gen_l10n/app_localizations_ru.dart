@@ -29,10 +29,25 @@ class AppLocalizationsRu extends AppLocalizations {
   String get error => 'Ошибка';
 
   @override
+  String get invalidPhoto => 'Неудачное фото. Пожалуйста, попробуйте снова';
+
+  @override
+  String get send => 'Отправить';
+
+  @override
+  String get testAdding => 'Добавление теста';
+
+  @override
+  String get addTest => 'Добавить тест';
+
+  @override
   String get tryAgain => 'Попробуйте снова';
 
   @override
   String get questionNumber => 'Номер вопроса';
+
+  @override
+  String get testNumber => 'Номер теста';
 
   @override
   String get selectedAnswer => 'Выбранный ответ';

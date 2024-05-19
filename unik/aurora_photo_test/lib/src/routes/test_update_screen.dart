@@ -1,5 +1,8 @@
+import 'dart:async';
+
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:i18n/s.dart';
 
 import '../di/di.dart';
 import '../features/main_button/main_button.dart';
@@ -7,6 +10,7 @@ import '../features/results/test_table.dart';
 import '../models/test_update_model.dart';
 import '../services/test_check.dart';
 import '../theme/constants/types.dart';
+import '../theme/topg_theme.dart';
 
 @RoutePage()
 class TestUpdateScreen extends StatefulWidget {
@@ -35,10 +39,15 @@ class _TestUpdateScreenState extends State<TestUpdateScreen> {
 
     final removeButtonType =
         model.test.isEmpty ? TopGType.disabled : TopGType.action;
+    final theme = TopGTheme.of(context);
+    final settingsTheme = theme.settings;
     return Scaffold(
+      backgroundColor: settingsTheme.backgroundColor,
       appBar: AppBar(
-        title: const Text('Обновление тестов'),
+        backgroundColor: settingsTheme.backgroundColor,
+        title: Text('${S.of(context).testAdding}'),
         centerTitle: true,
+        automaticallyImplyLeading: false,
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -46,9 +55,10 @@ class _TestUpdateScreenState extends State<TestUpdateScreen> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
               child: TextField(
-                decoration: const InputDecoration(
-                  border: OutlineInputBorder(),
-                  labelText: 'Логин',
+                decoration: InputDecoration(
+                  border: const OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(20))),
+                  labelText: '${S.of(context).login}',
                 ),
                 onChanged: (value) => setState(() {
                   final newModel = model.copyWith(login: value);
@@ -59,9 +69,10 @@ class _TestUpdateScreenState extends State<TestUpdateScreen> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
               child: TextField(
-                decoration: const InputDecoration(
-                  border: OutlineInputBorder(),
-                  labelText: 'Пароль',
+                decoration: InputDecoration(
+                  border: const OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(20))),
+                  labelText: '${S.of(context).password}',
                 ),
                 onChanged: (value) => setState(() {
                   final newModel = model.copyWith(password: value);
@@ -72,9 +83,10 @@ class _TestUpdateScreenState extends State<TestUpdateScreen> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
               child: TextField(
-                decoration: const InputDecoration(
-                  border: OutlineInputBorder(),
-                  labelText: 'Test id',
+                decoration: InputDecoration(
+                  border: const OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(20))),
+                  labelText: '${S.of(context).testNumber}',
                 ),
                 onChanged: (value) => setState(() {
                   final newModel = model.copyWith(testId: value);
@@ -83,16 +95,16 @@ class _TestUpdateScreenState extends State<TestUpdateScreen> {
               ),
             ),
             const SizedBox(height: 15),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 15.0),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 15.0),
               child: TestTableRow(
                 cells: [
                   Text(
-                    'Номер вопроса',
+                    '${S.of(context).questionNumber}',
                     textAlign: TextAlign.center,
                   ),
                   Text(
-                    'Выбранный ответ',
+                    '${S.of(context).selectedAnswer}',
                     textAlign: TextAlign.center,
                   ),
                 ],
@@ -146,8 +158,10 @@ class _TestUpdateScreenState extends State<TestUpdateScreen> {
               child: Row(
                 children: [
                   Expanded(
-                    child: MainButton(
-                      title: const Text('-'),
+                    child: OutlinedButton(
+                      child: const Text('-'),
+                      style: OutlinedButton.styleFrom(
+                          foregroundColor: settingsTheme.buttonColor),
                       onPressed: () {
                         setState(() {
                           final newList = List<TestUpdateRowModel>.from(
@@ -159,13 +173,14 @@ class _TestUpdateScreenState extends State<TestUpdateScreen> {
                           model = newModel;
                         });
                       },
-                      type: removeButtonType,
                     ),
                   ),
                   const SizedBox(width: 15),
                   Expanded(
-                    child: MainButton(
-                      title: const Text('+'),
+                    child: OutlinedButton(
+                      style: OutlinedButton.styleFrom(
+                          foregroundColor: settingsTheme.buttonColor),
+                      child: const Text('+'),
                       onPressed: () {
                         setState(() {
                           final newList = List<TestUpdateRowModel>.from(
@@ -177,24 +192,41 @@ class _TestUpdateScreenState extends State<TestUpdateScreen> {
                           model = newModel;
                         });
                       },
-                      type: TopGType.action,
                     ),
                   ),
                 ],
               ),
             ),
-            const SizedBox(height: 15),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8),
-              child: MainButton(
-                title: const Text('Send'),
-                onPressed: () async {
-                  await getIt.get<TestCheckService>().sendTest(model);
-                  await context.router.maybePop();
-                },
-                type: sendButtonType,
-              ),
+            const SizedBox(height: 10),
+            OutlinedButton(
+              style: OutlinedButton.styleFrom(
+                  foregroundColor: settingsTheme.buttonColor),
+              child: Text('${S.of(context).send}'),
+              onPressed: () async {
+                await getIt.get<TestCheckService>().sendTest(model);
+                await context.router.maybePop();
+              },
             ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
+              child: Stack(
+                children: [
+                  Align(
+                    alignment: AlignmentDirectional.centerStart,
+                    child: IconButton(
+                      onPressed: () {
+                        unawaited(context.router.maybePop());
+                      },
+                      icon: Icon(
+                        size: 40,
+                        Icons.chevron_left,
+                        color: settingsTheme.buttonColor,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            )
           ],
         ),
       ),

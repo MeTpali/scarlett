@@ -144,24 +144,6 @@ class _PhotoScreenState extends ConsumerState<PhotoScreen>
                   ),
                 ),
                 Align(
-                  alignment: AlignmentDirectional.centerStart,
-                  child: FlashButton(
-                    flashMode: flashMode,
-                    onPressed: controller != null &&
-                            controller!.value.isInitialized &&
-                            !controller!.value.isRecordingVideo
-                        ? () async {
-                            if (flashMode == FlashMode.always) {
-                              flashMode = FlashMode.off;
-                            } else {
-                              flashMode = FlashMode.always;
-                            }
-                            await controller!.setFlashMode(flashMode);
-                          }
-                        : null,
-                  ),
-                ),
-                Align(
                   alignment: AlignmentDirectional.centerEnd,
                   child: SettingsButton(
                     onTap: () async {

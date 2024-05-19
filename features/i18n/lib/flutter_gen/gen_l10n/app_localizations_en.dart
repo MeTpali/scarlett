@@ -29,10 +29,25 @@ class AppLocalizationsEn extends AppLocalizations {
   String get error => 'Error';
 
   @override
+  String get invalidPhoto => 'Bad photo. Please try again';
+
+  @override
+  String get send => 'Send';
+
+  @override
+  String get testAdding => 'Test adding';
+
+  @override
+  String get addTest => 'Add test';
+
+  @override
   String get tryAgain => 'Try again';
 
   @override
   String get questionNumber => 'Question number';
+
+  @override
+  String get testNumber => 'Test number';
 
   @override
   String get selectedAnswer => 'Selected answer';
