@@ -51,6 +51,12 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const TestResultsScreen(),
       );
     },
+    TestUpdateRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const TestUpdateScreen(),
+      );
+    },
   };
 }
 
@@ -134,6 +140,20 @@ class TestResultsRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'TestResultsRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [TestUpdateScreen]
+class TestUpdateRoute extends PageRouteInfo<void> {
+  const TestUpdateRoute({List<PageRouteInfo>? children})
+      : super(
+          TestUpdateRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'TestUpdateRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }

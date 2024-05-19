@@ -4,7 +4,7 @@ import '../../models/test_results_model.dart';
 import '../../theme/constants/constants.dart';
 import '../../theme/constants/types.dart';
 import '../../theme/scores/radial.dart';
-import 'test_answer.dart';
+import 'test_table.dart';
 
 class TestResultsWidget extends StatelessWidget {
   final List<TestAnswerModel> answers;
@@ -56,7 +56,7 @@ class TestResultsWidget extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 5),
-              const TestResultRow(
+              const TestTableRow(
                 cells: [
                   Text(
                     'Номер вопроса',
@@ -73,7 +73,7 @@ class TestResultsWidget extends StatelessWidget {
                 ],
               ),
               for (final answer in answers)
-                TestResultRow(
+                TestTableRow(
                   cells: [
                     Text(
                       answer.question,

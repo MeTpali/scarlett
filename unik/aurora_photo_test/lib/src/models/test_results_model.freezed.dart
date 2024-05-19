@@ -24,6 +24,8 @@ TestResultsModel _$TestResultsModelFromJson(Map<String, dynamic> json) {
       return _BadTestResultsModel.fromJson(json);
     case 'error':
       return _ErrorTestResultsModel.fromJson(json);
+    case 'parameters':
+      return _TestIdTestResultsModel.fromJson(json);
 
     default:
       throw CheckedFromJsonException(json, 'runtimeType', 'TestResultsModel',
@@ -43,6 +45,7 @@ mixin _$TestResultsModel {
     required TResult Function() loading,
     required TResult Function() bad,
     required TResult Function(String? message) error,
+    required TResult Function(String path) parameters,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -55,6 +58,7 @@ mixin _$TestResultsModel {
     TResult? Function()? loading,
     TResult? Function()? bad,
     TResult? Function(String? message)? error,
+    TResult? Function(String path)? parameters,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -67,6 +71,7 @@ mixin _$TestResultsModel {
     TResult Function()? loading,
     TResult Function()? bad,
     TResult Function(String? message)? error,
+    TResult Function(String path)? parameters,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -76,6 +81,7 @@ mixin _$TestResultsModel {
     required TResult Function(_LoadingTestResultsModel value) loading,
     required TResult Function(_BadTestResultsModel value) bad,
     required TResult Function(_ErrorTestResultsModel value) error,
+    required TResult Function(_TestIdTestResultsModel value) parameters,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -84,6 +90,7 @@ mixin _$TestResultsModel {
     TResult? Function(_LoadingTestResultsModel value)? loading,
     TResult? Function(_BadTestResultsModel value)? bad,
     TResult? Function(_ErrorTestResultsModel value)? error,
+    TResult? Function(_TestIdTestResultsModel value)? parameters,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -92,6 +99,7 @@ mixin _$TestResultsModel {
     TResult Function(_LoadingTestResultsModel value)? loading,
     TResult Function(_BadTestResultsModel value)? bad,
     TResult Function(_ErrorTestResultsModel value)? error,
+    TResult Function(_TestIdTestResultsModel value)? parameters,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -239,6 +247,7 @@ class _$ResultsTestResultsModelImpl implements _ResultsTestResultsModel {
     required TResult Function() loading,
     required TResult Function() bad,
     required TResult Function(String? message) error,
+    required TResult Function(String path) parameters,
   }) {
     return results(answersList, correctAnswers, incorrectAnswers);
   }
@@ -254,6 +263,7 @@ class _$ResultsTestResultsModelImpl implements _ResultsTestResultsModel {
     TResult? Function()? loading,
     TResult? Function()? bad,
     TResult? Function(String? message)? error,
+    TResult? Function(String path)? parameters,
   }) {
     return results?.call(answersList, correctAnswers, incorrectAnswers);
   }
@@ -269,6 +279,7 @@ class _$ResultsTestResultsModelImpl implements _ResultsTestResultsModel {
     TResult Function()? loading,
     TResult Function()? bad,
     TResult Function(String? message)? error,
+    TResult Function(String path)? parameters,
     required TResult orElse(),
   }) {
     if (results != null) {
@@ -284,6 +295,7 @@ class _$ResultsTestResultsModelImpl implements _ResultsTestResultsModel {
     required TResult Function(_LoadingTestResultsModel value) loading,
     required TResult Function(_BadTestResultsModel value) bad,
     required TResult Function(_ErrorTestResultsModel value) error,
+    required TResult Function(_TestIdTestResultsModel value) parameters,
   }) {
     return results(this);
   }
@@ -295,6 +307,7 @@ class _$ResultsTestResultsModelImpl implements _ResultsTestResultsModel {
     TResult? Function(_LoadingTestResultsModel value)? loading,
     TResult? Function(_BadTestResultsModel value)? bad,
     TResult? Function(_ErrorTestResultsModel value)? error,
+    TResult? Function(_TestIdTestResultsModel value)? parameters,
   }) {
     return results?.call(this);
   }
@@ -306,6 +319,7 @@ class _$ResultsTestResultsModelImpl implements _ResultsTestResultsModel {
     TResult Function(_LoadingTestResultsModel value)? loading,
     TResult Function(_BadTestResultsModel value)? bad,
     TResult Function(_ErrorTestResultsModel value)? error,
+    TResult Function(_TestIdTestResultsModel value)? parameters,
     required TResult orElse(),
   }) {
     if (results != null) {
@@ -400,6 +414,7 @@ class _$LoadingTestResultsModelImpl implements _LoadingTestResultsModel {
     required TResult Function() loading,
     required TResult Function() bad,
     required TResult Function(String? message) error,
+    required TResult Function(String path) parameters,
   }) {
     return loading();
   }
@@ -415,6 +430,7 @@ class _$LoadingTestResultsModelImpl implements _LoadingTestResultsModel {
     TResult? Function()? loading,
     TResult? Function()? bad,
     TResult? Function(String? message)? error,
+    TResult? Function(String path)? parameters,
   }) {
     return loading?.call();
   }
@@ -430,6 +446,7 @@ class _$LoadingTestResultsModelImpl implements _LoadingTestResultsModel {
     TResult Function()? loading,
     TResult Function()? bad,
     TResult Function(String? message)? error,
+    TResult Function(String path)? parameters,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -445,6 +462,7 @@ class _$LoadingTestResultsModelImpl implements _LoadingTestResultsModel {
     required TResult Function(_LoadingTestResultsModel value) loading,
     required TResult Function(_BadTestResultsModel value) bad,
     required TResult Function(_ErrorTestResultsModel value) error,
+    required TResult Function(_TestIdTestResultsModel value) parameters,
   }) {
     return loading(this);
   }
@@ -456,6 +474,7 @@ class _$LoadingTestResultsModelImpl implements _LoadingTestResultsModel {
     TResult? Function(_LoadingTestResultsModel value)? loading,
     TResult? Function(_BadTestResultsModel value)? bad,
     TResult? Function(_ErrorTestResultsModel value)? error,
+    TResult? Function(_TestIdTestResultsModel value)? parameters,
   }) {
     return loading?.call(this);
   }
@@ -467,6 +486,7 @@ class _$LoadingTestResultsModelImpl implements _LoadingTestResultsModel {
     TResult Function(_LoadingTestResultsModel value)? loading,
     TResult Function(_BadTestResultsModel value)? bad,
     TResult Function(_ErrorTestResultsModel value)? error,
+    TResult Function(_TestIdTestResultsModel value)? parameters,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -545,6 +565,7 @@ class _$BadTestResultsModelImpl implements _BadTestResultsModel {
     required TResult Function() loading,
     required TResult Function() bad,
     required TResult Function(String? message) error,
+    required TResult Function(String path) parameters,
   }) {
     return bad();
   }
@@ -560,6 +581,7 @@ class _$BadTestResultsModelImpl implements _BadTestResultsModel {
     TResult? Function()? loading,
     TResult? Function()? bad,
     TResult? Function(String? message)? error,
+    TResult? Function(String path)? parameters,
   }) {
     return bad?.call();
   }
@@ -575,6 +597,7 @@ class _$BadTestResultsModelImpl implements _BadTestResultsModel {
     TResult Function()? loading,
     TResult Function()? bad,
     TResult Function(String? message)? error,
+    TResult Function(String path)? parameters,
     required TResult orElse(),
   }) {
     if (bad != null) {
@@ -590,6 +613,7 @@ class _$BadTestResultsModelImpl implements _BadTestResultsModel {
     required TResult Function(_LoadingTestResultsModel value) loading,
     required TResult Function(_BadTestResultsModel value) bad,
     required TResult Function(_ErrorTestResultsModel value) error,
+    required TResult Function(_TestIdTestResultsModel value) parameters,
   }) {
     return bad(this);
   }
@@ -601,6 +625,7 @@ class _$BadTestResultsModelImpl implements _BadTestResultsModel {
     TResult? Function(_LoadingTestResultsModel value)? loading,
     TResult? Function(_BadTestResultsModel value)? bad,
     TResult? Function(_ErrorTestResultsModel value)? error,
+    TResult? Function(_TestIdTestResultsModel value)? parameters,
   }) {
     return bad?.call(this);
   }
@@ -612,6 +637,7 @@ class _$BadTestResultsModelImpl implements _BadTestResultsModel {
     TResult Function(_LoadingTestResultsModel value)? loading,
     TResult Function(_BadTestResultsModel value)? bad,
     TResult Function(_ErrorTestResultsModel value)? error,
+    TResult Function(_TestIdTestResultsModel value)? parameters,
     required TResult orElse(),
   }) {
     if (bad != null) {
@@ -717,6 +743,7 @@ class _$ErrorTestResultsModelImpl implements _ErrorTestResultsModel {
     required TResult Function() loading,
     required TResult Function() bad,
     required TResult Function(String? message) error,
+    required TResult Function(String path) parameters,
   }) {
     return error(message);
   }
@@ -732,6 +759,7 @@ class _$ErrorTestResultsModelImpl implements _ErrorTestResultsModel {
     TResult? Function()? loading,
     TResult? Function()? bad,
     TResult? Function(String? message)? error,
+    TResult? Function(String path)? parameters,
   }) {
     return error?.call(message);
   }
@@ -747,6 +775,7 @@ class _$ErrorTestResultsModelImpl implements _ErrorTestResultsModel {
     TResult Function()? loading,
     TResult Function()? bad,
     TResult Function(String? message)? error,
+    TResult Function(String path)? parameters,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -762,6 +791,7 @@ class _$ErrorTestResultsModelImpl implements _ErrorTestResultsModel {
     required TResult Function(_LoadingTestResultsModel value) loading,
     required TResult Function(_BadTestResultsModel value) bad,
     required TResult Function(_ErrorTestResultsModel value) error,
+    required TResult Function(_TestIdTestResultsModel value) parameters,
   }) {
     return error(this);
   }
@@ -773,6 +803,7 @@ class _$ErrorTestResultsModelImpl implements _ErrorTestResultsModel {
     TResult? Function(_LoadingTestResultsModel value)? loading,
     TResult? Function(_BadTestResultsModel value)? bad,
     TResult? Function(_ErrorTestResultsModel value)? error,
+    TResult? Function(_TestIdTestResultsModel value)? parameters,
   }) {
     return error?.call(this);
   }
@@ -784,6 +815,7 @@ class _$ErrorTestResultsModelImpl implements _ErrorTestResultsModel {
     TResult Function(_LoadingTestResultsModel value)? loading,
     TResult Function(_BadTestResultsModel value)? bad,
     TResult Function(_ErrorTestResultsModel value)? error,
+    TResult Function(_TestIdTestResultsModel value)? parameters,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -810,6 +842,191 @@ abstract class _ErrorTestResultsModel implements TestResultsModel {
   String? get message;
   @JsonKey(ignore: true)
   _$$ErrorTestResultsModelImplCopyWith<_$ErrorTestResultsModelImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$TestIdTestResultsModelImplCopyWith<$Res> {
+  factory _$$TestIdTestResultsModelImplCopyWith(
+          _$TestIdTestResultsModelImpl value,
+          $Res Function(_$TestIdTestResultsModelImpl) then) =
+      __$$TestIdTestResultsModelImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String path});
+}
+
+/// @nodoc
+class __$$TestIdTestResultsModelImplCopyWithImpl<$Res>
+    extends _$TestResultsModelCopyWithImpl<$Res, _$TestIdTestResultsModelImpl>
+    implements _$$TestIdTestResultsModelImplCopyWith<$Res> {
+  __$$TestIdTestResultsModelImplCopyWithImpl(
+      _$TestIdTestResultsModelImpl _value,
+      $Res Function(_$TestIdTestResultsModelImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? path = null,
+  }) {
+    return _then(_$TestIdTestResultsModelImpl(
+      path: null == path
+          ? _value.path
+          : path // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$TestIdTestResultsModelImpl implements _TestIdTestResultsModel {
+  const _$TestIdTestResultsModelImpl({required this.path, final String? $type})
+      : $type = $type ?? 'parameters';
+
+  factory _$TestIdTestResultsModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$TestIdTestResultsModelImplFromJson(json);
+
+  @override
+  final String path;
+
+  @JsonKey(name: 'runtimeType')
+  final String $type;
+
+  @override
+  String toString() {
+    return 'TestResultsModel.parameters(path: $path)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$TestIdTestResultsModelImpl &&
+            (identical(other.path, path) || other.path == path));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, path);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$TestIdTestResultsModelImplCopyWith<_$TestIdTestResultsModelImpl>
+      get copyWith => __$$TestIdTestResultsModelImplCopyWithImpl<
+          _$TestIdTestResultsModelImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(
+            @JsonKey(name: 'test') List<TestAnswerModel> answersList,
+            @JsonKey(name: 'total-correct-answers') int correctAnswers,
+            @JsonKey(name: 'total-incorrect-answers') int incorrectAnswers)
+        results,
+    required TResult Function() loading,
+    required TResult Function() bad,
+    required TResult Function(String? message) error,
+    required TResult Function(String path) parameters,
+  }) {
+    return parameters(path);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(
+            @JsonKey(name: 'test') List<TestAnswerModel> answersList,
+            @JsonKey(name: 'total-correct-answers') int correctAnswers,
+            @JsonKey(name: 'total-incorrect-answers') int incorrectAnswers)?
+        results,
+    TResult? Function()? loading,
+    TResult? Function()? bad,
+    TResult? Function(String? message)? error,
+    TResult? Function(String path)? parameters,
+  }) {
+    return parameters?.call(path);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(
+            @JsonKey(name: 'test') List<TestAnswerModel> answersList,
+            @JsonKey(name: 'total-correct-answers') int correctAnswers,
+            @JsonKey(name: 'total-incorrect-answers') int incorrectAnswers)?
+        results,
+    TResult Function()? loading,
+    TResult Function()? bad,
+    TResult Function(String? message)? error,
+    TResult Function(String path)? parameters,
+    required TResult orElse(),
+  }) {
+    if (parameters != null) {
+      return parameters(path);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_ResultsTestResultsModel value) results,
+    required TResult Function(_LoadingTestResultsModel value) loading,
+    required TResult Function(_BadTestResultsModel value) bad,
+    required TResult Function(_ErrorTestResultsModel value) error,
+    required TResult Function(_TestIdTestResultsModel value) parameters,
+  }) {
+    return parameters(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_ResultsTestResultsModel value)? results,
+    TResult? Function(_LoadingTestResultsModel value)? loading,
+    TResult? Function(_BadTestResultsModel value)? bad,
+    TResult? Function(_ErrorTestResultsModel value)? error,
+    TResult? Function(_TestIdTestResultsModel value)? parameters,
+  }) {
+    return parameters?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_ResultsTestResultsModel value)? results,
+    TResult Function(_LoadingTestResultsModel value)? loading,
+    TResult Function(_BadTestResultsModel value)? bad,
+    TResult Function(_ErrorTestResultsModel value)? error,
+    TResult Function(_TestIdTestResultsModel value)? parameters,
+    required TResult orElse(),
+  }) {
+    if (parameters != null) {
+      return parameters(this);
+    }
+    return orElse();
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$TestIdTestResultsModelImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _TestIdTestResultsModel implements TestResultsModel {
+  const factory _TestIdTestResultsModel({required final String path}) =
+      _$TestIdTestResultsModelImpl;
+
+  factory _TestIdTestResultsModel.fromJson(Map<String, dynamic> json) =
+      _$TestIdTestResultsModelImpl.fromJson;
+
+  String get path;
+  @JsonKey(ignore: true)
+  _$$TestIdTestResultsModelImplCopyWith<_$TestIdTestResultsModelImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 

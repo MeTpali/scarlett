@@ -1,7 +1,10 @@
+import 'dart:convert';
+
 import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
 
 import '../clients/test_check_client.dart';
+import '../models/test_update_model.dart';
 
 @singleton
 class TestCheckService {
@@ -9,7 +12,10 @@ class TestCheckService {
 
   const TestCheckService(@testCheckClient this._client);
 
-  Future<TestCheckResponse> sendPhoto(String path) async {
+  Future<TestCheckResponse> sendPhoto({
+    required String path,
+    required String testId,
+  }) async {
     final fileName = path.split('/').last;
     final data = FormData.fromMap({
       'photo': [
@@ -19,6 +25,17 @@ class TestCheckService {
         )
       ],
     });
+
+    // final response = await _client.post<dynamic>(
+    //   '/upload',
+    //   data: data,
+    // );
+
+    return TestCheckResponse();
+  }
+
+  Future<TestCheckResponse> sendTest(TestUpdateModel model) async {
+    final sex = model.toJson();
 
     // final response = await _client.post<dynamic>(
     //   '/upload',

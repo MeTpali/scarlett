@@ -8,6 +8,7 @@ import '../features/settings/settings_view.dart';
 import '../theme/constants/constants.dart';
 import '../theme/theme_modes.dart';
 import '../theme/topg_theme.dart';
+import 'app_router/app_router.dart';
 
 @RoutePage()
 class SettingsScreen extends StatelessWidget {
@@ -55,6 +56,21 @@ class SettingsScreen extends StatelessWidget {
                 ),
                 onTap: () async {
                   await ScarlettLocalization.switchLocaleOf(context);
+                },
+              ),
+            ],
+          ),
+          SettingsBlock(
+            title: "Дополнительные",
+            hasDivider: true,
+            settingsList: [
+              // Смена темы
+              SettingsTyle(
+                title: 'Изменение теста',
+                icon: Icons.admin_panel_settings,
+                lastInBlock: true,
+                onTap: () async {
+                  await context.router.push(const TestUpdateRoute());
                 },
               ),
             ],

@@ -64,6 +64,20 @@ Map<String, dynamic> _$$ErrorTestResultsModelImplToJson(
       'runtimeType': instance.$type,
     };
 
+_$TestIdTestResultsModelImpl _$$TestIdTestResultsModelImplFromJson(
+        Map<String, dynamic> json) =>
+    _$TestIdTestResultsModelImpl(
+      path: json['path'] as String,
+      $type: json['runtimeType'] as String?,
+    );
+
+Map<String, dynamic> _$$TestIdTestResultsModelImplToJson(
+        _$TestIdTestResultsModelImpl instance) =>
+    <String, dynamic>{
+      'path': instance.path,
+      'runtimeType': instance.$type,
+    };
+
 _$TestAnswerModelImpl _$$TestAnswerModelImplFromJson(
         Map<String, dynamic> json) =>
     _$TestAnswerModelImpl(

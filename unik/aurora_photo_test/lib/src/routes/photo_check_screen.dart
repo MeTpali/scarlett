@@ -22,6 +22,8 @@ class PhotoCheckScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final photoCheckModel = ref.watch(PhotoTestDi.photoCheckProvider);
+    final testResultsNotifier =
+        ref.watch(PhotoTestDi.testResultsProvider.notifier);
 
     final sendButtonType = photoCheckModel.maybeMap(
       orElse: () => TopGType.disabled,
@@ -85,13 +87,11 @@ class PhotoCheckScreen extends ConsumerWidget {
                 const SizedBox(width: 15),
                 Expanded(
                   child: MainButton(
-                    title: const Text('Отправить'),
+                    title: const Text('Продолжить'),
                     onPressed: photoCheckModel.maybeMap(
                       orElse: () => () {},
                       photo: (photo) => () {
-                        final testResultsNotifier =
-                            ref.watch(PhotoTestDi.testResultsProvider.notifier);
-                        unawaited(testResultsNotifier.sendPhoto(photo.path));
+                        testResultsNotifier.setPath(photo.path);
                         unawaited(
                           context.router.push(const TestResultsRoute()),
                         );

@@ -18,6 +18,10 @@ class TestResultsModel with _$TestResultsModel {
   const factory TestResultsModel.error({String? message}) =
       _ErrorTestResultsModel;
 
+  const factory TestResultsModel.parameters({
+    required String path,
+  }) = _TestIdTestResultsModel;
+
   factory TestResultsModel.fromJson(Map<String, dynamic> json) =>
       _$TestResultsModelFromJson(json);
 }

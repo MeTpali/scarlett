@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 
 import '../../theme/constants/types.dart';
 
-class TestResultRow extends StatelessWidget {
+class TestTableRow extends StatelessWidget {
   final List<Widget> cells;
-  const TestResultRow({
+  const TestTableRow({
     required this.cells,
     super.key,
   });
@@ -13,35 +13,17 @@ class TestResultRow extends StatelessWidget {
   Widget build(BuildContext context) => Row(
         children: [
           for (final cell in cells)
-            ResultsCellWrapper(
+            TestTableCellWrapper(
               child: cell,
             ),
-          // ResultsCellWrapper(
-          //   child: Text(
-          //     answer.question,
-          //     textAlign: TextAlign.center,
-          //   ),
-          // ),
-          // ResultsCellWrapper(
-          //   child: Text(
-          //     answer.answer,
-          //     textAlign: TextAlign.center,
-          //   ),
-          // ),
-          // ResultsCellWrapper(
-          //   child: Text(
-          //     answer.correctAnswer,
-          //     textAlign: TextAlign.center,
-          //   ),
-          // ),
         ],
       );
 }
 
-class ResultsCellWrapper extends StatelessWidget {
+class TestTableCellWrapper extends StatelessWidget {
   final Widget? child;
   final TopGType type;
-  const ResultsCellWrapper({
+  const TestTableCellWrapper({
     required this.child,
     this.type = TopGType.highlight,
     super.key,

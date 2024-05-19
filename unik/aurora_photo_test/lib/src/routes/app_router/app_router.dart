@@ -7,6 +7,7 @@ import '../photo_check_screen.dart';
 import '../photo_screen.dart';
 import '../settings_screen.dart';
 import '../test_results_screen.dart';
+import '../test_update_screen.dart';
 
 part 'app_router.gr.dart';
 
@@ -21,5 +22,6 @@ class AppRouter extends _$AppRouter {
         AutoRoute(page: PhotoCheckRoute.page),
         AutoRoute(page: TestResultsRoute.page),
         AutoRoute(page: ErrorRoute.page),
+        AutoRoute(page: TestUpdateRoute.page),
       ];
 }
