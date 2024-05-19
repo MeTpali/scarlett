@@ -5,6 +5,7 @@ import 'package:camera/camera.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:i18n/s.dart';
 
 import '../di/di.dart';
 import '../di/photo_test_di.dart';
@@ -112,16 +113,13 @@ class _PhotoScreenState extends ConsumerState<PhotoScreen>
               showDialog(
                 context: context,
                 builder: (context) => AlertDialog(
-                  title: const Text('''Я влюбился в твою маму
-Она совсем как ты, только может сделать похавать
-Она совсем как ты, только получает зарплату
-Она совсем как ты, я скоро стану твоим папой'''),
+                  title: Text(S.of(context).auroraPhotoTestDesc),
                   actions: [
                     TextButton(
                       onPressed: () {
                         Navigator.of(context).pop();
                       },
-                      child: const Text('Ок'),
+                      child: Text(S.of(context).ok),
                     ),
                   ],
                 ),

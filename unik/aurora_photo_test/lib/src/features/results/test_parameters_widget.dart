@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:i18n/s.dart';
 
 import '../../di/photo_test_di.dart';
 import '../../theme/constants/types.dart';
@@ -31,9 +32,9 @@ class _TestParametersWidgetState extends ConsumerState<TestParametersWidget> {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 15),
           child: TextField(
-            decoration: const InputDecoration(
-              border: OutlineInputBorder(),
-              labelText: 'Test id',
+            decoration: InputDecoration(
+              border: const OutlineInputBorder(),
+              labelText: S.of(context).testNumber,
             ),
             onChanged: (value) => setState(() {
               testId = value;
@@ -44,7 +45,7 @@ class _TestParametersWidgetState extends ConsumerState<TestParametersWidget> {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 15),
           child: MainButton(
-            title: const Text('Отправить'),
+            title: Text(S.of(context).send),
             onPressed: () async {
               await testResultsNotifier.sendPhoto(path: path, testId: testId);
             },

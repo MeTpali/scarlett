@@ -75,7 +75,7 @@ class PhotoCheckScreen extends ConsumerWidget {
               children: [
                 Expanded(
                   child: MainButton(
-                    title: const Text('Переделать'),
+                    title: Text(S.of(context).remake),
                     onPressed: () {
                       final camerasManager = getIt.get<CamerasManager>();
                       unawaited(camerasManager.getAvailableCameras());
@@ -87,7 +87,7 @@ class PhotoCheckScreen extends ConsumerWidget {
                 const SizedBox(width: 15),
                 Expanded(
                   child: MainButton(
-                    title: const Text('Продолжить'),
+                    title: Text(S.of(context).continuE),
                     onPressed: photoCheckModel.maybeMap(
                       orElse: () => () {},
                       photo: (photo) => () {

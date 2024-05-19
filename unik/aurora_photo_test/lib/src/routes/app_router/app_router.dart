@@ -1,8 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:injectable/injectable.dart';
 
-import '../camera_screen.dart';
-import '../error_screen.dart';
 import '../photo_check_screen.dart';
 import '../photo_screen.dart';
 import '../settings_screen.dart';
@@ -17,11 +15,9 @@ class AppRouter extends _$AppRouter {
   @override
   List<AutoRoute> get routes => [
         AutoRoute(page: SettingsRoute.page),
-        AutoRoute(page: CameraRoute.page),
         AutoRoute(page: PhotoRoute.page, initial: true),
         AutoRoute(page: PhotoCheckRoute.page),
         AutoRoute(page: TestResultsRoute.page),
-        AutoRoute(page: ErrorRoute.page),
         AutoRoute(page: TestUpdateRoute.page),
       ];
 }

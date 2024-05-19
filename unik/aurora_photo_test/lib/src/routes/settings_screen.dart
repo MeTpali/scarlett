@@ -61,12 +61,12 @@ class SettingsScreen extends StatelessWidget {
             ],
           ),
           SettingsBlock(
-            title: "Дополнительные",
+            title: S.of(context).additional,
             hasDivider: true,
             settingsList: [
               // Смена темы
               SettingsTyle(
-                title: 'Изменение теста',
+                title: S.of(context).changingTests,
                 icon: Icons.admin_panel_settings,
                 lastInBlock: true,
                 onTap: () async {

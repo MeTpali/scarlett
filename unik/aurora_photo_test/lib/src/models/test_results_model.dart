@@ -10,6 +10,7 @@ class TestResultsModel with _$TestResultsModel {
     @JsonKey(name: 'total-correct-answers') required int correctAnswers,
     @JsonKey(name: 'total-incorrect-answers') required int incorrectAnswers,
     @JsonKey(name: 'test_number') required int testNumber,
+    @JsonKey(name: 'sex', defaultValue: null) String? sex,
   }) = _ResultsTestResultsModel;
 
   const factory TestResultsModel.loading() = _LoadingTestResultsModel;

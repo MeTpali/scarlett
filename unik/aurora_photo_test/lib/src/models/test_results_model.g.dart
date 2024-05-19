@@ -15,6 +15,7 @@ _$ResultsTestResultsModelImpl _$$ResultsTestResultsModelImplFromJson(
       correctAnswers: (json['total-correct-answers'] as num).toInt(),
       incorrectAnswers: (json['total-incorrect-answers'] as num).toInt(),
       testNumber: (json['test_number'] as num).toInt(),
+      sex: json['sex'] as String?,
       $type: json['runtimeType'] as String?,
     );
 
@@ -25,6 +26,7 @@ Map<String, dynamic> _$$ResultsTestResultsModelImplToJson(
       'total-correct-answers': instance.correctAnswers,
       'total-incorrect-answers': instance.incorrectAnswers,
       'test_number': instance.testNumber,
+      'sex': instance.sex,
       'runtimeType': instance.$type,
     };
 

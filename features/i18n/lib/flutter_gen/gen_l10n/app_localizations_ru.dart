@@ -72,4 +72,67 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get password => 'Пароль';
+
+  @override
+  String get results => 'Результаты';
+
+  @override
+  String get error => 'Ошибка';
+
+  @override
+  String get remake => 'Переделать';
+
+  @override
+  String get continuE => 'Продолжить';
+
+  @override
+  String get noAvailableCameras => 'Нет доступных камер';
+
+  @override
+  String get clickToGivePermissionToCamera => 'Нажмите, чтобы дать разрешение на использование камеры';
+
+  @override
+  String get errorOccured => 'Произошла ошибка';
+
+  @override
+  String get loading => 'Загрузка';
+
+  @override
+  String get auroraPhotoTestDesc => 'Это приложение для проверки работ. Сфотографируйте и отправьте, а мы вам покажем успешность выполнения. В настройках вы можете поменять ответы на тест или добавить новый.';
+
+  @override
+  String get additional => 'Дополнительные';
+
+  @override
+  String get changingTests => 'Изменение тестов';
+
+  @override
+  String get test => 'Тест';
+
+  @override
+  String get questionNumber => 'Номер вопроса';
+
+  @override
+  String get question => 'Вопрос';
+
+  @override
+  String get number => 'Номер вопроса';
+
+  @override
+  String get selectedAnswer => 'Выбранный ответ';
+
+  @override
+  String get updatingTheTests => 'Обновление тестов';
+
+  @override
+  String get cameraPhotoError => 'Упс. Кажется фотография получилась не очень удачной. Попробуйте перефотографировать:)';
+
+  @override
+  String get ok => 'Ок';
+
+  @override
+  String get testNumber => 'Номер теста';
+
+  @override
+  String get send => 'Отправить';
 }

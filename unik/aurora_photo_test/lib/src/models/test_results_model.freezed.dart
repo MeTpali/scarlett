@@ -41,7 +41,8 @@ mixin _$TestResultsModel {
             @JsonKey(name: 'answers') List<TestAnswerModel> answersList,
             @JsonKey(name: 'total-correct-answers') int correctAnswers,
             @JsonKey(name: 'total-incorrect-answers') int incorrectAnswers,
-            @JsonKey(name: 'test_number') int testNumber)
+            @JsonKey(name: 'test_number') int testNumber,
+            @JsonKey(name: 'sex', defaultValue: null) String? sex)
         results,
     required TResult Function() loading,
     required TResult Function() bad,
@@ -55,7 +56,8 @@ mixin _$TestResultsModel {
             @JsonKey(name: 'answers') List<TestAnswerModel> answersList,
             @JsonKey(name: 'total-correct-answers') int correctAnswers,
             @JsonKey(name: 'total-incorrect-answers') int incorrectAnswers,
-            @JsonKey(name: 'test_number') int testNumber)?
+            @JsonKey(name: 'test_number') int testNumber,
+            @JsonKey(name: 'sex', defaultValue: null) String? sex)?
         results,
     TResult? Function()? loading,
     TResult? Function()? bad,
@@ -69,7 +71,8 @@ mixin _$TestResultsModel {
             @JsonKey(name: 'answers') List<TestAnswerModel> answersList,
             @JsonKey(name: 'total-correct-answers') int correctAnswers,
             @JsonKey(name: 'total-incorrect-answers') int incorrectAnswers,
-            @JsonKey(name: 'test_number') int testNumber)?
+            @JsonKey(name: 'test_number') int testNumber,
+            @JsonKey(name: 'sex', defaultValue: null) String? sex)?
         results,
     TResult Function()? loading,
     TResult Function()? bad,
@@ -138,7 +141,8 @@ abstract class _$$ResultsTestResultsModelImplCopyWith<$Res> {
       {@JsonKey(name: 'answers') List<TestAnswerModel> answersList,
       @JsonKey(name: 'total-correct-answers') int correctAnswers,
       @JsonKey(name: 'total-incorrect-answers') int incorrectAnswers,
-      @JsonKey(name: 'test_number') int testNumber});
+      @JsonKey(name: 'test_number') int testNumber,
+      @JsonKey(name: 'sex', defaultValue: null) String? sex});
 }
 
 /// @nodoc
@@ -157,6 +161,7 @@ class __$$ResultsTestResultsModelImplCopyWithImpl<$Res>
     Object? correctAnswers = null,
     Object? incorrectAnswers = null,
     Object? testNumber = null,
+    Object? sex = freezed,
   }) {
     return _then(_$ResultsTestResultsModelImpl(
       answersList: null == answersList
@@ -175,6 +180,10 @@ class __$$ResultsTestResultsModelImplCopyWithImpl<$Res>
           ? _value.testNumber
           : testNumber // ignore: cast_nullable_to_non_nullable
               as int,
+      sex: freezed == sex
+          ? _value.sex
+          : sex // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -188,6 +197,7 @@ class _$ResultsTestResultsModelImpl implements _ResultsTestResultsModel {
       @JsonKey(name: 'total-correct-answers') required this.correctAnswers,
       @JsonKey(name: 'total-incorrect-answers') required this.incorrectAnswers,
       @JsonKey(name: 'test_number') required this.testNumber,
+      @JsonKey(name: 'sex', defaultValue: null) this.sex,
       final String? $type})
       : _answersList = answersList,
         $type = $type ?? 'results';
@@ -213,13 +223,16 @@ class _$ResultsTestResultsModelImpl implements _ResultsTestResultsModel {
   @override
   @JsonKey(name: 'test_number')
   final int testNumber;
+  @override
+  @JsonKey(name: 'sex', defaultValue: null)
+  final String? sex;
 
   @JsonKey(name: 'runtimeType')
   final String $type;
 
   @override
   String toString() {
-    return 'TestResultsModel.results(answersList: $answersList, correctAnswers: $correctAnswers, incorrectAnswers: $incorrectAnswers, testNumber: $testNumber)';
+    return 'TestResultsModel.results(answersList: $answersList, correctAnswers: $correctAnswers, incorrectAnswers: $incorrectAnswers, testNumber: $testNumber, sex: $sex)';
   }
 
   @override
@@ -234,7 +247,8 @@ class _$ResultsTestResultsModelImpl implements _ResultsTestResultsModel {
             (identical(other.incorrectAnswers, incorrectAnswers) ||
                 other.incorrectAnswers == incorrectAnswers) &&
             (identical(other.testNumber, testNumber) ||
-                other.testNumber == testNumber));
+                other.testNumber == testNumber) &&
+            (identical(other.sex, sex) || other.sex == sex));
   }
 
   @JsonKey(ignore: true)
@@ -244,7 +258,8 @@ class _$ResultsTestResultsModelImpl implements _ResultsTestResultsModel {
       const DeepCollectionEquality().hash(_answersList),
       correctAnswers,
       incorrectAnswers,
-      testNumber);
+      testNumber,
+      sex);
 
   @JsonKey(ignore: true)
   @override
@@ -260,14 +275,16 @@ class _$ResultsTestResultsModelImpl implements _ResultsTestResultsModel {
             @JsonKey(name: 'answers') List<TestAnswerModel> answersList,
             @JsonKey(name: 'total-correct-answers') int correctAnswers,
             @JsonKey(name: 'total-incorrect-answers') int incorrectAnswers,
-            @JsonKey(name: 'test_number') int testNumber)
+            @JsonKey(name: 'test_number') int testNumber,
+            @JsonKey(name: 'sex', defaultValue: null) String? sex)
         results,
     required TResult Function() loading,
     required TResult Function() bad,
     required TResult Function(String? message) error,
     required TResult Function(String path) parameters,
   }) {
-    return results(answersList, correctAnswers, incorrectAnswers, testNumber);
+    return results(
+        answersList, correctAnswers, incorrectAnswers, testNumber, sex);
   }
 
   @override
@@ -277,7 +294,8 @@ class _$ResultsTestResultsModelImpl implements _ResultsTestResultsModel {
             @JsonKey(name: 'answers') List<TestAnswerModel> answersList,
             @JsonKey(name: 'total-correct-answers') int correctAnswers,
             @JsonKey(name: 'total-incorrect-answers') int incorrectAnswers,
-            @JsonKey(name: 'test_number') int testNumber)?
+            @JsonKey(name: 'test_number') int testNumber,
+            @JsonKey(name: 'sex', defaultValue: null) String? sex)?
         results,
     TResult? Function()? loading,
     TResult? Function()? bad,
@@ -285,7 +303,7 @@ class _$ResultsTestResultsModelImpl implements _ResultsTestResultsModel {
     TResult? Function(String path)? parameters,
   }) {
     return results?.call(
-        answersList, correctAnswers, incorrectAnswers, testNumber);
+        answersList, correctAnswers, incorrectAnswers, testNumber, sex);
   }
 
   @override
@@ -295,7 +313,8 @@ class _$ResultsTestResultsModelImpl implements _ResultsTestResultsModel {
             @JsonKey(name: 'answers') List<TestAnswerModel> answersList,
             @JsonKey(name: 'total-correct-answers') int correctAnswers,
             @JsonKey(name: 'total-incorrect-answers') int incorrectAnswers,
-            @JsonKey(name: 'test_number') int testNumber)?
+            @JsonKey(name: 'test_number') int testNumber,
+            @JsonKey(name: 'sex', defaultValue: null) String? sex)?
         results,
     TResult Function()? loading,
     TResult Function()? bad,
@@ -304,7 +323,8 @@ class _$ResultsTestResultsModelImpl implements _ResultsTestResultsModel {
     required TResult orElse(),
   }) {
     if (results != null) {
-      return results(answersList, correctAnswers, incorrectAnswers, testNumber);
+      return results(
+          answersList, correctAnswers, incorrectAnswers, testNumber, sex);
     }
     return orElse();
   }
@@ -364,8 +384,9 @@ abstract class _ResultsTestResultsModel implements TestResultsModel {
       @JsonKey(name: 'total-correct-answers') required final int correctAnswers,
       @JsonKey(name: 'total-incorrect-answers')
       required final int incorrectAnswers,
-      @JsonKey(name: 'test_number')
-      required final int testNumber}) = _$ResultsTestResultsModelImpl;
+      @JsonKey(name: 'test_number') required final int testNumber,
+      @JsonKey(name: 'sex', defaultValue: null)
+      final String? sex}) = _$ResultsTestResultsModelImpl;
 
   factory _ResultsTestResultsModel.fromJson(Map<String, dynamic> json) =
       _$ResultsTestResultsModelImpl.fromJson;
@@ -378,6 +399,8 @@ abstract class _ResultsTestResultsModel implements TestResultsModel {
   int get incorrectAnswers;
   @JsonKey(name: 'test_number')
   int get testNumber;
+  @JsonKey(name: 'sex', defaultValue: null)
+  String? get sex;
   @JsonKey(ignore: true)
   _$$ResultsTestResultsModelImplCopyWith<_$ResultsTestResultsModelImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -436,7 +459,8 @@ class _$LoadingTestResultsModelImpl implements _LoadingTestResultsModel {
             @JsonKey(name: 'answers') List<TestAnswerModel> answersList,
             @JsonKey(name: 'total-correct-answers') int correctAnswers,
             @JsonKey(name: 'total-incorrect-answers') int incorrectAnswers,
-            @JsonKey(name: 'test_number') int testNumber)
+            @JsonKey(name: 'test_number') int testNumber,
+            @JsonKey(name: 'sex', defaultValue: null) String? sex)
         results,
     required TResult Function() loading,
     required TResult Function() bad,
@@ -453,7 +477,8 @@ class _$LoadingTestResultsModelImpl implements _LoadingTestResultsModel {
             @JsonKey(name: 'answers') List<TestAnswerModel> answersList,
             @JsonKey(name: 'total-correct-answers') int correctAnswers,
             @JsonKey(name: 'total-incorrect-answers') int incorrectAnswers,
-            @JsonKey(name: 'test_number') int testNumber)?
+            @JsonKey(name: 'test_number') int testNumber,
+            @JsonKey(name: 'sex', defaultValue: null) String? sex)?
         results,
     TResult? Function()? loading,
     TResult? Function()? bad,
@@ -470,7 +495,8 @@ class _$LoadingTestResultsModelImpl implements _LoadingTestResultsModel {
             @JsonKey(name: 'answers') List<TestAnswerModel> answersList,
             @JsonKey(name: 'total-correct-answers') int correctAnswers,
             @JsonKey(name: 'total-incorrect-answers') int incorrectAnswers,
-            @JsonKey(name: 'test_number') int testNumber)?
+            @JsonKey(name: 'test_number') int testNumber,
+            @JsonKey(name: 'sex', defaultValue: null) String? sex)?
         results,
     TResult Function()? loading,
     TResult Function()? bad,
@@ -590,7 +616,8 @@ class _$BadTestResultsModelImpl implements _BadTestResultsModel {
             @JsonKey(name: 'answers') List<TestAnswerModel> answersList,
             @JsonKey(name: 'total-correct-answers') int correctAnswers,
             @JsonKey(name: 'total-incorrect-answers') int incorrectAnswers,
-            @JsonKey(name: 'test_number') int testNumber)
+            @JsonKey(name: 'test_number') int testNumber,
+            @JsonKey(name: 'sex', defaultValue: null) String? sex)
         results,
     required TResult Function() loading,
     required TResult Function() bad,
@@ -607,7 +634,8 @@ class _$BadTestResultsModelImpl implements _BadTestResultsModel {
             @JsonKey(name: 'answers') List<TestAnswerModel> answersList,
             @JsonKey(name: 'total-correct-answers') int correctAnswers,
             @JsonKey(name: 'total-incorrect-answers') int incorrectAnswers,
-            @JsonKey(name: 'test_number') int testNumber)?
+            @JsonKey(name: 'test_number') int testNumber,
+            @JsonKey(name: 'sex', defaultValue: null) String? sex)?
         results,
     TResult? Function()? loading,
     TResult? Function()? bad,
@@ -624,7 +652,8 @@ class _$BadTestResultsModelImpl implements _BadTestResultsModel {
             @JsonKey(name: 'answers') List<TestAnswerModel> answersList,
             @JsonKey(name: 'total-correct-answers') int correctAnswers,
             @JsonKey(name: 'total-incorrect-answers') int incorrectAnswers,
-            @JsonKey(name: 'test_number') int testNumber)?
+            @JsonKey(name: 'test_number') int testNumber,
+            @JsonKey(name: 'sex', defaultValue: null) String? sex)?
         results,
     TResult Function()? loading,
     TResult Function()? bad,
@@ -771,7 +800,8 @@ class _$ErrorTestResultsModelImpl implements _ErrorTestResultsModel {
             @JsonKey(name: 'answers') List<TestAnswerModel> answersList,
             @JsonKey(name: 'total-correct-answers') int correctAnswers,
             @JsonKey(name: 'total-incorrect-answers') int incorrectAnswers,
-            @JsonKey(name: 'test_number') int testNumber)
+            @JsonKey(name: 'test_number') int testNumber,
+            @JsonKey(name: 'sex', defaultValue: null) String? sex)
         results,
     required TResult Function() loading,
     required TResult Function() bad,
@@ -788,7 +818,8 @@ class _$ErrorTestResultsModelImpl implements _ErrorTestResultsModel {
             @JsonKey(name: 'answers') List<TestAnswerModel> answersList,
             @JsonKey(name: 'total-correct-answers') int correctAnswers,
             @JsonKey(name: 'total-incorrect-answers') int incorrectAnswers,
-            @JsonKey(name: 'test_number') int testNumber)?
+            @JsonKey(name: 'test_number') int testNumber,
+            @JsonKey(name: 'sex', defaultValue: null) String? sex)?
         results,
     TResult? Function()? loading,
     TResult? Function()? bad,
@@ -805,7 +836,8 @@ class _$ErrorTestResultsModelImpl implements _ErrorTestResultsModel {
             @JsonKey(name: 'answers') List<TestAnswerModel> answersList,
             @JsonKey(name: 'total-correct-answers') int correctAnswers,
             @JsonKey(name: 'total-incorrect-answers') int incorrectAnswers,
-            @JsonKey(name: 'test_number') int testNumber)?
+            @JsonKey(name: 'test_number') int testNumber,
+            @JsonKey(name: 'sex', defaultValue: null) String? sex)?
         results,
     TResult Function()? loading,
     TResult Function()? bad,
@@ -959,7 +991,8 @@ class _$TestIdTestResultsModelImpl implements _TestIdTestResultsModel {
             @JsonKey(name: 'answers') List<TestAnswerModel> answersList,
             @JsonKey(name: 'total-correct-answers') int correctAnswers,
             @JsonKey(name: 'total-incorrect-answers') int incorrectAnswers,
-            @JsonKey(name: 'test_number') int testNumber)
+            @JsonKey(name: 'test_number') int testNumber,
+            @JsonKey(name: 'sex', defaultValue: null) String? sex)
         results,
     required TResult Function() loading,
     required TResult Function() bad,
@@ -976,7 +1009,8 @@ class _$TestIdTestResultsModelImpl implements _TestIdTestResultsModel {
             @JsonKey(name: 'answers') List<TestAnswerModel> answersList,
             @JsonKey(name: 'total-correct-answers') int correctAnswers,
             @JsonKey(name: 'total-incorrect-answers') int incorrectAnswers,
-            @JsonKey(name: 'test_number') int testNumber)?
+            @JsonKey(name: 'test_number') int testNumber,
+            @JsonKey(name: 'sex', defaultValue: null) String? sex)?
         results,
     TResult? Function()? loading,
     TResult? Function()? bad,
@@ -993,7 +1027,8 @@ class _$TestIdTestResultsModelImpl implements _TestIdTestResultsModel {
             @JsonKey(name: 'answers') List<TestAnswerModel> answersList,
             @JsonKey(name: 'total-correct-answers') int correctAnswers,
             @JsonKey(name: 'total-incorrect-answers') int incorrectAnswers,
-            @JsonKey(name: 'test_number') int testNumber)?
+            @JsonKey(name: 'test_number') int testNumber,
+            @JsonKey(name: 'sex', defaultValue: null) String? sex)?
         results,
     TResult Function()? loading,
     TResult Function()? bad,

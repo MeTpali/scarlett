@@ -39,7 +39,7 @@ class TestCheckService {
     } catch (e) {
       return const TestResultsModel.error(
         message:
-            'Упс. Кажется фотография получилась не очень удачной. Попробуйте перефотографировать:)',
+            "Oops. It seems the photo didn't turn out very well. Try to take a photo:)",
       );
     }
     return TestResultsModel.fromJson(response);

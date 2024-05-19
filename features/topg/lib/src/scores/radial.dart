@@ -55,7 +55,7 @@ class _RadialScorePainter extends CustomPainter {
   });
   @override
   void paint(Canvas canvas, Size size) {
-    Rect arcRect = calculateArcsRect(size);
+    final Rect arcRect = calculateArcsRect(size);
 
     drawBackground(canvas, size);
 
@@ -111,7 +111,5 @@ class _RadialScorePainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) {
-    return true;
-  }
+  bool shouldRepaint(covariant CustomPainter oldDelegate) => true;
 }

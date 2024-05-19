@@ -230,6 +230,132 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Password'**
   String get password;
+
+  /// No description provided for @results.
+  ///
+  /// In en, this message translates to:
+  /// **'Results'**
+  String get results;
+
+  /// No description provided for @error.
+  ///
+  /// In en, this message translates to:
+  /// **'Error'**
+  String get error;
+
+  /// No description provided for @remake.
+  ///
+  /// In en, this message translates to:
+  /// **'Remake'**
+  String get remake;
+
+  /// No description provided for @continuE.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue'**
+  String get continuE;
+
+  /// No description provided for @noAvailableCameras.
+  ///
+  /// In en, this message translates to:
+  /// **'There are no cameras available'**
+  String get noAvailableCameras;
+
+  /// No description provided for @clickToGivePermissionToCamera.
+  ///
+  /// In en, this message translates to:
+  /// **'Click to give permission to the camera'**
+  String get clickToGivePermissionToCamera;
+
+  /// No description provided for @errorOccured.
+  ///
+  /// In en, this message translates to:
+  /// **'An error has occured'**
+  String get errorOccured;
+
+  /// No description provided for @loading.
+  ///
+  /// In en, this message translates to:
+  /// **'Loading'**
+  String get loading;
+
+  /// No description provided for @auroraPhotoTestDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'This is a job verification app. Take a picture and send it, and we will show you the success of the execution. In the settings, you can change the answers to the test or add a new one.'**
+  String get auroraPhotoTestDesc;
+
+  /// No description provided for @additional.
+  ///
+  /// In en, this message translates to:
+  /// **'Additional'**
+  String get additional;
+
+  /// No description provided for @changingTests.
+  ///
+  /// In en, this message translates to:
+  /// **'Tests changing'**
+  String get changingTests;
+
+  /// No description provided for @test.
+  ///
+  /// In en, this message translates to:
+  /// **'Test'**
+  String get test;
+
+  /// No description provided for @questionNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Question number'**
+  String get questionNumber;
+
+  /// No description provided for @question.
+  ///
+  /// In en, this message translates to:
+  /// **'Question'**
+  String get question;
+
+  /// No description provided for @number.
+  ///
+  /// In en, this message translates to:
+  /// **'Number'**
+  String get number;
+
+  /// No description provided for @selectedAnswer.
+  ///
+  /// In en, this message translates to:
+  /// **'Selected answer'**
+  String get selectedAnswer;
+
+  /// No description provided for @updatingTheTests.
+  ///
+  /// In en, this message translates to:
+  /// **'Updating the tests'**
+  String get updatingTheTests;
+
+  /// No description provided for @cameraPhotoError.
+  ///
+  /// In en, this message translates to:
+  /// **'Oops. It seems the photo didn\'t turn out very well. Try to take a photo:)'**
+  String get cameraPhotoError;
+
+  /// No description provided for @ok.
+  ///
+  /// In en, this message translates to:
+  /// **'Ok'**
+  String get ok;
+
+  /// No description provided for @testNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Test number'**
+  String get testNumber;
+
+  /// No description provided for @send.
+  ///
+  /// In en, this message translates to:
+  /// **'Send'**
+  String get send;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

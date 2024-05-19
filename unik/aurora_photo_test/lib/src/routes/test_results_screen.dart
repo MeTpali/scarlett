@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:i18n/s.dart';
 
 import '../di/photo_test_di.dart';
 import '../features/results/test_parameters_widget.dart';
@@ -21,7 +22,7 @@ class TestResultsScreen extends ConsumerWidget {
     final testResults = ref.watch(PhotoTestDi.testResultsProvider);
     return Scaffold(
       appBar: AppBar(
-        title: Text('Результаты'),
+        title: Text(S.of(context).results),
         centerTitle: true,
         leading: IconButton(
           onPressed: () {
@@ -48,10 +49,10 @@ class TestResultsScreen extends ConsumerWidget {
         error: (error) => Center(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 15),
-            child: Text('Ошибка: ${error.message}'),
+            child: Text('${S.of(context).error}: ${error.message}'),
           ),
         ),
-        bad: (_) => const Center(child: Text('Перефотографируйте')),
+        bad: (_) => Center(child: Text(S.of(context).remake)),
         parameters: (_) => const Center(
           child: TestParametersWidget(),
         ),

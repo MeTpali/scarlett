@@ -72,4 +72,67 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get password => 'Password';
+
+  @override
+  String get results => 'Results';
+
+  @override
+  String get error => 'Error';
+
+  @override
+  String get remake => 'Remake';
+
+  @override
+  String get continuE => 'Continue';
+
+  @override
+  String get noAvailableCameras => 'There are no cameras available';
+
+  @override
+  String get clickToGivePermissionToCamera => 'Click to give permission to the camera';
+
+  @override
+  String get errorOccured => 'An error has occured';
+
+  @override
+  String get loading => 'Loading';
+
+  @override
+  String get auroraPhotoTestDesc => 'This is a job verification app. Take a picture and send it, and we will show you the success of the execution. In the settings, you can change the answers to the test or add a new one.';
+
+  @override
+  String get additional => 'Additional';
+
+  @override
+  String get changingTests => 'Tests changing';
+
+  @override
+  String get test => 'Test';
+
+  @override
+  String get questionNumber => 'Question number';
+
+  @override
+  String get question => 'Question';
+
+  @override
+  String get number => 'Number';
+
+  @override
+  String get selectedAnswer => 'Selected answer';
+
+  @override
+  String get updatingTheTests => 'Updating the tests';
+
+  @override
+  String get cameraPhotoError => 'Oops. It seems the photo didn\'t turn out very well. Try to take a photo:)';
+
+  @override
+  String get ok => 'Ok';
+
+  @override
+  String get testNumber => 'Test number';
+
+  @override
+  String get send => 'Send';
 }
