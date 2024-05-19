@@ -45,7 +45,12 @@ class TestResultsScreen extends ConsumerWidget {
           incorrectAnswers: results.incorrectAnswers,
         ),
         loading: (_) => const Center(child: CircularProgressIndicator()),
-        error: (error) => Center(child: Text('Ошибка: ${error.message}')),
+        error: (error) => Center(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 15),
+            child: Text('Ошибка: ${error.message}'),
+          ),
+        ),
         bad: (_) => const Center(child: Text('Перефотографируйте')),
         parameters: (_) => const Center(
           child: TestParametersWidget(),

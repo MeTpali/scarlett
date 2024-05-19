@@ -38,9 +38,10 @@ mixin _$TestResultsModel {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            @JsonKey(name: 'test') List<TestAnswerModel> answersList,
+            @JsonKey(name: 'answers') List<TestAnswerModel> answersList,
             @JsonKey(name: 'total-correct-answers') int correctAnswers,
-            @JsonKey(name: 'total-incorrect-answers') int incorrectAnswers)
+            @JsonKey(name: 'total-incorrect-answers') int incorrectAnswers,
+            @JsonKey(name: 'test_number') int testNumber)
         results,
     required TResult Function() loading,
     required TResult Function() bad,
@@ -51,9 +52,10 @@ mixin _$TestResultsModel {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(
-            @JsonKey(name: 'test') List<TestAnswerModel> answersList,
+            @JsonKey(name: 'answers') List<TestAnswerModel> answersList,
             @JsonKey(name: 'total-correct-answers') int correctAnswers,
-            @JsonKey(name: 'total-incorrect-answers') int incorrectAnswers)?
+            @JsonKey(name: 'total-incorrect-answers') int incorrectAnswers,
+            @JsonKey(name: 'test_number') int testNumber)?
         results,
     TResult? Function()? loading,
     TResult? Function()? bad,
@@ -64,9 +66,10 @@ mixin _$TestResultsModel {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
-            @JsonKey(name: 'test') List<TestAnswerModel> answersList,
+            @JsonKey(name: 'answers') List<TestAnswerModel> answersList,
             @JsonKey(name: 'total-correct-answers') int correctAnswers,
-            @JsonKey(name: 'total-incorrect-answers') int incorrectAnswers)?
+            @JsonKey(name: 'total-incorrect-answers') int incorrectAnswers,
+            @JsonKey(name: 'test_number') int testNumber)?
         results,
     TResult Function()? loading,
     TResult Function()? bad,
@@ -132,9 +135,10 @@ abstract class _$$ResultsTestResultsModelImplCopyWith<$Res> {
       __$$ResultsTestResultsModelImplCopyWithImpl<$Res>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'test') List<TestAnswerModel> answersList,
+      {@JsonKey(name: 'answers') List<TestAnswerModel> answersList,
       @JsonKey(name: 'total-correct-answers') int correctAnswers,
-      @JsonKey(name: 'total-incorrect-answers') int incorrectAnswers});
+      @JsonKey(name: 'total-incorrect-answers') int incorrectAnswers,
+      @JsonKey(name: 'test_number') int testNumber});
 }
 
 /// @nodoc
@@ -152,6 +156,7 @@ class __$$ResultsTestResultsModelImplCopyWithImpl<$Res>
     Object? answersList = null,
     Object? correctAnswers = null,
     Object? incorrectAnswers = null,
+    Object? testNumber = null,
   }) {
     return _then(_$ResultsTestResultsModelImpl(
       answersList: null == answersList
@@ -166,6 +171,10 @@ class __$$ResultsTestResultsModelImplCopyWithImpl<$Res>
           ? _value.incorrectAnswers
           : incorrectAnswers // ignore: cast_nullable_to_non_nullable
               as int,
+      testNumber: null == testNumber
+          ? _value.testNumber
+          : testNumber // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -174,9 +183,11 @@ class __$$ResultsTestResultsModelImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$ResultsTestResultsModelImpl implements _ResultsTestResultsModel {
   const _$ResultsTestResultsModelImpl(
-      {@JsonKey(name: 'test') required final List<TestAnswerModel> answersList,
+      {@JsonKey(name: 'answers')
+      required final List<TestAnswerModel> answersList,
       @JsonKey(name: 'total-correct-answers') required this.correctAnswers,
       @JsonKey(name: 'total-incorrect-answers') required this.incorrectAnswers,
+      @JsonKey(name: 'test_number') required this.testNumber,
       final String? $type})
       : _answersList = answersList,
         $type = $type ?? 'results';
@@ -186,7 +197,7 @@ class _$ResultsTestResultsModelImpl implements _ResultsTestResultsModel {
 
   final List<TestAnswerModel> _answersList;
   @override
-  @JsonKey(name: 'test')
+  @JsonKey(name: 'answers')
   List<TestAnswerModel> get answersList {
     if (_answersList is EqualUnmodifiableListView) return _answersList;
     // ignore: implicit_dynamic_type
@@ -199,13 +210,16 @@ class _$ResultsTestResultsModelImpl implements _ResultsTestResultsModel {
   @override
   @JsonKey(name: 'total-incorrect-answers')
   final int incorrectAnswers;
+  @override
+  @JsonKey(name: 'test_number')
+  final int testNumber;
 
   @JsonKey(name: 'runtimeType')
   final String $type;
 
   @override
   String toString() {
-    return 'TestResultsModel.results(answersList: $answersList, correctAnswers: $correctAnswers, incorrectAnswers: $incorrectAnswers)';
+    return 'TestResultsModel.results(answersList: $answersList, correctAnswers: $correctAnswers, incorrectAnswers: $incorrectAnswers, testNumber: $testNumber)';
   }
 
   @override
@@ -218,7 +232,9 @@ class _$ResultsTestResultsModelImpl implements _ResultsTestResultsModel {
             (identical(other.correctAnswers, correctAnswers) ||
                 other.correctAnswers == correctAnswers) &&
             (identical(other.incorrectAnswers, incorrectAnswers) ||
-                other.incorrectAnswers == incorrectAnswers));
+                other.incorrectAnswers == incorrectAnswers) &&
+            (identical(other.testNumber, testNumber) ||
+                other.testNumber == testNumber));
   }
 
   @JsonKey(ignore: true)
@@ -227,7 +243,8 @@ class _$ResultsTestResultsModelImpl implements _ResultsTestResultsModel {
       runtimeType,
       const DeepCollectionEquality().hash(_answersList),
       correctAnswers,
-      incorrectAnswers);
+      incorrectAnswers,
+      testNumber);
 
   @JsonKey(ignore: true)
   @override
@@ -240,41 +257,45 @@ class _$ResultsTestResultsModelImpl implements _ResultsTestResultsModel {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            @JsonKey(name: 'test') List<TestAnswerModel> answersList,
+            @JsonKey(name: 'answers') List<TestAnswerModel> answersList,
             @JsonKey(name: 'total-correct-answers') int correctAnswers,
-            @JsonKey(name: 'total-incorrect-answers') int incorrectAnswers)
+            @JsonKey(name: 'total-incorrect-answers') int incorrectAnswers,
+            @JsonKey(name: 'test_number') int testNumber)
         results,
     required TResult Function() loading,
     required TResult Function() bad,
     required TResult Function(String? message) error,
     required TResult Function(String path) parameters,
   }) {
-    return results(answersList, correctAnswers, incorrectAnswers);
+    return results(answersList, correctAnswers, incorrectAnswers, testNumber);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(
-            @JsonKey(name: 'test') List<TestAnswerModel> answersList,
+            @JsonKey(name: 'answers') List<TestAnswerModel> answersList,
             @JsonKey(name: 'total-correct-answers') int correctAnswers,
-            @JsonKey(name: 'total-incorrect-answers') int incorrectAnswers)?
+            @JsonKey(name: 'total-incorrect-answers') int incorrectAnswers,
+            @JsonKey(name: 'test_number') int testNumber)?
         results,
     TResult? Function()? loading,
     TResult? Function()? bad,
     TResult? Function(String? message)? error,
     TResult? Function(String path)? parameters,
   }) {
-    return results?.call(answersList, correctAnswers, incorrectAnswers);
+    return results?.call(
+        answersList, correctAnswers, incorrectAnswers, testNumber);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
-            @JsonKey(name: 'test') List<TestAnswerModel> answersList,
+            @JsonKey(name: 'answers') List<TestAnswerModel> answersList,
             @JsonKey(name: 'total-correct-answers') int correctAnswers,
-            @JsonKey(name: 'total-incorrect-answers') int incorrectAnswers)?
+            @JsonKey(name: 'total-incorrect-answers') int incorrectAnswers,
+            @JsonKey(name: 'test_number') int testNumber)?
         results,
     TResult Function()? loading,
     TResult Function()? bad,
@@ -283,7 +304,7 @@ class _$ResultsTestResultsModelImpl implements _ResultsTestResultsModel {
     required TResult orElse(),
   }) {
     if (results != null) {
-      return results(answersList, correctAnswers, incorrectAnswers);
+      return results(answersList, correctAnswers, incorrectAnswers, testNumber);
     }
     return orElse();
   }
@@ -338,20 +359,25 @@ class _$ResultsTestResultsModelImpl implements _ResultsTestResultsModel {
 
 abstract class _ResultsTestResultsModel implements TestResultsModel {
   const factory _ResultsTestResultsModel(
-      {@JsonKey(name: 'test') required final List<TestAnswerModel> answersList,
+      {@JsonKey(name: 'answers')
+      required final List<TestAnswerModel> answersList,
       @JsonKey(name: 'total-correct-answers') required final int correctAnswers,
       @JsonKey(name: 'total-incorrect-answers')
-      required final int incorrectAnswers}) = _$ResultsTestResultsModelImpl;
+      required final int incorrectAnswers,
+      @JsonKey(name: 'test_number')
+      required final int testNumber}) = _$ResultsTestResultsModelImpl;
 
   factory _ResultsTestResultsModel.fromJson(Map<String, dynamic> json) =
       _$ResultsTestResultsModelImpl.fromJson;
 
-  @JsonKey(name: 'test')
+  @JsonKey(name: 'answers')
   List<TestAnswerModel> get answersList;
   @JsonKey(name: 'total-correct-answers')
   int get correctAnswers;
   @JsonKey(name: 'total-incorrect-answers')
   int get incorrectAnswers;
+  @JsonKey(name: 'test_number')
+  int get testNumber;
   @JsonKey(ignore: true)
   _$$ResultsTestResultsModelImplCopyWith<_$ResultsTestResultsModelImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -407,9 +433,10 @@ class _$LoadingTestResultsModelImpl implements _LoadingTestResultsModel {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            @JsonKey(name: 'test') List<TestAnswerModel> answersList,
+            @JsonKey(name: 'answers') List<TestAnswerModel> answersList,
             @JsonKey(name: 'total-correct-answers') int correctAnswers,
-            @JsonKey(name: 'total-incorrect-answers') int incorrectAnswers)
+            @JsonKey(name: 'total-incorrect-answers') int incorrectAnswers,
+            @JsonKey(name: 'test_number') int testNumber)
         results,
     required TResult Function() loading,
     required TResult Function() bad,
@@ -423,9 +450,10 @@ class _$LoadingTestResultsModelImpl implements _LoadingTestResultsModel {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(
-            @JsonKey(name: 'test') List<TestAnswerModel> answersList,
+            @JsonKey(name: 'answers') List<TestAnswerModel> answersList,
             @JsonKey(name: 'total-correct-answers') int correctAnswers,
-            @JsonKey(name: 'total-incorrect-answers') int incorrectAnswers)?
+            @JsonKey(name: 'total-incorrect-answers') int incorrectAnswers,
+            @JsonKey(name: 'test_number') int testNumber)?
         results,
     TResult? Function()? loading,
     TResult? Function()? bad,
@@ -439,9 +467,10 @@ class _$LoadingTestResultsModelImpl implements _LoadingTestResultsModel {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
-            @JsonKey(name: 'test') List<TestAnswerModel> answersList,
+            @JsonKey(name: 'answers') List<TestAnswerModel> answersList,
             @JsonKey(name: 'total-correct-answers') int correctAnswers,
-            @JsonKey(name: 'total-incorrect-answers') int incorrectAnswers)?
+            @JsonKey(name: 'total-incorrect-answers') int incorrectAnswers,
+            @JsonKey(name: 'test_number') int testNumber)?
         results,
     TResult Function()? loading,
     TResult Function()? bad,
@@ -558,9 +587,10 @@ class _$BadTestResultsModelImpl implements _BadTestResultsModel {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            @JsonKey(name: 'test') List<TestAnswerModel> answersList,
+            @JsonKey(name: 'answers') List<TestAnswerModel> answersList,
             @JsonKey(name: 'total-correct-answers') int correctAnswers,
-            @JsonKey(name: 'total-incorrect-answers') int incorrectAnswers)
+            @JsonKey(name: 'total-incorrect-answers') int incorrectAnswers,
+            @JsonKey(name: 'test_number') int testNumber)
         results,
     required TResult Function() loading,
     required TResult Function() bad,
@@ -574,9 +604,10 @@ class _$BadTestResultsModelImpl implements _BadTestResultsModel {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(
-            @JsonKey(name: 'test') List<TestAnswerModel> answersList,
+            @JsonKey(name: 'answers') List<TestAnswerModel> answersList,
             @JsonKey(name: 'total-correct-answers') int correctAnswers,
-            @JsonKey(name: 'total-incorrect-answers') int incorrectAnswers)?
+            @JsonKey(name: 'total-incorrect-answers') int incorrectAnswers,
+            @JsonKey(name: 'test_number') int testNumber)?
         results,
     TResult? Function()? loading,
     TResult? Function()? bad,
@@ -590,9 +621,10 @@ class _$BadTestResultsModelImpl implements _BadTestResultsModel {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
-            @JsonKey(name: 'test') List<TestAnswerModel> answersList,
+            @JsonKey(name: 'answers') List<TestAnswerModel> answersList,
             @JsonKey(name: 'total-correct-answers') int correctAnswers,
-            @JsonKey(name: 'total-incorrect-answers') int incorrectAnswers)?
+            @JsonKey(name: 'total-incorrect-answers') int incorrectAnswers,
+            @JsonKey(name: 'test_number') int testNumber)?
         results,
     TResult Function()? loading,
     TResult Function()? bad,
@@ -736,9 +768,10 @@ class _$ErrorTestResultsModelImpl implements _ErrorTestResultsModel {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            @JsonKey(name: 'test') List<TestAnswerModel> answersList,
+            @JsonKey(name: 'answers') List<TestAnswerModel> answersList,
             @JsonKey(name: 'total-correct-answers') int correctAnswers,
-            @JsonKey(name: 'total-incorrect-answers') int incorrectAnswers)
+            @JsonKey(name: 'total-incorrect-answers') int incorrectAnswers,
+            @JsonKey(name: 'test_number') int testNumber)
         results,
     required TResult Function() loading,
     required TResult Function() bad,
@@ -752,9 +785,10 @@ class _$ErrorTestResultsModelImpl implements _ErrorTestResultsModel {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(
-            @JsonKey(name: 'test') List<TestAnswerModel> answersList,
+            @JsonKey(name: 'answers') List<TestAnswerModel> answersList,
             @JsonKey(name: 'total-correct-answers') int correctAnswers,
-            @JsonKey(name: 'total-incorrect-answers') int incorrectAnswers)?
+            @JsonKey(name: 'total-incorrect-answers') int incorrectAnswers,
+            @JsonKey(name: 'test_number') int testNumber)?
         results,
     TResult? Function()? loading,
     TResult? Function()? bad,
@@ -768,9 +802,10 @@ class _$ErrorTestResultsModelImpl implements _ErrorTestResultsModel {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
-            @JsonKey(name: 'test') List<TestAnswerModel> answersList,
+            @JsonKey(name: 'answers') List<TestAnswerModel> answersList,
             @JsonKey(name: 'total-correct-answers') int correctAnswers,
-            @JsonKey(name: 'total-incorrect-answers') int incorrectAnswers)?
+            @JsonKey(name: 'total-incorrect-answers') int incorrectAnswers,
+            @JsonKey(name: 'test_number') int testNumber)?
         results,
     TResult Function()? loading,
     TResult Function()? bad,
@@ -921,9 +956,10 @@ class _$TestIdTestResultsModelImpl implements _TestIdTestResultsModel {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            @JsonKey(name: 'test') List<TestAnswerModel> answersList,
+            @JsonKey(name: 'answers') List<TestAnswerModel> answersList,
             @JsonKey(name: 'total-correct-answers') int correctAnswers,
-            @JsonKey(name: 'total-incorrect-answers') int incorrectAnswers)
+            @JsonKey(name: 'total-incorrect-answers') int incorrectAnswers,
+            @JsonKey(name: 'test_number') int testNumber)
         results,
     required TResult Function() loading,
     required TResult Function() bad,
@@ -937,9 +973,10 @@ class _$TestIdTestResultsModelImpl implements _TestIdTestResultsModel {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(
-            @JsonKey(name: 'test') List<TestAnswerModel> answersList,
+            @JsonKey(name: 'answers') List<TestAnswerModel> answersList,
             @JsonKey(name: 'total-correct-answers') int correctAnswers,
-            @JsonKey(name: 'total-incorrect-answers') int incorrectAnswers)?
+            @JsonKey(name: 'total-incorrect-answers') int incorrectAnswers,
+            @JsonKey(name: 'test_number') int testNumber)?
         results,
     TResult? Function()? loading,
     TResult? Function()? bad,
@@ -953,9 +990,10 @@ class _$TestIdTestResultsModelImpl implements _TestIdTestResultsModel {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
-            @JsonKey(name: 'test') List<TestAnswerModel> answersList,
+            @JsonKey(name: 'answers') List<TestAnswerModel> answersList,
             @JsonKey(name: 'total-correct-answers') int correctAnswers,
-            @JsonKey(name: 'total-incorrect-answers') int incorrectAnswers)?
+            @JsonKey(name: 'total-incorrect-answers') int incorrectAnswers,
+            @JsonKey(name: 'test_number') int testNumber)?
         results,
     TResult Function()? loading,
     TResult Function()? bad,

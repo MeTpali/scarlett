@@ -11,7 +11,7 @@ _$TestUpdateModelImpl _$$TestUpdateModelImplFromJson(
     _$TestUpdateModelImpl(
       login: json['login'] as String? ?? '',
       password: json['password'] as String? ?? '',
-      testId: json['testId'] as String? ?? '',
+      testId: json['number'] as String? ?? '',
       test: (json['test'] as List<dynamic>?)
               ?.map(
                   (e) => TestUpdateRowModel.fromJson(e as Map<String, dynamic>))
@@ -24,7 +24,7 @@ Map<String, dynamic> _$$TestUpdateModelImplToJson(
     <String, dynamic>{
       'login': instance.login,
       'password': instance.password,
-      'testId': instance.testId,
+      'number': instance.testId,
       'test': instance.test.map((e) => e.toJson()).toList(),
     };
 
@@ -32,12 +32,12 @@ _$TestUpdateRowModelImpl _$$TestUpdateRowModelImplFromJson(
         Map<String, dynamic> json) =>
     _$TestUpdateRowModelImpl(
       question: json['question'] as String? ?? '',
-      answer: json['answer'] as String? ?? '',
+      answer: json['correct_answer'] as String? ?? '',
     );
 
 Map<String, dynamic> _$$TestUpdateRowModelImplToJson(
         _$TestUpdateRowModelImpl instance) =>
     <String, dynamic>{
       'question': instance.question,
-      'answer': instance.answer,
+      'correct_answer': instance.answer,
     };

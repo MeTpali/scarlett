@@ -1,9 +1,8 @@
-import 'dart:convert';
-
 import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
 
 import '../clients/test_check_client.dart';
+import '../models/test_results_model.dart';
 import '../models/test_update_model.dart';
 
 @singleton
@@ -12,10 +11,11 @@ class TestCheckService {
 
   const TestCheckService(@testCheckClient this._client);
 
-  Future<TestCheckResponse> sendPhoto({
+  Future<TestResultsModel> sendPhoto({
     required String path,
     required String testId,
   }) async {
+    final testNumber = int.parse(testId);
     final fileName = path.split('/').last;
     final data = FormData.fromMap({
       'photo': [
@@ -26,28 +26,37 @@ class TestCheckService {
       ],
     });
 
-    // final response = await _client.post<dynamic>(
-    //   '/upload',
-    //   data: data,
-    // );
-
-    return TestCheckResponse();
+    Map<String, dynamic> response;
+    try {
+      response = await _client.post<dynamic>(
+        '/upload',
+        queryParameters: {
+          'test_number': testNumber,
+        },
+        data: data,
+      ) as Map<String, dynamic>;
+      // ignore: avoid_catches_without_on_clauses
+    } catch (e) {
+      return const TestResultsModel.error(
+        message:
+            'Упс. Кажется фотография получилась не очень удачной. Попробуйте перефотографировать:)',
+      );
+    }
+    return TestResultsModel.fromJson(response);
   }
 
-  Future<TestCheckResponse> sendTest(TestUpdateModel model) async {
-    final sex = model.toJson();
+  Future<bool> sendTest(TestUpdateModel model) async {
+    final data = model.toJson();
 
-    // final response = await _client.post<dynamic>(
-    //   '/upload',
-    //   data: data,
-    // );
-
-    return TestCheckResponse();
+    try {
+      await _client.post<dynamic>(
+        '/auth',
+        data: data,
+      );
+      // ignore: avoid_catches_without_on_clauses
+    } catch (e) {
+      return false;
+    }
+    return true;
   }
-}
-
-class TestCheckResponse {
-  const TestCheckResponse();
-  factory TestCheckResponse.fromJson(Map<String, dynamic> json) =>
-      const TestCheckResponse();
 }

@@ -4,11 +4,9 @@ import 'package:flutter/material.dart';
 import '../di/di.dart';
 import '../features/main_button/main_button.dart';
 import '../features/results/test_table.dart';
-import '../features/settings/button.dart';
 import '../models/test_update_model.dart';
 import '../services/test_check.dart';
 import '../theme/constants/types.dart';
-import 'app_router/app_router.dart';
 
 @RoutePage()
 class TestUpdateScreen extends StatefulWidget {
@@ -192,6 +190,7 @@ class _TestUpdateScreenState extends State<TestUpdateScreen> {
                 title: const Text('Send'),
                 onPressed: () async {
                   await getIt.get<TestCheckService>().sendTest(model);
+                  await context.router.maybePop();
                 },
                 type: sendButtonType,
               ),

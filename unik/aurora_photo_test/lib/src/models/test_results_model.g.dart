@@ -9,20 +9,22 @@ part of 'test_results_model.dart';
 _$ResultsTestResultsModelImpl _$$ResultsTestResultsModelImplFromJson(
         Map<String, dynamic> json) =>
     _$ResultsTestResultsModelImpl(
-      answersList: (json['test'] as List<dynamic>)
+      answersList: (json['answers'] as List<dynamic>)
           .map((e) => TestAnswerModel.fromJson(e as Map<String, dynamic>))
           .toList(),
       correctAnswers: (json['total-correct-answers'] as num).toInt(),
       incorrectAnswers: (json['total-incorrect-answers'] as num).toInt(),
+      testNumber: (json['test_number'] as num).toInt(),
       $type: json['runtimeType'] as String?,
     );
 
 Map<String, dynamic> _$$ResultsTestResultsModelImplToJson(
         _$ResultsTestResultsModelImpl instance) =>
     <String, dynamic>{
-      'test': instance.answersList,
+      'answers': instance.answersList,
       'total-correct-answers': instance.correctAnswers,
       'total-incorrect-answers': instance.incorrectAnswers,
+      'test_number': instance.testNumber,
       'runtimeType': instance.$type,
     };
 

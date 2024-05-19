@@ -6,9 +6,10 @@ part 'test_results_model.g.dart';
 @freezed
 class TestResultsModel with _$TestResultsModel {
   const factory TestResultsModel.results({
-    @JsonKey(name: 'test') required List<TestAnswerModel> answersList,
+    @JsonKey(name: 'answers') required List<TestAnswerModel> answersList,
     @JsonKey(name: 'total-correct-answers') required int correctAnswers,
     @JsonKey(name: 'total-incorrect-answers') required int incorrectAnswers,
+    @JsonKey(name: 'test_number') required int testNumber,
   }) = _ResultsTestResultsModel;
 
   const factory TestResultsModel.loading() = _LoadingTestResultsModel;

@@ -9,7 +9,7 @@ class TestUpdateModel with _$TestUpdateModel {
   const factory TestUpdateModel({
     @JsonKey(name: 'login') @Default('') String login,
     @JsonKey(name: 'password') @Default('') String password,
-    @JsonKey(name: 'testId') @Default('') String testId,
+    @JsonKey(name: 'number') @Default('') String testId,
     @JsonKey(name: 'test') @Default([]) List<TestUpdateRowModel> test,
   }) = _TestUpdateModel;
 
@@ -22,7 +22,7 @@ class TestUpdateRowModel with _$TestUpdateRowModel {
   @JsonSerializable(explicitToJson: true)
   const factory TestUpdateRowModel({
     @JsonKey(name: 'question') @Default('') String question,
-    @JsonKey(name: 'answer') @Default('') String answer,
+    @JsonKey(name: 'correct_answer') @Default('') String answer,
   }) = _TestUpdateRowModel;
 
   factory TestUpdateRowModel.fromJson(Map<String, dynamic> json) =>

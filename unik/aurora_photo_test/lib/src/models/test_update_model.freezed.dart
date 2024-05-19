@@ -24,7 +24,7 @@ mixin _$TestUpdateModel {
   String get login => throw _privateConstructorUsedError;
   @JsonKey(name: 'password')
   String get password => throw _privateConstructorUsedError;
-  @JsonKey(name: 'testId')
+  @JsonKey(name: 'number')
   String get testId => throw _privateConstructorUsedError;
   @JsonKey(name: 'test')
   List<TestUpdateRowModel> get test => throw _privateConstructorUsedError;
@@ -44,7 +44,7 @@ abstract class $TestUpdateModelCopyWith<$Res> {
   $Res call(
       {@JsonKey(name: 'login') String login,
       @JsonKey(name: 'password') String password,
-      @JsonKey(name: 'testId') String testId,
+      @JsonKey(name: 'number') String testId,
       @JsonKey(name: 'test') List<TestUpdateRowModel> test});
 }
 
@@ -98,7 +98,7 @@ abstract class _$$TestUpdateModelImplCopyWith<$Res>
   $Res call(
       {@JsonKey(name: 'login') String login,
       @JsonKey(name: 'password') String password,
-      @JsonKey(name: 'testId') String testId,
+      @JsonKey(name: 'number') String testId,
       @JsonKey(name: 'test') List<TestUpdateRowModel> test});
 }
 
@@ -146,7 +146,7 @@ class _$TestUpdateModelImpl implements _TestUpdateModel {
   const _$TestUpdateModelImpl(
       {@JsonKey(name: 'login') this.login = '',
       @JsonKey(name: 'password') this.password = '',
-      @JsonKey(name: 'testId') this.testId = '',
+      @JsonKey(name: 'number') this.testId = '',
       @JsonKey(name: 'test') final List<TestUpdateRowModel> test = const []})
       : _test = test;
 
@@ -160,7 +160,7 @@ class _$TestUpdateModelImpl implements _TestUpdateModel {
   @JsonKey(name: 'password')
   final String password;
   @override
-  @JsonKey(name: 'testId')
+  @JsonKey(name: 'number')
   final String testId;
   final List<TestUpdateRowModel> _test;
   @override
@@ -212,7 +212,7 @@ abstract class _TestUpdateModel implements TestUpdateModel {
   const factory _TestUpdateModel(
           {@JsonKey(name: 'login') final String login,
           @JsonKey(name: 'password') final String password,
-          @JsonKey(name: 'testId') final String testId,
+          @JsonKey(name: 'number') final String testId,
           @JsonKey(name: 'test') final List<TestUpdateRowModel> test}) =
       _$TestUpdateModelImpl;
 
@@ -226,7 +226,7 @@ abstract class _TestUpdateModel implements TestUpdateModel {
   @JsonKey(name: 'password')
   String get password;
   @override
-  @JsonKey(name: 'testId')
+  @JsonKey(name: 'number')
   String get testId;
   @override
   @JsonKey(name: 'test')
@@ -245,7 +245,7 @@ TestUpdateRowModel _$TestUpdateRowModelFromJson(Map<String, dynamic> json) {
 mixin _$TestUpdateRowModel {
   @JsonKey(name: 'question')
   String get question => throw _privateConstructorUsedError;
-  @JsonKey(name: 'answer')
+  @JsonKey(name: 'correct_answer')
   String get answer => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -262,7 +262,7 @@ abstract class $TestUpdateRowModelCopyWith<$Res> {
   @useResult
   $Res call(
       {@JsonKey(name: 'question') String question,
-      @JsonKey(name: 'answer') String answer});
+      @JsonKey(name: 'correct_answer') String answer});
 }
 
 /// @nodoc
@@ -304,7 +304,7 @@ abstract class _$$TestUpdateRowModelImplCopyWith<$Res>
   @useResult
   $Res call(
       {@JsonKey(name: 'question') String question,
-      @JsonKey(name: 'answer') String answer});
+      @JsonKey(name: 'correct_answer') String answer});
 }
 
 /// @nodoc
@@ -340,7 +340,7 @@ class __$$TestUpdateRowModelImplCopyWithImpl<$Res>
 class _$TestUpdateRowModelImpl implements _TestUpdateRowModel {
   const _$TestUpdateRowModelImpl(
       {@JsonKey(name: 'question') this.question = '',
-      @JsonKey(name: 'answer') this.answer = ''});
+      @JsonKey(name: 'correct_answer') this.answer = ''});
 
   factory _$TestUpdateRowModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$TestUpdateRowModelImplFromJson(json);
@@ -349,7 +349,7 @@ class _$TestUpdateRowModelImpl implements _TestUpdateRowModel {
   @JsonKey(name: 'question')
   final String question;
   @override
-  @JsonKey(name: 'answer')
+  @JsonKey(name: 'correct_answer')
   final String answer;
 
   @override
@@ -388,8 +388,9 @@ class _$TestUpdateRowModelImpl implements _TestUpdateRowModel {
 
 abstract class _TestUpdateRowModel implements TestUpdateRowModel {
   const factory _TestUpdateRowModel(
-      {@JsonKey(name: 'question') final String question,
-      @JsonKey(name: 'answer') final String answer}) = _$TestUpdateRowModelImpl;
+          {@JsonKey(name: 'question') final String question,
+          @JsonKey(name: 'correct_answer') final String answer}) =
+      _$TestUpdateRowModelImpl;
 
   factory _TestUpdateRowModel.fromJson(Map<String, dynamic> json) =
       _$TestUpdateRowModelImpl.fromJson;
@@ -398,7 +399,7 @@ abstract class _TestUpdateRowModel implements TestUpdateRowModel {
   @JsonKey(name: 'question')
   String get question;
   @override
-  @JsonKey(name: 'answer')
+  @JsonKey(name: 'correct_answer')
   String get answer;
   @override
   @JsonKey(ignore: true)
