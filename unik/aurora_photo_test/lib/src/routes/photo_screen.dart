@@ -104,7 +104,6 @@ class _PhotoScreenState extends ConsumerState<PhotoScreen>
     final theme = TopGTheme.of(context);
     final settingsTheme = theme.settings;
     return Scaffold(
-      extendBodyBehindAppBar: true,
       backgroundColor: settingsTheme.backgroundColor,
       appBar: AppBar(
         backgroundColor: settingsTheme.backgroundColor,
