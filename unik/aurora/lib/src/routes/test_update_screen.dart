@@ -22,7 +22,7 @@ class _TestUpdateScreenState extends State<TestUpdateScreen> {
   TestUpdateModel model = const TestUpdateModel();
   @override
   Widget build(BuildContext context) {
-    var sendButtonType = TopGType.action;
+    var sendButtonType = TopGType.statistics;
     if (model.login.isEmpty ||
         model.password.isEmpty ||
         model.testId.isEmpty ||
@@ -36,7 +36,7 @@ class _TestUpdateScreenState extends State<TestUpdateScreen> {
     }
 
     final removeButtonType =
-        model.test.isEmpty ? TopGType.disabled : TopGType.action;
+        model.test.isEmpty ? TopGType.disabled : TopGType.statistics;
     return Scaffold(
       appBar: AppBar(
         title: Text(S.of(context).updatingTheTests),
@@ -49,7 +49,7 @@ class _TestUpdateScreenState extends State<TestUpdateScreen> {
               padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
               child: TextField(
                 decoration: InputDecoration(
-                  border: const OutlineInputBorder(),
+                  border: const UnderlineInputBorder(),
                   labelText: S.of(context).login,
                 ),
                 onChanged: (value) => setState(() {
@@ -62,7 +62,7 @@ class _TestUpdateScreenState extends State<TestUpdateScreen> {
               padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
               child: TextField(
                 decoration: InputDecoration(
-                  border: const OutlineInputBorder(),
+                  border: const UnderlineInputBorder(),
                   labelText: S.of(context).password,
                 ),
                 onChanged: (value) => setState(() {
@@ -75,7 +75,7 @@ class _TestUpdateScreenState extends State<TestUpdateScreen> {
               padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
               child: TextField(
                 decoration: InputDecoration(
-                  border: const OutlineInputBorder(),
+                  border: const UnderlineInputBorder(),
                   labelText: S.of(context).testNumber,
                 ),
                 onChanged: (value) => setState(() {
@@ -145,42 +145,38 @@ class _TestUpdateScreenState extends State<TestUpdateScreen> {
             const SizedBox(height: 15),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 8),
-              child: Row(
+              child: Column(
                 children: [
-                  Expanded(
-                    child: MainButton(
-                      title: const Text('-'),
-                      onPressed: () {
-                        setState(() {
-                          final newList = List<TestUpdateRowModel>.from(
-                            model.test,
-                            growable: true,
-                          );
-                          newList.removeLast();
-                          final newModel = model.copyWith(test: newList);
-                          model = newModel;
-                        });
-                      },
-                      type: removeButtonType,
-                    ),
+                  MainButton(
+                    title: Text(S.of(context).remove),
+                    onPressed: () {
+                      setState(() {
+                        final newList = List<TestUpdateRowModel>.from(
+                          model.test,
+                          growable: true,
+                        );
+                        newList.removeLast();
+                        final newModel = model.copyWith(test: newList);
+                        model = newModel;
+                      });
+                    },
+                    type: removeButtonType,
                   ),
-                  const SizedBox(width: 15),
-                  Expanded(
-                    child: MainButton(
-                      title: const Text('+'),
-                      onPressed: () {
-                        setState(() {
-                          final newList = List<TestUpdateRowModel>.from(
-                            model.test,
-                            growable: true,
-                          );
-                          newList.add(const TestUpdateRowModel());
-                          final newModel = model.copyWith(test: newList);
-                          model = newModel;
-                        });
-                      },
-                      type: TopGType.action,
-                    ),
+                  const SizedBox(height: 15),
+                  MainButton(
+                    title: Text(S.of(context).add),
+                    onPressed: () {
+                      setState(() {
+                        final newList = List<TestUpdateRowModel>.from(
+                          model.test,
+                          growable: true,
+                        );
+                        newList.add(const TestUpdateRowModel());
+                        final newModel = model.copyWith(test: newList);
+                        model = newModel;
+                      });
+                    },
+                    type: TopGType.statistics,
                   ),
                 ],
               ),

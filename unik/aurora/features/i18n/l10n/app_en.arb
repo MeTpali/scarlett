@@ -43,5 +43,7 @@
     "cameraPhotoError": "Oops. It seems the photo didn't turn out very well. Try to take a photo:)",
     "ok": "Ok",
     "testNumber": "Test number",
-    "send": "Send"
+    "send": "Send",
+    "add": "Add",
+    "remove": "Remove"
 }

@@ -135,4 +135,10 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get send => 'Отправить';
+
+  @override
+  String get add => 'Добавить';
+
+  @override
+  String get remove => 'Убрать';
 }

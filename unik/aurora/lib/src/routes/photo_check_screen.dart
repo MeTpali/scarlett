@@ -25,7 +25,7 @@ class PhotoCheckScreen extends ConsumerWidget {
 
     final sendButtonType = photoCheckModel.maybeMap(
       orElse: () => TopGType.disabled,
-      photo: (_) => TopGType.action,
+      photo: (_) => TopGType.statistics,
     );
     return Scaffold(
       appBar: AppBar(

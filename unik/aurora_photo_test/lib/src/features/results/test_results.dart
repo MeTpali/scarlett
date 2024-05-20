@@ -19,11 +19,13 @@ class TestResultsWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final percent = double.parse(
-        (correctAnswers / (correctAnswers + incorrectAnswers))
+    final percent = correctAnswers == 0 && incorrectAnswers == 0
+        ? 0.0
+        : double.parse((correctAnswers / (correctAnswers + incorrectAnswers))
             .toStringAsPrecision(2));
-    final score =
-        (correctAnswers / (correctAnswers + incorrectAnswers) * 100).round();
+    final score = correctAnswers == 0 && incorrectAnswers == 0
+        ? 0.0
+        : (correctAnswers / (correctAnswers + incorrectAnswers) * 100).round();
 
     final fillColor = percent < 0.5
         ? TopGColors.yRed

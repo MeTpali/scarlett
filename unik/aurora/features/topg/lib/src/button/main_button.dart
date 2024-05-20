@@ -41,6 +41,9 @@ class MainButton extends StatelessWidget {
           overlayColor: MaterialStateProperty.all(
             Color.lerp(type.resolveColor(context), Colors.white, 0.2),
           ),
+          shape: MaterialStateProperty.all(RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10),
+          )),
         ),
       ),
     );

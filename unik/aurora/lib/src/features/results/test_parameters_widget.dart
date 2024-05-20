@@ -24,7 +24,7 @@ class _TestParametersWidgetState extends ConsumerState<TestParametersWidget> {
       orElse: () => '',
       parameters: (params) => params.path,
     );
-    final buttonType = testId.isEmpty ? TopGType.disabled : TopGType.action;
+    final buttonType = testId.isEmpty ? TopGType.disabled : TopGType.statistics;
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -32,7 +32,7 @@ class _TestParametersWidgetState extends ConsumerState<TestParametersWidget> {
           padding: const EdgeInsets.symmetric(horizontal: 15),
           child: TextField(
             decoration: InputDecoration(
-              border: const OutlineInputBorder(),
+              border: const UnderlineInputBorder(),
               labelText: S.of(context).testNumber,
             ),
             onChanged: (value) => setState(() {

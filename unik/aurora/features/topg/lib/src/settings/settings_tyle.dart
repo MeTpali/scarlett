@@ -13,7 +13,9 @@ class SettingsTyle extends StatelessWidget {
     required this.title,
     required this.icon,
     required this.onTap,
-    this.trailing,
+    this.trailing = const SizedBox(
+      width: 39.5,
+    ),
     this.lastInBlock = false,
     super.key,
   });
@@ -36,7 +38,7 @@ class SettingsTyle extends StatelessWidget {
         icon,
         color: settingsTheme.iconColor,
       ),
-      title: Text(title),
+      title: Center(child: Text(title)),
       trailing: trailing,
       onTap: onTap,
       shape: shape,

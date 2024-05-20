@@ -147,7 +147,6 @@ class _PhotoScreenState extends ConsumerState<PhotoScreen>
               ),
             ),
           ),
-          const SizedBox(height: 10),
           InkWell(
             onTap: controller != null && controller!.value.isInitialized
                 ? () async =>

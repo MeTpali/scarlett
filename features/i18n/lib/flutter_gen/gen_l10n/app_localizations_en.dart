@@ -135,4 +135,10 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get send => 'Send';
+
+  @override
+  String get add => 'Add';
+
+  @override
+  String get remove => 'Remove';
 }
