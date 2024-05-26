@@ -129,12 +129,13 @@ class SkeletButton extends StatelessWidget {
           shadowColor: MaterialStateProperty.all(Colors.transparent),
           surfaceTintColor: MaterialStateProperty.all(Colors.transparent),
           backgroundColor: MaterialStateProperty.all(Colors.transparent),
-          foregroundColor: MaterialStateProperty.all(type.resolveColor()),
+          foregroundColor:
+              MaterialStateProperty.all(type.resolveColor(context)),
           overlayColor: MaterialStateProperty.all(Colors.transparent),
           shape: MaterialStateProperty.all(
             RoundedRectangleBorder(
               side: BorderSide(
-                color: type.resolveColor(),
+                color: type.resolveColor(context),
                 width: 4,
               ),
               borderRadius: const BorderRadius.all(

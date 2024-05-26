@@ -35,10 +35,11 @@ class MainButton extends StatelessWidget {
         style: ButtonStyle(
           shadowColor: MaterialStateProperty.all(Colors.transparent),
           surfaceTintColor: MaterialStateProperty.all(Colors.transparent),
-          backgroundColor: MaterialStateProperty.all(type.resolveColor()),
+          backgroundColor:
+              MaterialStateProperty.all(type.resolveColor(context)),
           foregroundColor: MaterialStateProperty.all(foregroundColor),
           overlayColor: MaterialStateProperty.all(
-            Color.lerp(type.resolveColor(), Colors.white, 0.2),
+            Color.lerp(type.resolveColor(context), Colors.white, 0.2),
           ),
         ),
       ),
