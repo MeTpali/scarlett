@@ -14,6 +14,7 @@ enum TopGType {
   surge,
   warning,
   disabled,
+  transparent,
 }
 
 extension TopGTypeX on TopGType {
@@ -47,6 +48,8 @@ extension TopGTypeX on TopGType {
         return TopGColors.yRed;
       case TopGType.disabled:
         return TopGColors.yMidGrey.withOpacity(0.5);
+      case TopGType.transparent:
+        return Colors.transparent;
     }
   }
 }

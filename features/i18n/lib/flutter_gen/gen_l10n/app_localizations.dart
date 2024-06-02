@@ -368,6 +368,42 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Remove'**
   String get remove;
+
+  /// No description provided for @chooseQuery.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose query'**
+  String get chooseQuery;
+
+  /// No description provided for @query.
+  ///
+  /// In en, this message translates to:
+  /// **'Query'**
+  String get query;
+
+  /// No description provided for @queryS.
+  ///
+  /// In en, this message translates to:
+  /// **'Script'**
+  String get queryS;
+
+  /// No description provided for @sql.
+  ///
+  /// In en, this message translates to:
+  /// **'SQL'**
+  String get sql;
+
+  /// No description provided for @table.
+  ///
+  /// In en, this message translates to:
+  /// **'Table'**
+  String get table;
+
+  /// No description provided for @leave.
+  ///
+  /// In en, this message translates to:
+  /// **'Leave'**
+  String get leave;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

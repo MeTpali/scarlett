@@ -45,5 +45,11 @@
     "testNumber": "Test number",
     "send": "Send",
     "add": "Add",
-    "remove": "Remove"
+    "remove": "Remove",
+    "chooseQuery": "Choose query",
+    "query": "Query",
+    "queryS": "Script",
+    "sql": "SQL",
+    "table": "Table",
+    "leave": "Leave"
 }

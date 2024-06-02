@@ -97,10 +97,5 @@ class DotaTileImage extends StatelessWidget {
           width: 71,
           child: Placeholder(),
         ),
-        loadingBuilder: (context, child, loadingProgress) => const SizedBox(
-          height: 40,
-          width: 71,
-          child: Placeholder(),
-        ),
       );
 }

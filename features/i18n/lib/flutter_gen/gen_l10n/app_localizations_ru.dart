@@ -141,4 +141,22 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get remove => 'Убрать';
+
+  @override
+  String get chooseQuery => 'Выбор запроса';
+
+  @override
+  String get query => 'Запрос';
+
+  @override
+  String get queryS => 'Запрос';
+
+  @override
+  String get sql => 'SQL';
+
+  @override
+  String get table => 'Таблица';
+
+  @override
+  String get leave => 'Выйти';
 }

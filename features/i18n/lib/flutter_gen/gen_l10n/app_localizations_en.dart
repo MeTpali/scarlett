@@ -141,4 +141,22 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get remove => 'Remove';
+
+  @override
+  String get chooseQuery => 'Choose query';
+
+  @override
+  String get query => 'Query';
+
+  @override
+  String get queryS => 'Script';
+
+  @override
+  String get sql => 'SQL';
+
+  @override
+  String get table => 'Table';
+
+  @override
+  String get leave => 'Leave';
 }
