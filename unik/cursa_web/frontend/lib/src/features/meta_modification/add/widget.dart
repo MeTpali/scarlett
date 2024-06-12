@@ -11,7 +11,15 @@ class AddMetaWidget extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final addHeroNotifier = ref.watch(DotaDi.addHero.notifier);
+    final addMetaNotifier = ref.watch(DotaDi.addMeta.notifier);
+    final addMeta = ref.watch(DotaDi.addMeta);
+    final addButtonType = addMeta.hero1Id == 0 ||
+            addMeta.hero2Id == 0 ||
+            addMeta.disadvantage.isEmpty ||
+            addMeta.winrate.isEmpty ||
+            addMeta.matchesPlayed == 0
+        ? TopGType.disabled
+        : TopGType.knowledge;
     return SingleChildScrollView(
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -27,7 +35,7 @@ class AddMetaWidget extends ConsumerWidget {
                     child: TextField(
                       textAlign: TextAlign.center,
                       onChanged: (value) {
-                        addHeroNotifier.updateName(value);
+                        addMetaNotifier.updateFirstHeroId(value);
                       },
                       decoration: const InputDecoration(
                         labelText: 'Идентификатор первого героя',
@@ -41,7 +49,7 @@ class AddMetaWidget extends ConsumerWidget {
                     child: TextField(
                       textAlign: TextAlign.center,
                       onChanged: (value) {
-                        addHeroNotifier.updateName(value);
+                        addMetaNotifier.updateSecondHeroId(value);
                       },
                       decoration: const InputDecoration(
                         labelText: 'Идентификатор второго героя',
@@ -63,7 +71,7 @@ class AddMetaWidget extends ConsumerWidget {
                     child: TextField(
                       textAlign: TextAlign.center,
                       onChanged: (value) {
-                        addHeroNotifier.updateName(value);
+                        addMetaNotifier.updateDisadvantage(value);
                       },
                       decoration: const InputDecoration(
                         labelText: 'Удобство',
@@ -77,7 +85,7 @@ class AddMetaWidget extends ConsumerWidget {
                     child: TextField(
                       textAlign: TextAlign.center,
                       onChanged: (value) {
-                        addHeroNotifier.updateName(value);
+                        addMetaNotifier.updateWinrate(value);
                       },
                       decoration: const InputDecoration(
                         labelText: 'Винрейт',
@@ -91,7 +99,7 @@ class AddMetaWidget extends ConsumerWidget {
                     child: TextField(
                       textAlign: TextAlign.center,
                       onChanged: (value) {
-                        addHeroNotifier.updateName(value);
+                        addMetaNotifier.updateMatchesPlayed(value);
                       },
                       decoration: const InputDecoration(
                         labelText: 'Сыграно матчей',
@@ -107,8 +115,11 @@ class AddMetaWidget extends ConsumerWidget {
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: MainButton(
               title: const Text('Add'),
-              onPressed: () async {},
-              type: TopGType.statistics,
+              onPressed: () async {
+                await addMetaNotifier.add();
+                await context.router.maybePop();
+              },
+              type: addButtonType,
             ),
           ),
           const SizedBox(height: 15),

@@ -54,8 +54,10 @@ class DotaRateTile extends StatelessWidget {
     final rateTileData = theme.dota.rateTileData;
     final color = backgroundType.resolveColor(theme.mode);
 
+    final rateString = rate.toStringAsPrecision(3);
+
     final rateWidget = Text(
-      '$rate%',
+      '$rateString%',
       style: rateTileData.rateStyle,
     );
     final leading = type == RateTileType.left ? symbol : rateWidget;

@@ -3,15 +3,27 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 
 class RadialScoreWidget extends StatelessWidget {
+  /// Widget on foreground in the center of [RadialScoreWidget]
   final Widget child;
+
+  /// The percentage by which the strip should be filled, must be between 0 and 1
   final double percent;
-  final Color fillColor;
+
+  /// Background color of [RadialScoreWidget]
+  final Color backgroundColor;
+
+  /// The part corresponding to the [percent]
   final Color lineColor;
+
+  /// The part corresponding to the 1 - [percent]
   final Color freeColor;
+
+  /// Width of percent line
   final double lineWidth;
+
   const RadialScoreWidget({
     required this.child,
-    required this.fillColor,
+    required this.backgroundColor,
     required this.lineColor,
     required this.freeColor,
     required this.lineWidth,
@@ -26,7 +38,7 @@ class RadialScoreWidget extends StatelessWidget {
           CustomPaint(
             painter: _RadialScorePainter(
               percent: percent,
-              fillColor: fillColor,
+              backgroundColor: backgroundColor,
               lineColor: lineColor,
               freeColor: freeColor,
               lineWidth: lineWidth,
@@ -42,12 +54,12 @@ class RadialScoreWidget extends StatelessWidget {
 
 class _RadialScorePainter extends CustomPainter {
   final double percent;
-  final Color fillColor;
+  final Color backgroundColor;
   final Color lineColor;
   final Color freeColor;
   final double lineWidth;
   _RadialScorePainter({
-    required this.fillColor,
+    required this.backgroundColor,
     required this.lineColor,
     required this.freeColor,
     required this.lineWidth,
@@ -97,7 +109,7 @@ class _RadialScorePainter extends CustomPainter {
 
   void drawBackground(Canvas canvas, Size size) {
     final paint = Paint();
-    paint.color = fillColor;
+    paint.color = backgroundColor;
     paint.style = PaintingStyle.fill;
     canvas.drawOval(Offset.zero & size, paint);
   }

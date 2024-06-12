@@ -18,6 +18,8 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$PickModel {
   List<HeroRateModel> get radiant => throw _privateConstructorUsedError;
   List<HeroRateModel> get dire => throw _privateConstructorUsedError;
+  double get radiantRate => throw _privateConstructorUsedError;
+  double get direRate => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $PickModelCopyWith<PickModel> get copyWith =>
@@ -29,7 +31,11 @@ abstract class $PickModelCopyWith<$Res> {
   factory $PickModelCopyWith(PickModel value, $Res Function(PickModel) then) =
       _$PickModelCopyWithImpl<$Res, PickModel>;
   @useResult
-  $Res call({List<HeroRateModel> radiant, List<HeroRateModel> dire});
+  $Res call(
+      {List<HeroRateModel> radiant,
+      List<HeroRateModel> dire,
+      double radiantRate,
+      double direRate});
 }
 
 /// @nodoc
@@ -47,6 +53,8 @@ class _$PickModelCopyWithImpl<$Res, $Val extends PickModel>
   $Res call({
     Object? radiant = null,
     Object? dire = null,
+    Object? radiantRate = null,
+    Object? direRate = null,
   }) {
     return _then(_value.copyWith(
       radiant: null == radiant
@@ -57,6 +65,14 @@ class _$PickModelCopyWithImpl<$Res, $Val extends PickModel>
           ? _value.dire
           : dire // ignore: cast_nullable_to_non_nullable
               as List<HeroRateModel>,
+      radiantRate: null == radiantRate
+          ? _value.radiantRate
+          : radiantRate // ignore: cast_nullable_to_non_nullable
+              as double,
+      direRate: null == direRate
+          ? _value.direRate
+          : direRate // ignore: cast_nullable_to_non_nullable
+              as double,
     ) as $Val);
   }
 }
@@ -69,7 +85,11 @@ abstract class _$$PickModelImplCopyWith<$Res>
       __$$PickModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<HeroRateModel> radiant, List<HeroRateModel> dire});
+  $Res call(
+      {List<HeroRateModel> radiant,
+      List<HeroRateModel> dire,
+      double radiantRate,
+      double direRate});
 }
 
 /// @nodoc
@@ -85,6 +105,8 @@ class __$$PickModelImplCopyWithImpl<$Res>
   $Res call({
     Object? radiant = null,
     Object? dire = null,
+    Object? radiantRate = null,
+    Object? direRate = null,
   }) {
     return _then(_$PickModelImpl(
       radiant: null == radiant
@@ -95,6 +117,14 @@ class __$$PickModelImplCopyWithImpl<$Res>
           ? _value._dire
           : dire // ignore: cast_nullable_to_non_nullable
               as List<HeroRateModel>,
+      radiantRate: null == radiantRate
+          ? _value.radiantRate
+          : radiantRate // ignore: cast_nullable_to_non_nullable
+              as double,
+      direRate: null == direRate
+          ? _value.direRate
+          : direRate // ignore: cast_nullable_to_non_nullable
+              as double,
     ));
   }
 }
@@ -104,7 +134,9 @@ class __$$PickModelImplCopyWithImpl<$Res>
 class _$PickModelImpl implements _PickModel {
   const _$PickModelImpl(
       {final List<HeroRateModel> radiant = const [],
-      final List<HeroRateModel> dire = const []})
+      final List<HeroRateModel> dire = const [],
+      this.radiantRate = 50.0,
+      this.direRate = 50.0})
       : _radiant = radiant,
         _dire = dire;
 
@@ -127,8 +159,15 @@ class _$PickModelImpl implements _PickModel {
   }
 
   @override
+  @JsonKey()
+  final double radiantRate;
+  @override
+  @JsonKey()
+  final double direRate;
+
+  @override
   String toString() {
-    return 'PickModel(radiant: $radiant, dire: $dire)';
+    return 'PickModel(radiant: $radiant, dire: $dire, radiantRate: $radiantRate, direRate: $direRate)';
   }
 
   @override
@@ -137,14 +176,20 @@ class _$PickModelImpl implements _PickModel {
         (other.runtimeType == runtimeType &&
             other is _$PickModelImpl &&
             const DeepCollectionEquality().equals(other._radiant, _radiant) &&
-            const DeepCollectionEquality().equals(other._dire, _dire));
+            const DeepCollectionEquality().equals(other._dire, _dire) &&
+            (identical(other.radiantRate, radiantRate) ||
+                other.radiantRate == radiantRate) &&
+            (identical(other.direRate, direRate) ||
+                other.direRate == direRate));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(_radiant),
-      const DeepCollectionEquality().hash(_dire));
+      const DeepCollectionEquality().hash(_dire),
+      radiantRate,
+      direRate);
 
   @JsonKey(ignore: true)
   @override
@@ -156,12 +201,18 @@ class _$PickModelImpl implements _PickModel {
 abstract class _PickModel implements PickModel {
   const factory _PickModel(
       {final List<HeroRateModel> radiant,
-      final List<HeroRateModel> dire}) = _$PickModelImpl;
+      final List<HeroRateModel> dire,
+      final double radiantRate,
+      final double direRate}) = _$PickModelImpl;
 
   @override
   List<HeroRateModel> get radiant;
   @override
   List<HeroRateModel> get dire;
+  @override
+  double get radiantRate;
+  @override
+  double get direRate;
   @override
   @JsonKey(ignore: true)
   _$$PickModelImplCopyWith<_$PickModelImpl> get copyWith =>

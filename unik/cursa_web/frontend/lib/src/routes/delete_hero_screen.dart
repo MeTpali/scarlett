@@ -11,7 +11,7 @@ class DeleteHeroScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(
-          title: Text(S.of(context).connectionSettings),
+          title: Text('Удаление героя'),
           centerTitle: true,
         ),
         body: const DeleteHeroWidget(),

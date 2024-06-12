@@ -43,7 +43,7 @@ class _ChatTextFieldState extends State<ChatTextField> {
     final theme = TopGTheme.of(context);
     final chatTheme = theme.chat;
     return ColoredBox(
-      color: theme.colorScheme.background,
+      color: theme.colorScheme.surface,
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
         child: Row(

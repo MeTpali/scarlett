@@ -24,6 +24,7 @@ class SettingsScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text(S.of(context).settings),
         centerTitle: true,
+        scrolledUnderElevation: 0,
       ),
       body: SettingsView(
         settingBlocksList: [
@@ -55,7 +56,7 @@ class SettingsScreen extends StatelessWidget {
               // Об авторе
               SettingsTyle(
                 title: 'Об авторе',
-                icon: themeIcon,
+                icon: Icons.info_outline_rounded,
                 lastInBlock: true,
                 onTap: () async {
                   await context.router.push(const AuthorRoute());
@@ -91,6 +92,38 @@ class SettingsScreen extends StatelessWidget {
                 lastInBlock: true,
                 onTap: () async {
                   await context.router.push(const DeleteHeroRoute());
+                },
+              ),
+            ],
+          ),
+          // Изменение меты
+          SettingsBlock(
+            title: 'Meta',
+            hasDivider: true,
+            settingsList: [
+              // Добавление героя
+              SettingsTyle(
+                title: 'Добавление мета',
+                icon: Icons.add,
+                onTap: () async {
+                  await context.router.push(const AddMetaRoute());
+                },
+              ),
+              // Изменение героя
+              SettingsTyle(
+                title: 'Изменение мета',
+                icon: Icons.update,
+                onTap: () async {
+                  await context.router.push(const UpdateMetaRoute());
+                },
+              ),
+              // Удаление героя
+              SettingsTyle(
+                title: 'Удаление мета',
+                icon: Icons.delete,
+                lastInBlock: true,
+                onTap: () async {
+                  await context.router.push(const DeleteMetaRoute());
                 },
               ),
             ],

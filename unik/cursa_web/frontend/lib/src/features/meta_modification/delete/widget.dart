@@ -4,61 +4,54 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:topg/topg.dart';
 
 import '../../../di/dota_di.dart';
-import '../../model_lists/hero_picker.dart';
-import '../../tyles/hero.dart';
+import '../../model_lists/meta_list.dart';
 
-class DeleteHeroWidget extends ConsumerWidget {
-  const DeleteHeroWidget({super.key});
+class DeleteMetaWidget extends ConsumerWidget {
+  const DeleteMetaWidget({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final deleteHero = ref.watch(DotaDi.deleteHero);
-    final deleteHeroNotifier = ref.watch(DotaDi.deleteHero.notifier);
+    final deleteMetaNotifier = ref.watch(DotaDi.deleteMeta.notifier);
+    final deleteMeta = ref.watch(DotaDi.deleteMeta);
+    final deleteButtonType =
+        deleteMeta.id == 0 ? TopGType.disabled : TopGType.warning;
     return SingleChildScrollView(
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
           const SizedBox(height: 15),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16),
-            child: MainButton(
-              title: const Text('Выбрать героя'),
-              onPressed: () async {
-                await showDialog<dynamic>(
-                  context: context,
-                  builder: (context) => Material(
-                    child: SizedBox(
-                      height: MediaQuery.of(context).size.height - 100,
-                      child: HeroPicker(
-                        onTap: (hero) {
-                          deleteHeroNotifier.chooseHero(hero);
-                          Navigator.of(context).pop();
-                        },
-                      ),
-                    ),
-                  ),
-                );
+            padding: const EdgeInsets.symmetric(horizontal: 8),
+            child: TextField(
+              textAlign: TextAlign.center,
+              onChanged: (value) {
+                deleteMetaNotifier.updateId(value);
               },
-              type: TopGType.statistics,
+              decoration: const InputDecoration(
+                labelText: 'Идентификатор',
+              ),
             ),
           ),
-          if (deleteHero.hero != null) ...[
-            const SizedBox(height: 15),
-            HeroTyle(hero: deleteHero.hero!),
-          ],
           const SizedBox(height: 15),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: MainButton(
               title: const Text('Delete'),
               onPressed: () async {
-                await deleteHeroNotifier.deleteHero();
+                await deleteMetaNotifier.delete();
                 await context.router.maybePop();
               },
-              type: deleteHero.hero == null
-                  ? TopGType.disabled
-                  : TopGType.statistics,
+              type: deleteButtonType,
             ),
+          ),
+          const SizedBox(height: 15),
+          MetaList(
+            shrinkWrap: true,
+            showFilters: true,
+            onTap: (meta) async {
+              await deleteMetaNotifier.delete(meta.id);
+              await context.router.maybePop();
+            },
           ),
         ],
       ),

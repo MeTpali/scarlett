@@ -58,8 +58,6 @@ abstract class TopGColorScheme {
     onSecondary: TopGColors.blackFogra,
     error: TopGColors.yRed,
     onError: TopGColors.white,
-    background: TopGColors.white,
-    onBackground: TopGColors.blackFogra,
     surface: TopGColors.white,
     onSurface: TopGColors.blackFogra,
   );
@@ -72,8 +70,6 @@ abstract class TopGColorScheme {
     onSecondary: TopGColors.blackFogra,
     error: TopGColors.yRed,
     onError: TopGColors.blackFogra,
-    background: TopGColors.eerieBlack,
-    onBackground: TopGColors.white,
     surface: TopGColors.eerieBlack,
     onSurface: TopGColors.white,
   );

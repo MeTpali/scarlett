@@ -9,13 +9,22 @@ class AuthorScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(
-          title: Text(S.of(context).connectionSettings),
+          title: Text('Информация'),
           centerTitle: true,
         ),
         body: const Center(
           child: Text(
-            'lalal',
+            '''Автор:
+Терещук Артемий Алексеевич
+Группа:
+М3О-310Б-21
+Тема курсовой:
+Контрпики dota 2
+''',
             textAlign: TextAlign.center,
+            style: TextStyle(
+              fontSize: 20,
+            ),
           ),
         ),
       );

@@ -1,7 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../models/delete_hero_model/delete_hero_model.dart';
 import '../../../models/heroes/hero_model.dart';
+import '../../../models/heroes_modification/delete_hero_model/delete_hero_model.dart';
 import '../../../repositories/heroes_repo.dart';
 import '../../../services/heroes_service.dart';
 

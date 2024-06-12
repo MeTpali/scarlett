@@ -55,7 +55,7 @@ class AddHeroWidget extends ConsumerWidget {
               },
               type: addHero.name.isEmpty || addHero.icon.isEmpty
                   ? TopGType.disabled
-                  : TopGType.statistics,
+                  : TopGType.knowledge,
             ),
           ),
         ],

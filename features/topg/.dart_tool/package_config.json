@@ -15,9 +15,9 @@
     },
     {
       "name": "args",
-      "rootUri": "file:///C:/Users/tarte/AppData/Local/Pub/Cache/hosted/pub.dev/args-2.4.2",
+      "rootUri": "file:///C:/Users/tarte/AppData/Local/Pub/Cache/hosted/pub.dev/args-2.5.0",
       "packageUri": "lib/",
-      "languageVersion": "2.19"
+      "languageVersion": "3.0"
     },
     {
       "name": "async",
@@ -45,9 +45,9 @@
     },
     {
       "name": "build_daemon",
-      "rootUri": "file:///C:/Users/tarte/AppData/Local/Pub/Cache/hosted/pub.dev/build_daemon-4.0.1",
+      "rootUri": "file:///C:/Users/tarte/AppData/Local/Pub/Cache/hosted/pub.dev/build_daemon-4.0.2",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "3.4"
     },
     {
       "name": "build_resolvers",
@@ -57,9 +57,9 @@
     },
     {
       "name": "build_runner",
-      "rootUri": "file:///C:/Users/tarte/AppData/Local/Pub/Cache/hosted/pub.dev/build_runner-2.4.9",
+      "rootUri": "file:///C:/Users/tarte/AppData/Local/Pub/Cache/hosted/pub.dev/build_runner-2.4.10",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "3.4"
     },
     {
       "name": "build_runner_core",
@@ -123,9 +123,9 @@
     },
     {
       "name": "cupertino_icons",
-      "rootUri": "file:///C:/Users/tarte/AppData/Local/Pub/Cache/hosted/pub.dev/cupertino_icons-1.0.6",
+      "rootUri": "file:///C:/Users/tarte/AppData/Local/Pub/Cache/hosted/pub.dev/cupertino_icons-1.0.8",
       "packageUri": "lib/",
-      "languageVersion": "2.19"
+      "languageVersion": "3.1"
     },
     {
       "name": "dart_style",
@@ -167,7 +167,7 @@
       "name": "flutter",
       "rootUri": "file:///C:/Users/tarte/FlutterDev/flutter/packages/flutter",
       "packageUri": "lib/",
-      "languageVersion": "3.2"
+      "languageVersion": "3.3"
     },
     {
       "name": "flutter_lints",
@@ -179,7 +179,7 @@
       "name": "flutter_test",
       "rootUri": "file:///C:/Users/tarte/FlutterDev/flutter/packages/flutter_test",
       "packageUri": "lib/",
-      "languageVersion": "3.2"
+      "languageVersion": "3.3"
     },
     {
       "name": "flutter_web_plugins",
@@ -189,7 +189,7 @@
     },
     {
       "name": "freezed",
-      "rootUri": "file:///C:/Users/tarte/AppData/Local/Pub/Cache/hosted/pub.dev/freezed-2.5.1",
+      "rootUri": "file:///C:/Users/tarte/AppData/Local/Pub/Cache/hosted/pub.dev/freezed-2.5.2",
       "packageUri": "lib/",
       "languageVersion": "2.17"
     },
@@ -243,27 +243,27 @@
     },
     {
       "name": "json_annotation",
-      "rootUri": "file:///C:/Users/tarte/AppData/Local/Pub/Cache/hosted/pub.dev/json_annotation-4.8.1",
+      "rootUri": "file:///C:/Users/tarte/AppData/Local/Pub/Cache/hosted/pub.dev/json_annotation-4.9.0",
       "packageUri": "lib/",
-      "languageVersion": "2.19"
+      "languageVersion": "3.0"
     },
     {
       "name": "leak_tracker",
-      "rootUri": "file:///C:/Users/tarte/AppData/Local/Pub/Cache/hosted/pub.dev/leak_tracker-10.0.0",
+      "rootUri": "file:///C:/Users/tarte/AppData/Local/Pub/Cache/hosted/pub.dev/leak_tracker-10.0.4",
       "packageUri": "lib/",
-      "languageVersion": "3.1"
+      "languageVersion": "3.2"
     },
     {
       "name": "leak_tracker_flutter_testing",
-      "rootUri": "file:///C:/Users/tarte/AppData/Local/Pub/Cache/hosted/pub.dev/leak_tracker_flutter_testing-2.0.1",
+      "rootUri": "file:///C:/Users/tarte/AppData/Local/Pub/Cache/hosted/pub.dev/leak_tracker_flutter_testing-3.0.3",
       "packageUri": "lib/",
-      "languageVersion": "3.1"
+      "languageVersion": "3.2"
     },
     {
       "name": "leak_tracker_testing",
-      "rootUri": "file:///C:/Users/tarte/AppData/Local/Pub/Cache/hosted/pub.dev/leak_tracker_testing-2.0.1",
+      "rootUri": "file:///C:/Users/tarte/AppData/Local/Pub/Cache/hosted/pub.dev/leak_tracker_testing-3.0.1",
       "packageUri": "lib/",
-      "languageVersion": "3.1"
+      "languageVersion": "3.2"
     },
     {
       "name": "lints",
@@ -291,7 +291,7 @@
     },
     {
       "name": "meta",
-      "rootUri": "file:///C:/Users/tarte/AppData/Local/Pub/Cache/hosted/pub.dev/meta-1.11.0",
+      "rootUri": "file:///C:/Users/tarte/AppData/Local/Pub/Cache/hosted/pub.dev/meta-1.12.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -357,27 +357,27 @@
     },
     {
       "name": "pubspec_parse",
-      "rootUri": "file:///C:/Users/tarte/AppData/Local/Pub/Cache/hosted/pub.dev/pubspec_parse-1.2.3",
+      "rootUri": "file:///C:/Users/tarte/AppData/Local/Pub/Cache/hosted/pub.dev/pubspec_parse-1.3.0",
       "packageUri": "lib/",
-      "languageVersion": "2.18"
+      "languageVersion": "3.0"
     },
     {
       "name": "shared_preferences",
-      "rootUri": "file:///C:/Users/tarte/AppData/Local/Pub/Cache/hosted/pub.dev/shared_preferences-2.2.2",
+      "rootUri": "file:///C:/Users/tarte/AppData/Local/Pub/Cache/hosted/pub.dev/shared_preferences-2.2.3",
       "packageUri": "lib/",
-      "languageVersion": "2.19"
+      "languageVersion": "3.1"
     },
     {
       "name": "shared_preferences_android",
-      "rootUri": "file:///C:/Users/tarte/AppData/Local/Pub/Cache/hosted/pub.dev/shared_preferences_android-2.2.1",
+      "rootUri": "file:///C:/Users/tarte/AppData/Local/Pub/Cache/hosted/pub.dev/shared_preferences_android-2.2.3",
       "packageUri": "lib/",
-      "languageVersion": "2.19"
+      "languageVersion": "3.4"
     },
     {
       "name": "shared_preferences_foundation",
-      "rootUri": "file:///C:/Users/tarte/AppData/Local/Pub/Cache/hosted/pub.dev/shared_preferences_foundation-2.3.5",
+      "rootUri": "file:///C:/Users/tarte/AppData/Local/Pub/Cache/hosted/pub.dev/shared_preferences_foundation-2.4.0",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "3.2"
     },
     {
       "name": "shared_preferences_linux",
@@ -411,9 +411,9 @@
     },
     {
       "name": "shelf_web_socket",
-      "rootUri": "file:///C:/Users/tarte/AppData/Local/Pub/Cache/hosted/pub.dev/shelf_web_socket-1.0.4",
+      "rootUri": "file:///C:/Users/tarte/AppData/Local/Pub/Cache/hosted/pub.dev/shelf_web_socket-2.0.0",
       "packageUri": "lib/",
-      "languageVersion": "2.17"
+      "languageVersion": "3.0"
     },
     {
       "name": "sky_engine",
@@ -465,7 +465,7 @@
     },
     {
       "name": "test_api",
-      "rootUri": "file:///C:/Users/tarte/AppData/Local/Pub/Cache/hosted/pub.dev/test_api-0.6.1",
+      "rootUri": "file:///C:/Users/tarte/AppData/Local/Pub/Cache/hosted/pub.dev/test_api-0.7.0",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
@@ -489,9 +489,9 @@
     },
     {
       "name": "vm_service",
-      "rootUri": "file:///C:/Users/tarte/AppData/Local/Pub/Cache/hosted/pub.dev/vm_service-13.0.0",
+      "rootUri": "file:///C:/Users/tarte/AppData/Local/Pub/Cache/hosted/pub.dev/vm_service-14.2.1",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "3.3"
     },
     {
       "name": "watcher",
@@ -506,16 +506,22 @@
       "languageVersion": "3.3"
     },
     {
+      "name": "web_socket",
+      "rootUri": "file:///C:/Users/tarte/AppData/Local/Pub/Cache/hosted/pub.dev/web_socket-0.1.5",
+      "packageUri": "lib/",
+      "languageVersion": "3.3"
+    },
+    {
       "name": "web_socket_channel",
-      "rootUri": "file:///C:/Users/tarte/AppData/Local/Pub/Cache/hosted/pub.dev/web_socket_channel-2.4.5",
+      "rootUri": "file:///C:/Users/tarte/AppData/Local/Pub/Cache/hosted/pub.dev/web_socket_channel-3.0.0",
       "packageUri": "lib/",
       "languageVersion": "3.3"
     },
     {
       "name": "win32",
-      "rootUri": "file:///C:/Users/tarte/AppData/Local/Pub/Cache/hosted/pub.dev/win32-5.4.0",
+      "rootUri": "file:///C:/Users/tarte/AppData/Local/Pub/Cache/hosted/pub.dev/win32-5.5.1",
       "packageUri": "lib/",
-      "languageVersion": "3.3"
+      "languageVersion": "3.4"
     },
     {
       "name": "xdg_directories",
@@ -536,7 +542,10 @@
       "languageVersion": "3.3"
     }
   ],
-  "generated": "2024-04-10T19:00:48.920482Z",
+  "generated": "2024-06-03T12:55:28.541343Z",
   "generator": "pub",
-  "generatorVersion": "3.3.1"
+  "generatorVersion": "3.4.1",
+  "flutterRoot": "file:///C:/Users/tarte/FlutterDev/flutter",
+  "flutterVersion": "3.22.1",
+  "pubCache": "file:///C:/Users/tarte/AppData/Local/Pub/Cache"
 }

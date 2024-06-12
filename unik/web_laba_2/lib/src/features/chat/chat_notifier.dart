@@ -8,63 +8,6 @@ import 'package:topg/topg.dart';
 import '../../models/chat_model.dart';
 import '../log/log_provider.dart';
 
-abstract class Worker {
-  void work() {
-    throw UnimplementedError();
-  }
-}
-
-class Employer extends Worker {
-  @override
-  void work() {
-    print('отдыхает');
-  }
-}
-
-class Employee extends Worker {
-  @override
-  void work() {
-    print('работает');
-  }
-}
-
-class Boss extends Worker {}
-
-class Entrepreneur extends Employer {
-  @override
-  void work() {
-    print('ama boss');
-  }
-}
-
-class Loader extends Employee {
-  @override
-  void work() {
-    drive();
-  }
-
-  void drive() {
-    print('загружает машину');
-  }
-}
-
-class Driver extends Employee {
-  @override
-  void work() {
-    drive();
-  }
-
-  void drive() {
-    // водит машину
-  }
-}
-
-class X {
-  int do2(int x) {
-    return x * x;
-  }
-}
-
 class ChatNotifier extends StateNotifier<ChatModel> {
   final LogProvider _logProvider;
   ChatNotifier({

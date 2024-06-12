@@ -1,7 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../models/add_hero_model/add_hero_model.dart';
 import '../../../models/heroes/hero_model.dart';
+import '../../../models/heroes_modification/add_hero_model/add_hero_model.dart';
 import '../../../repositories/heroes_repo.dart';
 import '../../../services/heroes_service.dart';
 
@@ -29,14 +29,4 @@ class AddHeroNotifier extends StateNotifier<AddHeroModel> {
     await _heroesService.add(hero);
     await _heroesRepo.update();
   }
-
-  // Future<void> updateById() async {
-  //   await _heroesService.add(state);
-  //   await _heroesRepo.update();
-  // }
-
-  // Future<void> remove(int id) async {
-  //   await _heroesService.deleteById(id);
-  //   await _heroesRepo.update();
-  // }
 }

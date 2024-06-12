@@ -33,12 +33,11 @@ class MainButton extends StatelessWidget {
         onLongPress: onLongPress,
         child: title,
         style: ButtonStyle(
-          shadowColor: MaterialStateProperty.all(Colors.transparent),
-          surfaceTintColor: MaterialStateProperty.all(Colors.transparent),
-          backgroundColor:
-              MaterialStateProperty.all(type.resolveColor(context)),
-          foregroundColor: MaterialStateProperty.all(foregroundColor),
-          overlayColor: MaterialStateProperty.all(
+          shadowColor: WidgetStateProperty.all(Colors.transparent),
+          surfaceTintColor: WidgetStateProperty.all(Colors.transparent),
+          backgroundColor: WidgetStateProperty.all(type.resolveColor(context)),
+          foregroundColor: WidgetStateProperty.all(foregroundColor),
+          overlayColor: WidgetStateProperty.all(
             Color.lerp(type.resolveColor(context), Colors.white, 0.2),
           ),
         ),

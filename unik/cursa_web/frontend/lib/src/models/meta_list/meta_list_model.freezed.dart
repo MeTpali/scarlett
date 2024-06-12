@@ -141,10 +141,7 @@ abstract class _MetaListModel implements MetaListModel {
 
 /// @nodoc
 mixin _$MetaListRate {
-  int get id => throw _privateConstructorUsedError;
-  String get winrate => throw _privateConstructorUsedError;
-  int get matchesPlayed => throw _privateConstructorUsedError;
-  String get disadvantage => throw _privateConstructorUsedError;
+  MetaModel get meta => throw _privateConstructorUsedError;
   String get hero1 => throw _privateConstructorUsedError;
   String get hero2 => throw _privateConstructorUsedError;
 
@@ -159,13 +156,9 @@ abstract class $MetaListRateCopyWith<$Res> {
           MetaListRate value, $Res Function(MetaListRate) then) =
       _$MetaListRateCopyWithImpl<$Res, MetaListRate>;
   @useResult
-  $Res call(
-      {int id,
-      String winrate,
-      int matchesPlayed,
-      String disadvantage,
-      String hero1,
-      String hero2});
+  $Res call({MetaModel meta, String hero1, String hero2});
+
+  $MetaModelCopyWith<$Res> get meta;
 }
 
 /// @nodoc
@@ -181,30 +174,15 @@ class _$MetaListRateCopyWithImpl<$Res, $Val extends MetaListRate>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
-    Object? winrate = null,
-    Object? matchesPlayed = null,
-    Object? disadvantage = null,
+    Object? meta = null,
     Object? hero1 = null,
     Object? hero2 = null,
   }) {
     return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int,
-      winrate: null == winrate
-          ? _value.winrate
-          : winrate // ignore: cast_nullable_to_non_nullable
-              as String,
-      matchesPlayed: null == matchesPlayed
-          ? _value.matchesPlayed
-          : matchesPlayed // ignore: cast_nullable_to_non_nullable
-              as int,
-      disadvantage: null == disadvantage
-          ? _value.disadvantage
-          : disadvantage // ignore: cast_nullable_to_non_nullable
-              as String,
+      meta: null == meta
+          ? _value.meta
+          : meta // ignore: cast_nullable_to_non_nullable
+              as MetaModel,
       hero1: null == hero1
           ? _value.hero1
           : hero1 // ignore: cast_nullable_to_non_nullable
@@ -214,6 +192,14 @@ class _$MetaListRateCopyWithImpl<$Res, $Val extends MetaListRate>
           : hero2 // ignore: cast_nullable_to_non_nullable
               as String,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $MetaModelCopyWith<$Res> get meta {
+    return $MetaModelCopyWith<$Res>(_value.meta, (value) {
+      return _then(_value.copyWith(meta: value) as $Val);
+    });
   }
 }
 
@@ -225,13 +211,10 @@ abstract class _$$MetaListRateImplCopyWith<$Res>
       __$$MetaListRateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {int id,
-      String winrate,
-      int matchesPlayed,
-      String disadvantage,
-      String hero1,
-      String hero2});
+  $Res call({MetaModel meta, String hero1, String hero2});
+
+  @override
+  $MetaModelCopyWith<$Res> get meta;
 }
 
 /// @nodoc
@@ -245,30 +228,15 @@ class __$$MetaListRateImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
-    Object? winrate = null,
-    Object? matchesPlayed = null,
-    Object? disadvantage = null,
+    Object? meta = null,
     Object? hero1 = null,
     Object? hero2 = null,
   }) {
     return _then(_$MetaListRateImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int,
-      winrate: null == winrate
-          ? _value.winrate
-          : winrate // ignore: cast_nullable_to_non_nullable
-              as String,
-      matchesPlayed: null == matchesPlayed
-          ? _value.matchesPlayed
-          : matchesPlayed // ignore: cast_nullable_to_non_nullable
-              as int,
-      disadvantage: null == disadvantage
-          ? _value.disadvantage
-          : disadvantage // ignore: cast_nullable_to_non_nullable
-              as String,
+      meta: null == meta
+          ? _value.meta
+          : meta // ignore: cast_nullable_to_non_nullable
+              as MetaModel,
       hero1: null == hero1
           ? _value.hero1
           : hero1 // ignore: cast_nullable_to_non_nullable
@@ -285,21 +253,10 @@ class __$$MetaListRateImplCopyWithImpl<$Res>
 
 class _$MetaListRateImpl implements _MetaListRate {
   const _$MetaListRateImpl(
-      {required this.id,
-      required this.winrate,
-      required this.matchesPlayed,
-      required this.disadvantage,
-      required this.hero1,
-      required this.hero2});
+      {required this.meta, required this.hero1, required this.hero2});
 
   @override
-  final int id;
-  @override
-  final String winrate;
-  @override
-  final int matchesPlayed;
-  @override
-  final String disadvantage;
+  final MetaModel meta;
   @override
   final String hero1;
   @override
@@ -307,7 +264,7 @@ class _$MetaListRateImpl implements _MetaListRate {
 
   @override
   String toString() {
-    return 'MetaListRate(id: $id, winrate: $winrate, matchesPlayed: $matchesPlayed, disadvantage: $disadvantage, hero1: $hero1, hero2: $hero2)';
+    return 'MetaListRate(meta: $meta, hero1: $hero1, hero2: $hero2)';
   }
 
   @override
@@ -315,19 +272,13 @@ class _$MetaListRateImpl implements _MetaListRate {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MetaListRateImpl &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.winrate, winrate) || other.winrate == winrate) &&
-            (identical(other.matchesPlayed, matchesPlayed) ||
-                other.matchesPlayed == matchesPlayed) &&
-            (identical(other.disadvantage, disadvantage) ||
-                other.disadvantage == disadvantage) &&
+            (identical(other.meta, meta) || other.meta == meta) &&
             (identical(other.hero1, hero1) || other.hero1 == hero1) &&
             (identical(other.hero2, hero2) || other.hero2 == hero2));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, id, winrate, matchesPlayed, disadvantage, hero1, hero2);
+  int get hashCode => Object.hash(runtimeType, meta, hero1, hero2);
 
   @JsonKey(ignore: true)
   @override
@@ -338,21 +289,12 @@ class _$MetaListRateImpl implements _MetaListRate {
 
 abstract class _MetaListRate implements MetaListRate {
   const factory _MetaListRate(
-      {required final int id,
-      required final String winrate,
-      required final int matchesPlayed,
-      required final String disadvantage,
+      {required final MetaModel meta,
       required final String hero1,
       required final String hero2}) = _$MetaListRateImpl;
 
   @override
-  int get id;
-  @override
-  String get winrate;
-  @override
-  int get matchesPlayed;
-  @override
-  String get disadvantage;
+  MetaModel get meta;
   @override
   String get hero1;
   @override

@@ -57,7 +57,7 @@ class DeleteHeroWidget extends ConsumerWidget {
               },
               type: deleteHero.hero == null
                   ? TopGType.disabled
-                  : TopGType.statistics,
+                  : TopGType.warning,
             ),
           ),
         ],

@@ -127,13 +127,14 @@ class SkeletButton extends StatelessWidget {
         onPressed: () => onPress?.call(isRadiant),
         onLongPress: onLongPress,
         style: ButtonStyle(
-          shadowColor: MaterialStateProperty.all(Colors.transparent),
-          surfaceTintColor: MaterialStateProperty.all(Colors.transparent),
-          backgroundColor: MaterialStateProperty.all(Colors.transparent),
-          foregroundColor:
-              MaterialStateProperty.all(type.resolveColor(context)),
-          overlayColor: MaterialStateProperty.all(Colors.transparent),
-          shape: MaterialStateProperty.all(
+          shadowColor: WidgetStateProperty.all(Colors.transparent),
+          surfaceTintColor: WidgetStateProperty.all(Colors.transparent),
+          backgroundColor: WidgetStateProperty.all(
+            TopGColors.yGreen.withOpacity(0.1),
+          ),
+          foregroundColor: WidgetStateProperty.all(type.resolveColor(context)),
+          overlayColor: WidgetStateProperty.all(Colors.transparent),
+          shape: WidgetStateProperty.all(
             RoundedRectangleBorder(
               side: BorderSide(
                 color: type.resolveColor(context),

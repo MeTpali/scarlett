@@ -33,22 +33,16 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const AuthorScreen(),
       );
     },
-    ChangingMetaRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const ChangingMetaScreen(),
-      );
-    },
-    ChangingRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const ChangingScreen(),
-      );
-    },
     DeleteHeroRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const DeleteHeroScreen(),
+      );
+    },
+    DeleteMetaRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const DeleteMetaScreen(),
       );
     },
     PickRoute.name: (routeData) {
@@ -67,6 +61,12 @@ abstract class _$AppRouter extends RootStackRouter {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const UpdateHeroScreen(),
+      );
+    },
+    UpdateMetaRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const UpdateMetaScreen(),
       );
     },
   };
@@ -115,34 +115,6 @@ class AuthorRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [ChangingMetaScreen]
-class ChangingMetaRoute extends PageRouteInfo<void> {
-  const ChangingMetaRoute({List<PageRouteInfo>? children})
-      : super(
-          ChangingMetaRoute.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'ChangingMetaRoute';
-
-  static const PageInfo<void> page = PageInfo<void>(name);
-}
-
-/// generated route for
-/// [ChangingScreen]
-class ChangingRoute extends PageRouteInfo<void> {
-  const ChangingRoute({List<PageRouteInfo>? children})
-      : super(
-          ChangingRoute.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'ChangingRoute';
-
-  static const PageInfo<void> page = PageInfo<void>(name);
-}
-
-/// generated route for
 /// [DeleteHeroScreen]
 class DeleteHeroRoute extends PageRouteInfo<void> {
   const DeleteHeroRoute({List<PageRouteInfo>? children})
@@ -152,6 +124,20 @@ class DeleteHeroRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'DeleteHeroRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [DeleteMetaScreen]
+class DeleteMetaRoute extends PageRouteInfo<void> {
+  const DeleteMetaRoute({List<PageRouteInfo>? children})
+      : super(
+          DeleteMetaRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'DeleteMetaRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }
@@ -194,6 +180,20 @@ class UpdateHeroRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'UpdateHeroRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [UpdateMetaScreen]
+class UpdateMetaRoute extends PageRouteInfo<void> {
+  const UpdateMetaRoute({List<PageRouteInfo>? children})
+      : super(
+          UpdateMetaRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'UpdateMetaRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }

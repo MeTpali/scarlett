@@ -1,9 +1,9 @@
-import 'package:cursa_web/src/clients/dota_client.dart';
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
 import 'package:logger/logger.dart';
 
+import '../clients/dota_client.dart';
 import '../features/log/log.dart';
 import 'di.config.dart';
 

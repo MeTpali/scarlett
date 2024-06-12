@@ -2,18 +2,18 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:i18n/i18n.dart';
 
-import '../features/heroes_modification/update/widget.dart';
+import '../features/meta_modification/update/widget.dart';
 
 @RoutePage()
-class UpdateHeroScreen extends StatelessWidget {
-  const UpdateHeroScreen({super.key});
+class UpdateMetaScreen extends StatelessWidget {
+  const UpdateMetaScreen({super.key});
 
   @override
   Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(
-          title: Text("Обновление героя"),
+          title: Text("Обновление меты"),
           centerTitle: true,
         ),
-        body: const UpdateHeroWidget(),
+        body: const UpdateMetaWidget(),
       );
 }

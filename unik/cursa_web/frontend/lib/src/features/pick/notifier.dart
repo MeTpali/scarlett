@@ -49,7 +49,12 @@ class PickNotifier extends StateNotifier<PickModel> {
       final newState = state.copyWith(radiant: newList);
       state = newState;
       final newDire = recalc(dire, false);
-      final newRecalcState = state.copyWith(dire: newDire);
+      final teamRate = calcTeamRate();
+      final newRecalcState = state.copyWith(
+        dire: newDire,
+        radiantRate: teamRate,
+        direRate: 100 - teamRate,
+      );
       state = newRecalcState;
     } else {
       final newList = List<HeroRateModel>.from(state.dire);
@@ -57,7 +62,12 @@ class PickNotifier extends StateNotifier<PickModel> {
       final newState = state.copyWith(dire: newList);
       state = newState;
       final newRadiant = recalc(radiant, true);
-      final newRecalcState = state.copyWith(radiant: newRadiant);
+      final teamRate = calcTeamRate();
+      final newRecalcState = state.copyWith(
+        radiant: newRadiant,
+        radiantRate: teamRate,
+        direRate: 100 - teamRate,
+      );
       state = newRecalcState;
     }
   }
@@ -109,6 +119,27 @@ class PickNotifier extends StateNotifier<PickModel> {
       summ += element;
     });
     return summ;
+  }
+
+  double calcTeamRate() {
+    final meta = _metaRepo.meta;
+    final filtered = meta.meta
+        .where(
+          (element) =>
+              state.radiant
+                  .where((rad) => element.hero1Id == rad.id)
+                  .isNotEmpty &&
+              state.dire.where((dir) => element.hero2Id == dir.id).isNotEmpty,
+        )
+        .toList();
+    final doubleRate =
+        filtered.map((element) => double.parse(element.winrate)).toList();
+    double rate = 0.0;
+    for (final element in doubleRate) {
+      rate += element;
+    }
+
+    return doubleRate.isEmpty ? 50.0 : rate / doubleRate.length;
   }
 
   void remove(int id, [bool isRadiant = true]) {

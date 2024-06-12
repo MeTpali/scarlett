@@ -9,7 +9,7 @@ const dotaClient = Named('TKSBPClient');
 Dio createDotaClient(Log logger) {
   final Dio client = Dio(
     BaseOptions(
-      baseUrl: 'http://192.168.0.101:1337',
+      baseUrl: 'http://192.168.11.25:1337',
     ),
   )..interceptors.addAll([logInterceptor(logger)]);
 

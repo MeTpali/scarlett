@@ -1,42 +1,68 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../models/add_hero_model/add_hero_model.dart';
-import '../../../models/heroes/hero_model.dart';
-import '../../../repositories/heroes_repo.dart';
-import '../../../services/heroes_service.dart';
+import '../../../models/meta/meta_model.dart';
+import '../../../models/meta_modification/add_meta_model/add_meta_model.dart';
+import '../../../repositories/meta_repo.dart';
+import '../../../services/meta_service.dart';
 
-class AddMetaNotifier extends StateNotifier<AddHeroModel> {
-  final HeroesService _heroesService;
-  final HeroesRepo _heroesRepo;
-  AddMetaNotifier(
-      {required HeroesService heroesService, required HeroesRepo heroesRepo})
-      : _heroesService = heroesService,
-        _heroesRepo = heroesRepo,
-        super(const AddHeroModel());
+class AddMetaNotifier extends StateNotifier<AddMetaModel> {
+  final MetaService _metaService;
+  final MetaRepo _metaRepo;
+  AddMetaNotifier({
+    required MetaService metaService,
+    required MetaRepo metaRepo,
+  })  : _metaService = metaService,
+        _metaRepo = metaRepo,
+        super(const AddMetaModel());
 
-  void updateName(String value) {
-    final newState = state.copyWith(name: value);
+  void updateFirstHeroId(String value) {
+    final id = value.isEmpty ? 0 : int.parse(value);
+    final newState = state.copyWith(hero1Id: id);
     state = newState;
   }
 
-  void updateIcon(String value) {
-    final newState = state.copyWith(icon: value);
+  void updateSecondHeroId(String value) {
+    final id = value.isEmpty ? 0 : int.parse(value);
+    final newState = state.copyWith(hero2Id: id);
+    state = newState;
+  }
+
+  void updateDisadvantage(String value) {
+    final newState = state.copyWith(disadvantage: value);
+    state = newState;
+  }
+
+  void updateWinrate(String value) {
+    final newState = state.copyWith(winrate: value);
+    state = newState;
+  }
+
+  void updateMatchesPlayed(String value) {
+    final matchesPlayed = value.isEmpty ? 0 : int.parse(value);
+    final newState = state.copyWith(matchesPlayed: matchesPlayed);
     state = newState;
   }
 
   Future<void> add() async {
-    final hero = HeroModel(id: 0, name: state.name, icon: state.icon);
-    await _heroesService.add(hero);
-    await _heroesRepo.update();
+    final meta = MetaModel(
+      id: 0,
+      winrate: state.winrate,
+      matchesPlayed: state.matchesPlayed,
+      disadvantage: state.disadvantage,
+      hero1Id: state.hero1Id,
+      hero2Id: state.hero2Id,
+    );
+
+    final reverseMeta = MetaModel(
+      id: 0,
+      winrate: (100 - double.parse(state.winrate)).toString(),
+      matchesPlayed: state.matchesPlayed,
+      disadvantage: ((-1) * double.parse(state.disadvantage)).toString(),
+      hero1Id: state.hero2Id,
+      hero2Id: state.hero1Id,
+    );
+    await _metaService.add(meta);
+    await _metaService.add(reverseMeta);
+    await _metaRepo.update();
   }
-
-  // Future<void> updateById() async {
-  //   await _heroesService.add(state);
-  //   await _heroesRepo.update();
-  // }
-
-  // Future<void> remove(int id) async {
-  //   await _heroesService.deleteById(id);
-  //   await _heroesRepo.update();
-  // }
 }

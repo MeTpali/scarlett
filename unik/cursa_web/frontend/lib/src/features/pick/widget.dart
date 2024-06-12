@@ -1,10 +1,10 @@
-import 'package:auto_route/auto_route.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:topg/topg.dart';
 
 import '../../di/dota_di.dart';
-import '../../routes/app_router/app_router.dart';
 import '../dota_teams/view.dart';
 import '../model_lists/hero_picker.dart';
 
@@ -40,24 +40,55 @@ class PickWidget extends ConsumerWidget {
             );
           },
         ),
-        const SizedBox(height: 15),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: MainButton(
-            title: const Text('Heroes'),
-            onPressed: () async {
-              await context.router.push(const DeleteHeroRoute());
-            },
-            type: TopGType.action,
-          ),
-        ),
-        const SizedBox(height: 15),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: MainButton(
-            title: const Text('Meta'),
-            onPressed: () {},
-            type: TopGType.action,
+        const SizedBox(height: 30),
+        SizedBox(
+          height: 120,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              SizedBox(
+                width: 120,
+                child: RadialScoreWidget(
+                  child: Text(
+                    '${pick.radiantRate}%',
+                    style: TextStyle(
+                      fontSize: 20,
+                      color: pick.radiantRate == 50
+                          ? null
+                          : pick.radiantRate > 50
+                              ? TopGColors.yGreen
+                              : TopGColors.yRed,
+                    ),
+                  ),
+                  backgroundColor: Colors.transparent,
+                  lineColor: TopGColors.yGreen,
+                  freeColor: TopGColors.yRed,
+                  lineWidth: 5,
+                  percent: pick.radiantRate / 100,
+                ),
+              ),
+              SizedBox(
+                width: 120,
+                child: RadialScoreWidget(
+                  child: Text(
+                    '${pick.direRate}%',
+                    style: TextStyle(
+                      fontSize: 20,
+                      color: pick.direRate == 50
+                          ? null
+                          : pick.direRate > 50
+                              ? TopGColors.yGreen
+                              : TopGColors.yRed,
+                    ),
+                  ),
+                  backgroundColor: Colors.transparent,
+                  lineColor: TopGColors.yGreen,
+                  freeColor: TopGColors.yRed,
+                  lineWidth: 5,
+                  percent: pick.direRate / 100,
+                ),
+              ),
+            ],
           ),
         ),
       ],
