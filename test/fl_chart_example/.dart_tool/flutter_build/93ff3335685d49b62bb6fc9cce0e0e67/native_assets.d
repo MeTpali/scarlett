@@ -1,0 +1,1 @@
+ Z:\\tarte\\flutter\\scarlett\\test\\fl_chart_example\\.dart_tool\\flutter_build\\93ff3335685d49b62bb6fc9cce0e0e67\\native_assets.yaml: 

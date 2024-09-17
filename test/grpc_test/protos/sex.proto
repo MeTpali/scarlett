@@ -1,0 +1,17 @@
+syntax="proto3";
+
+
+service SexRpc {
+    rpc SexStream (stream RequestDto) returns (stream ResponseDto);
+}
+
+message RequestDto {
+    string api_id = 1;
+    string api_hash = 2;
+}
+
+message ResponseDto {
+    string status = 1;
+    string message = 2;
+}
+
