@@ -1,0 +1,1 @@
+{"routes":[{"name":null,"pathParams":[],"pageType":{"import":"package:training_sobes/routes/screens/key_page.dart","name":"KeyPage","isNullable":false,"isRecordType":false},"className":"KeyPage","parameters":[],"hasWrappedRoute":false,"hasConstConstructor":true,"deferredLoading":null}],"inputPath":"lib/routes/screens/key_page.dart","inputHash":0}

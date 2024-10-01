@@ -1,0 +1,1 @@
+ D:\\tarte\\flutter\\scarlett\\test\\training_sobes\\.dart_tool\\flutter_build\\a5f2be0ea4d680630ebad11c0911f352\\native_assets.yaml: 
