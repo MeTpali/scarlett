@@ -3,7 +3,7 @@ import 'topg_theme_data.dart';
 enum TopGMode { light, dark }
 
 extension TopGModeX on TopGMode {
-  TopGMode get deagault => TopGMode.light;
+  TopGMode get deafault => TopGMode.light;
 
   TopGThemeData resolveTheme() {
     switch (this) {

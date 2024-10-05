@@ -1,7 +1,7 @@
 #!/bin/sh
 # This is a generated file; do not edit or check into version control.
-export "FLUTTER_ROOT=C:\Users\tarte\FlutterDev\flutter"
-export "FLUTTER_APPLICATION_PATH=Z:\tarte\flutter\scarlett\test\fl_chart_example"
+export "FLUTTER_ROOT=C:\Users\MeTpa\Flutter SDK\flutter"
+export "FLUTTER_APPLICATION_PATH=D:\tarte\flutter\scarlett\test\fl_chart_example"
 export "COCOAPODS_PARALLEL_CODE_SIGN=true"
 export "FLUTTER_BUILD_DIR=build"
 export "FLUTTER_BUILD_NAME=1.0.0"
