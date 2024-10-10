@@ -14,7 +14,7 @@ class SettingsButton extends StatelessWidget {
       onPressed: onTap,
       icon: Icon(
         Icons.settings,
-        color: settingsTheme.buttonColor,
+        // color: settingsTheme.buttonColor,
       ),
     );
   }

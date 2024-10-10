@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:kpi_drive/routes/router.dart';
 import 'package:kpi_drive/theme/kpi_theme.dart';
+import 'package:topg/topg.dart';
 
 import 'di/di.dart';
 
@@ -9,11 +10,14 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   configureDependencies();
   await KpiThemeProvider.init();
+  await TopG.init();
 
   runApp(
     ProviderScope(
-      child: KpiThemeProvider(
-        child: MyApp(),
+      child: TopG(
+        child: KpiThemeProvider(
+          child: MyApp(),
+        ),
       ),
     ),
   );
