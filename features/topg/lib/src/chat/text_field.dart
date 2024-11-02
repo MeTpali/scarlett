@@ -4,10 +4,24 @@ import '../../topg.dart';
 
 class ChatTextField extends StatefulWidget {
   final String? labelText;
+  final TextStyle? labelStyle;
+  final Widget? leading;
+  final List<Widget>? actions;
+  final InputDecoration? textFieldDecoration;
   final void Function(String value) onSend;
+  final double height;
+  final double width;
+  final EdgeInsetsGeometry textFieldPadding;
   const ChatTextField({
     required this.onSend,
     this.labelText,
+    this.labelStyle,
+    this.textFieldDecoration,
+    this.leading,
+    this.actions,
+    this.height = 70,
+    this.width = double.infinity,
+    this.textFieldPadding = EdgeInsets.zero,
     super.key,
   });
 
@@ -42,34 +56,45 @@ class _ChatTextFieldState extends State<ChatTextField> {
   Widget build(BuildContext context) {
     final theme = TopGTheme.of(context);
     final chatTheme = theme.chat;
-    return ColoredBox(
-      color: theme.colorScheme.surface,
-      child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+    return SizedBox(
+      height: widget.height,
+      width: widget.width,
+      child: ColoredBox(
+        color: theme.colorScheme.surface,
         child: Row(
           children: [
+            widget.leading ?? const SizedBox.shrink(),
             Expanded(
-              child: TextField(
-                controller: controller,
-                decoration: InputDecoration(
-                  border: const OutlineInputBorder(),
-                  labelText: widget.labelText,
+              child: Padding(
+                padding: widget.textFieldPadding,
+                child: TextField(
+                  controller: controller,
+                  decoration: widget.textFieldDecoration ??
+                      InputDecoration(
+                        border: const OutlineInputBorder(),
+                        labelText: widget.labelText,
+                        labelStyle: widget.labelStyle,
+                      ),
                 ),
               ),
             ),
-            IconButton(
-              onPressed: canSend
-                  ? () {
-                      FocusManager.instance.primaryFocus?.unfocus();
-                      widget.onSend(controller.text);
-                      controller.clear();
-                    }
-                  : null,
-              icon: const Icon(Icons.send),
-              color: chatTheme.buttonActiveColor,
-              disabledColor: chatTheme.buttonDisabledColor,
-              splashColor: chatTheme.splashColor,
-            ),
+            ...!canSend && widget.actions != null
+                ? widget.actions!
+                : [
+                    IconButton(
+                      onPressed: canSend
+                          ? () {
+                              FocusManager.instance.primaryFocus?.unfocus();
+                              widget.onSend(controller.text);
+                              controller.clear();
+                            }
+                          : null,
+                      icon: const Icon(Icons.send),
+                      color: chatTheme.buttonActiveColor,
+                      disabledColor: chatTheme.buttonDisabledColor,
+                      splashColor: chatTheme.splashColor,
+                    ),
+                  ],
           ],
         ),
       ),

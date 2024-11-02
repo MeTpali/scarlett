@@ -1,6 +1,8 @@
 {
     "@@locale": "ru",
     "localeFull": "Русский",
+    "on": "Вкл",
+    "off": "Выкл",
     "settings": "Настройки",
     "language": "Язык",
     "lightTheme": "Светлая тема",

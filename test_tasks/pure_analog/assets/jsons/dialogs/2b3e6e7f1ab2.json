@@ -1,0 +1,26 @@
+{
+    "avatar_id": 4,
+    "user_id": "2b3e6e7f1ab2",
+    "has_story": true,
+    "temptation_count": 47,
+    "messages": [
+        {
+            "is_my": false,
+            "timestamp": "2023-10-29 14:00:00",
+            "text": "У тебя есть возможность созвониться?",
+            "is_read": true
+        },
+        {
+            "is_my": true,
+            "timestamp": "2023-10-29 14:02:00",
+            "text": "Да, давай через 10 минут?",
+            "is_read": true
+        },
+        {
+            "is_my": false,
+            "timestamp": "2023-10-29 14:03:00",
+            "text": "Отлично, жду.",
+            "is_read": false
+        }
+    ]
+}

@@ -21,7 +21,9 @@ mixin _$MessageModel {
   DateTime? get date => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of MessageModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $MessageModelCopyWith<MessageModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -46,6 +48,8 @@ class _$MessageModelCopyWithImpl<$Res, $Val extends MessageModel>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of MessageModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -95,6 +99,8 @@ class __$$MessageModelImplCopyWithImpl<$Res>
       _$MessageModelImpl _value, $Res Function(_$MessageModelImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of MessageModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -161,7 +167,9 @@ class _$MessageModelImpl implements _MessageModel {
   @override
   int get hashCode => Object.hash(runtimeType, author, message, date, name);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of MessageModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$MessageModelImplCopyWith<_$MessageModelImpl> get copyWith =>
@@ -183,8 +191,11 @@ abstract class _MessageModel implements MessageModel {
   DateTime? get date;
   @override
   String? get name;
+
+  /// Create a copy of MessageModel
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$MessageModelImplCopyWith<_$MessageModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

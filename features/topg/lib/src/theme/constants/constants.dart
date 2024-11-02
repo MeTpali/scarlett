@@ -74,3 +74,13 @@ abstract class TopGColorScheme {
     onSurface: TopGColors.white,
   );
 }
+
+abstract class TopGCardTheme {
+  static const CardTheme light = CardTheme(
+    color: TopGColors.softLightBlue,
+  );
+
+  static const CardTheme dark = CardTheme(
+    color: TopGColors.softDarkBlue,
+  );
+}

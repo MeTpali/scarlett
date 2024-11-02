@@ -1,0 +1,44 @@
+{
+    "avatar_id": 1,
+    "user_id": "3d97f2a1b8a9",
+    "has_story": false,
+    "temptation_count": 12,
+    "messages": [
+        {
+            "is_my": false,
+            "timestamp": "2023-10-15 09:00:00",
+            "text": "Доброе утро! Как ты?",
+            "is_read": true
+        },
+        {
+            "is_my": true,
+            "timestamp": "2023-10-15 09:01:00",
+            "text": "Привет! Всё хорошо, спасибо. А у тебя?",
+            "is_read": true
+        },
+        {
+            "is_my": false,
+            "timestamp": "2023-10-15 09:03:00",
+            "text": "Тоже отлично! Готов к встрече сегодня?",
+            "is_read": true
+        },
+        {
+            "is_my": true,
+            "timestamp": "2023-10-15 09:05:00",
+            "text": "Да, конечно. Во сколько собираемся?",
+            "is_read": true
+        },
+        {
+            "is_my": false,
+            "timestamp": "2023-10-15 09:10:00",
+            "text": "В 14:00, на нашем месте.",
+            "is_read": true
+        },
+        {
+            "is_my": true,
+            "timestamp": "2023-10-15 09:12:00",
+            "text": "Отлично, буду вовремя!",
+            "is_read": true
+        }
+    ]
+}

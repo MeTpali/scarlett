@@ -1,0 +1,26 @@
+{
+    "avatar_id": 2,
+    "user_id": "663c7e93d420",
+    "has_story": false,
+    "temptation_count": 95,
+    "messages": [
+        {
+            "is_my": true,
+            "timestamp": "2023-10-26 19:00:00",
+            "text": "Привет, как продвигается проект?",
+            "is_read": true
+        },
+        {
+            "is_my": false,
+            "timestamp": "2023-10-26 19:05:00",
+            "text": "Привет! Почти готово, остались мелочи.",
+            "is_read": true
+        },
+        {
+            "is_my": true,
+            "timestamp": "2023-10-26 19:10:00",
+            "text": "Отлично, спасибо за твою работу!",
+            "is_read": false
+        }
+    ]
+}

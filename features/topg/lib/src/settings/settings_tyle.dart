@@ -4,15 +4,15 @@ import '../theme/topg_theme.dart';
 
 class SettingsTyle extends StatelessWidget {
   final String title;
-  final IconData icon;
+  final IconData? icon;
   final Widget? trailing;
   final VoidCallback onTap;
   final bool lastInBlock;
 
   const SettingsTyle({
     required this.title,
-    required this.icon,
     required this.onTap,
+    this.icon,
     this.trailing,
     this.lastInBlock = false,
     super.key,
@@ -32,10 +32,15 @@ class SettingsTyle extends StatelessWidget {
           )
         : null;
     return ListTile(
-      leading: Icon(
-        icon,
-        color: settingsTheme.iconColor,
-      ),
+      leading: icon == null
+          ? const SizedBox(
+              height: 24,
+              width: 24,
+            )
+          : Icon(
+              icon,
+              color: settingsTheme.iconColor,
+            ),
       title: Text(title),
       trailing: trailing,
       onTap: onTap,

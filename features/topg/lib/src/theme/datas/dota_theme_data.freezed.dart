@@ -56,7 +56,9 @@ mixin _$DotaThemeData {
   }) =>
       throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of DotaThemeData
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $DotaThemeDataCopyWith<DotaThemeData> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -82,6 +84,8 @@ class _$DotaThemeDataCopyWithImpl<$Res, $Val extends DotaThemeData>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of DotaThemeData
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -95,6 +99,8 @@ class _$DotaThemeDataCopyWithImpl<$Res, $Val extends DotaThemeData>
     ) as $Val);
   }
 
+  /// Create a copy of DotaThemeData
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $RateTileDataCopyWith<$Res> get rateTileData {
@@ -126,6 +132,8 @@ class __$$DotaThemeDataLightImplCopyWithImpl<$Res>
       $Res Function(_$DotaThemeDataLightImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of DotaThemeData
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -167,7 +175,9 @@ class _$DotaThemeDataLightImpl implements _DotaThemeDataLight {
   @override
   int get hashCode => Object.hash(runtimeType, rateTileData);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of DotaThemeData
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$DotaThemeDataLightImplCopyWith<_$DotaThemeDataLightImpl> get copyWith =>
@@ -243,8 +253,11 @@ abstract class _DotaThemeDataLight implements DotaThemeData {
 
   @override
   RateTileData get rateTileData;
+
+  /// Create a copy of DotaThemeData
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$DotaThemeDataLightImplCopyWith<_$DotaThemeDataLightImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -271,6 +284,8 @@ class __$$DotaThemeDataDarkImplCopyWithImpl<$Res>
       $Res Function(_$DotaThemeDataDarkImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of DotaThemeData
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -312,7 +327,9 @@ class _$DotaThemeDataDarkImpl implements _DotaThemeDataDark {
   @override
   int get hashCode => Object.hash(runtimeType, rateTileData);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of DotaThemeData
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$DotaThemeDataDarkImplCopyWith<_$DotaThemeDataDarkImpl> get copyWith =>
@@ -388,8 +405,11 @@ abstract class _DotaThemeDataDark implements DotaThemeData {
 
   @override
   RateTileData get rateTileData;
+
+  /// Create a copy of DotaThemeData
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$DotaThemeDataDarkImplCopyWith<_$DotaThemeDataDarkImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

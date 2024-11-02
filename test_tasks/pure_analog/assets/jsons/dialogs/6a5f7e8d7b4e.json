@@ -1,0 +1,26 @@
+{
+    "avatar_id": 0,
+    "user_id": "6a5f7e8d7b4e",
+    "has_story": false,
+    "temptation_count": 75,
+    "messages": [
+        {
+            "is_my": true,
+            "timestamp": "2023-11-01 09:00:00",
+            "text": "Доброе утро! Когда встречаемся?",
+            "is_read": true
+        },
+        {
+            "is_my": false,
+            "timestamp": "2023-11-01 09:02:00",
+            "text": "Доброе! Предлагаю в 11:00.",
+            "is_read": true
+        },
+        {
+            "is_my": true,
+            "timestamp": "2023-11-01 09:05:00",
+            "text": "Подходит, до встречи!",
+            "is_read": false
+        }
+    ]
+}

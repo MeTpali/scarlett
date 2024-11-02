@@ -1,0 +1,26 @@
+{
+    "avatar_id": 2,
+    "user_id": "3a4d8e5f7c1a",
+    "has_story": true,
+    "temptation_count": 33,
+    "messages": [
+        {
+            "is_my": false,
+            "timestamp": "2023-11-01 15:30:00",
+            "text": "Ты уже отправил отчёт?",
+            "is_read": true
+        },
+        {
+            "is_my": true,
+            "timestamp": "2023-11-01 15:32:00",
+            "text": "Да, отправил пару минут назад.",
+            "is_read": true
+        },
+        {
+            "is_my": false,
+            "timestamp": "2023-11-01 15:35:00",
+            "text": "Отлично, спасибо!",
+            "is_read": false
+        }
+    ]
+}

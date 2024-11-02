@@ -14,6 +14,7 @@ class TopGThemeData with _$TopGThemeData {
   const factory TopGThemeData.light({
     @Default(TopGMode.light) TopGMode mode,
     @Default(TopGColorScheme.light) ColorScheme colorScheme,
+    @Default(TopGCardTheme.light) CardTheme cardTheme,
     @Default(SettingsThemeData.light()) SettingsThemeData settings,
     @Default(ChatThemeData.light()) ChatThemeData chat,
     @Default(DotaThemeData.light()) DotaThemeData dota,
@@ -22,6 +23,7 @@ class TopGThemeData with _$TopGThemeData {
   const factory TopGThemeData.dark({
     @Default(TopGMode.dark) TopGMode mode,
     @Default(TopGColorScheme.dark) ColorScheme colorScheme,
+    @Default(TopGCardTheme.dark) CardTheme cardTheme,
     @Default(SettingsThemeData.dark()) SettingsThemeData settings,
     @Default(ChatThemeData.dark()) ChatThemeData chat,
     @Default(DotaThemeData.dark()) DotaThemeData dota,
