@@ -1,0 +1,26 @@
+{
+    "avatar_id": 4,
+    "user_id": "2b8d3d8f43c4",
+    "has_story": false,
+    "temptation_count": 78,
+    "messages": [
+        {
+            "is_my": true,
+            "timestamp": "2023-10-24 14:00:00",
+            "text": "Привет! Как успехи по задаче?",
+            "is_read": true
+        },
+        {
+            "is_my": false,
+            "timestamp": "2023-10-24 14:05:00",
+            "text": "Привет! Уже почти закончил.",
+            "is_read": true
+        },
+        {
+            "is_my": true,
+            "timestamp": "2023-10-24 14:10:00",
+            "text": "Отлично, если что, пиши.",
+            "is_read": false
+        }
+    ]
+}

@@ -1,0 +1,38 @@
+{
+    "avatar_id": 2,
+    "user_id": "2c963f66afa6",
+    "has_story": false,
+    "temptation_count": 89,
+    "messages": [
+        {
+            "is_my": false,
+            "timestamp": "2023-10-17 15:45:00",
+            "text": "Ты получил документы?",
+            "is_read": true
+        },
+        {
+            "is_my": true,
+            "timestamp": "2023-10-17 15:47:00",
+            "text": "Да, только что открыл. Всё выглядит хорошо.",
+            "is_read": true
+        },
+        {
+            "is_my": false,
+            "timestamp": "2023-10-17 15:50:00",
+            "text": "Отлично! Если будут вопросы, пиши.",
+            "is_read": true
+        },
+        {
+            "is_my": true,
+            "timestamp": "2023-10-17 15:52:00",
+            "text": "Обязательно, спасибо!",
+            "is_read": true
+        },
+        {
+            "is_my": false,
+            "timestamp": "2023-10-17 15:55:00",
+            "text": "На связи.",
+            "is_read": false
+        }
+    ]
+}

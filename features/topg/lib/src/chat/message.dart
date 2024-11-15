@@ -69,7 +69,12 @@ class Message extends StatelessWidget {
                       : const SizedBox.shrink(),
                 ),
               ),
-              Text(model.message),
+              Text(
+                model.message,
+                style: model.author == MessageAuthor.you
+                    ? const TextStyle(color: TopGColors.white)
+                    : null,
+              ),
               Align(
                 alignment: Alignment.centerRight,
                 child: Padding(

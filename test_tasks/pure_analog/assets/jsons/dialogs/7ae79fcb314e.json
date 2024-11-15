@@ -1,0 +1,26 @@
+{
+    "avatar_id": 2,
+    "user_id": "7ae79fcb314e",
+    "has_story": false,
+    "temptation_count": 61,
+    "messages": [
+        {
+            "is_my": true,
+            "timestamp": "2023-10-28 10:00:00",
+            "text": "Привет! Ты на встрече будешь?",
+            "is_read": true
+        },
+        {
+            "is_my": false,
+            "timestamp": "2023-10-28 10:05:00",
+            "text": "Да, я на месте. Жду тебя.",
+            "is_read": true
+        },
+        {
+            "is_my": true,
+            "timestamp": "2023-10-28 10:07:00",
+            "text": "Скоро буду, пять минут.",
+            "is_read": false
+        }
+    ]
+}

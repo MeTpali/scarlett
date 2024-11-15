@@ -1,0 +1,32 @@
+{
+    "avatar_id": 5,
+    "user_id": "8f3c367fc3d7",
+    "has_story": true,
+    "temptation_count": 23,
+    "messages": [
+        {
+            "is_my": true,
+            "timestamp": "2023-10-18 10:00:00",
+            "text": "Привет! У нас есть какие-то новости по проекту?",
+            "is_read": true
+        },
+        {
+            "is_my": false,
+            "timestamp": "2023-10-18 10:05:00",
+            "text": "Да, жду подтверждения от заказчика.",
+            "is_read": true
+        },
+        {
+            "is_my": true,
+            "timestamp": "2023-10-18 10:07:00",
+            "text": "Хорошо, держи в курсе.",
+            "is_read": true
+        },
+        {
+            "is_my": false,
+            "timestamp": "2023-10-18 10:10:00",
+            "text": "Обязательно, как только будут новости.",
+            "is_read": false
+        }
+    ]
+}

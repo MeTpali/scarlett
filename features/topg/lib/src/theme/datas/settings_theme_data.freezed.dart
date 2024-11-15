@@ -93,7 +93,9 @@ mixin _$SettingsThemeData {
   }) =>
       throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SettingsThemeData
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $SettingsThemeDataCopyWith<SettingsThemeData> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -123,6 +125,8 @@ class _$SettingsThemeDataCopyWithImpl<$Res, $Val extends SettingsThemeData>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of SettingsThemeData
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -189,6 +193,8 @@ class __$$SettingsThemeDataLightImplCopyWithImpl<$Res>
       $Res Function(_$SettingsThemeDataLightImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of SettingsThemeData
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -286,7 +292,9 @@ class _$SettingsThemeDataLightImpl implements _SettingsThemeDataLight {
   int get hashCode => Object.hash(runtimeType, buttonColor, blockTitleColor,
       blockColor, iconColor, backgroundColor, dividerColor);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SettingsThemeData
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SettingsThemeDataLightImplCopyWith<_$SettingsThemeDataLightImpl>
@@ -412,8 +420,11 @@ abstract class _SettingsThemeDataLight implements SettingsThemeData {
   Color get backgroundColor;
   @override
   Color get dividerColor;
+
+  /// Create a copy of SettingsThemeData
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SettingsThemeDataLightImplCopyWith<_$SettingsThemeDataLightImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -444,6 +455,8 @@ class __$$SettingsThemeDataDarkImplCopyWithImpl<$Res>
       $Res Function(_$SettingsThemeDataDarkImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of SettingsThemeData
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -541,7 +554,9 @@ class _$SettingsThemeDataDarkImpl implements _SettingsThemeDataDark {
   int get hashCode => Object.hash(runtimeType, buttonColor, blockTitleColor,
       blockColor, iconColor, backgroundColor, dividerColor);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SettingsThemeData
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SettingsThemeDataDarkImplCopyWith<_$SettingsThemeDataDarkImpl>
@@ -667,8 +682,11 @@ abstract class _SettingsThemeDataDark implements SettingsThemeData {
   Color get backgroundColor;
   @override
   Color get dividerColor;
+
+  /// Create a copy of SettingsThemeData
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SettingsThemeDataDarkImplCopyWith<_$SettingsThemeDataDarkImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

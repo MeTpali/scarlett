@@ -96,7 +96,9 @@ mixin _$RateTileData {
   }) =>
       throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of RateTileData
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $RateTileDataCopyWith<RateTileData> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -125,6 +127,8 @@ class _$RateTileDataCopyWithImpl<$Res, $Val extends RateTileData>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of RateTileData
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -183,6 +187,8 @@ class __$$RateTileDataImplCopyWithImpl<$Res>
       _$RateTileDataImpl _value, $Res Function(_$RateTileDataImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of RateTileData
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -264,7 +270,9 @@ class _$RateTileDataImpl implements _RateTileData {
   int get hashCode => Object.hash(runtimeType, contentPadding,
       horizontalTitleGap, titleStyle, rateStyle, splashColor);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of RateTileData
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$RateTileDataImplCopyWith<_$RateTileDataImpl> get copyWith =>
@@ -390,8 +398,11 @@ abstract class _RateTileData implements RateTileData {
   TextStyle get rateStyle;
   @override
   Color? get splashColor;
+
+  /// Create a copy of RateTileData
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$RateTileDataImplCopyWith<_$RateTileDataImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -420,6 +431,8 @@ class __$$DefaultRateTileDataImplCopyWithImpl<$Res>
       $Res Function(_$DefaultRateTileDataImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of RateTileData
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -506,7 +519,9 @@ class _$DefaultRateTileDataImpl implements _DefaultRateTileData {
   int get hashCode => Object.hash(runtimeType, contentPadding,
       horizontalTitleGap, titleStyle, rateStyle, splashColor);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of RateTileData
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$DefaultRateTileDataImplCopyWith<_$DefaultRateTileDataImpl> get copyWith =>
@@ -633,8 +648,11 @@ abstract class _DefaultRateTileData implements RateTileData {
   TextStyle get rateStyle;
   @override
   Color? get splashColor;
+
+  /// Create a copy of RateTileData
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$DefaultRateTileDataImplCopyWith<_$DefaultRateTileDataImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

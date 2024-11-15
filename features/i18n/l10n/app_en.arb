@@ -1,6 +1,8 @@
 {
     "@@locale": "en",
     "localeFull": "English",
+    "on": "On",
+    "off": "Off",
     "settings": "Settings",
     "language": "Language",
     "lightTheme": "Light theme",

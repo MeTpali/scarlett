@@ -1,0 +1,82 @@
+# Miscellaneous
+*.class
+*.lock
+*.log
+*.pyc
+*.swp
+*.tmp
+.DS_Store
+.atom/
+.buildlog/
+.history
+.svn/
+migrate_working_dir/
+
+# IntelliJ related
+*.iml
+*.ipr
+*.iws
+
+# iOS/Android files
+ios/Pods/
+ios/.symlinks/
+ios/Flutter/Flutter.framework/
+ios/Flutter/Flutter.podspec
+android/.gradle/
+android/app/proguard-rules.pro
+android/app/google-services.json
+android/key.properties
+
+# macOS
+macos/Pods/
+macos/.symlinks/
+macos/Flutter/ephemeral/
+
+# Linux
+linux/flutter/ephemeral/
+
+# Windows
+windows/flutter/ephemeral/
+
+# Web
+web/.dart_tool/
+web/flutter_service_worker.js
+web/canvaskit/
+
+# IDE-files
+.vscode/
+.idea/
+*.sublime-workspace
+
+# Dart Analysis
+analyzer-output/
+
+# Flutter/Dart/Pub related
+**/doc/api/
+**/ios/Flutter/.last_build_id
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.cvs/
+.packages
+.pub-cache/
+.pub/
+/build/
+
+# Symbolication related
+app.*.symbols
+
+# Obfuscation related
+app.*.map.json
+
+# Android Studio will place build artifacts here
+/android/app/debug
+/android/app/profile
+/android/app/release
+
+
+# Credentials
+# *.key
+# *.jks
+# *.keystore
+# *.env

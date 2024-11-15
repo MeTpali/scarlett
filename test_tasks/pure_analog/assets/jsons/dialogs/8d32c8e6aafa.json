@@ -1,0 +1,26 @@
+{
+    "avatar_id": 3,
+    "user_id": "8d32c8e6aafa",
+    "has_story": true,
+    "temptation_count": 42,
+    "messages": [
+        {
+            "is_my": false,
+            "timestamp": "2023-10-23 16:30:00",
+            "text": "Ты видел последние обновления?",
+            "is_read": true
+        },
+        {
+            "is_my": true,
+            "timestamp": "2023-10-23 16:32:00",
+            "text": "Ещё нет, сейчас посмотрю.",
+            "is_read": true
+        },
+        {
+            "is_my": false,
+            "timestamp": "2023-10-23 16:35:00",
+            "text": "Давай, там важная информация.",
+            "is_read": false
+        }
+    ]
+}

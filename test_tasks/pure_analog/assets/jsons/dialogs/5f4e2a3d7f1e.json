@@ -1,0 +1,20 @@
+{
+    "avatar_id": 3,
+    "user_id": "5f4e2a3d7f1e",
+    "has_story": true,
+    "temptation_count": 38,
+    "messages": [
+        {
+            "is_my": false,
+            "timestamp": "2023-10-31 13:15:00",
+            "text": "Ты свободен для звонка?",
+            "is_read": true
+        },
+        {
+            "is_my": true,
+            "timestamp": "2023-10-31 13:17:00",
+            "text": "Да, звони.",
+            "is_read": true
+        }
+    ]
+}

@@ -18,36 +18,67 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$TopGThemeData {
   TopGMode get mode => throw _privateConstructorUsedError;
   ColorScheme get colorScheme => throw _privateConstructorUsedError;
+  CardTheme get cardTheme => throw _privateConstructorUsedError;
   SettingsThemeData get settings => throw _privateConstructorUsedError;
   ChatThemeData get chat => throw _privateConstructorUsedError;
   DotaThemeData get dota => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(TopGMode mode, ColorScheme colorScheme,
-            SettingsThemeData settings, ChatThemeData chat, DotaThemeData dota)
+    required TResult Function(
+            TopGMode mode,
+            ColorScheme colorScheme,
+            CardTheme cardTheme,
+            SettingsThemeData settings,
+            ChatThemeData chat,
+            DotaThemeData dota)
         light,
-    required TResult Function(TopGMode mode, ColorScheme colorScheme,
-            SettingsThemeData settings, ChatThemeData chat, DotaThemeData dota)
+    required TResult Function(
+            TopGMode mode,
+            ColorScheme colorScheme,
+            CardTheme cardTheme,
+            SettingsThemeData settings,
+            ChatThemeData chat,
+            DotaThemeData dota)
         dark,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(TopGMode mode, ColorScheme colorScheme,
-            SettingsThemeData settings, ChatThemeData chat, DotaThemeData dota)?
+    TResult? Function(
+            TopGMode mode,
+            ColorScheme colorScheme,
+            CardTheme cardTheme,
+            SettingsThemeData settings,
+            ChatThemeData chat,
+            DotaThemeData dota)?
         light,
-    TResult? Function(TopGMode mode, ColorScheme colorScheme,
-            SettingsThemeData settings, ChatThemeData chat, DotaThemeData dota)?
+    TResult? Function(
+            TopGMode mode,
+            ColorScheme colorScheme,
+            CardTheme cardTheme,
+            SettingsThemeData settings,
+            ChatThemeData chat,
+            DotaThemeData dota)?
         dark,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(TopGMode mode, ColorScheme colorScheme,
-            SettingsThemeData settings, ChatThemeData chat, DotaThemeData dota)?
+    TResult Function(
+            TopGMode mode,
+            ColorScheme colorScheme,
+            CardTheme cardTheme,
+            SettingsThemeData settings,
+            ChatThemeData chat,
+            DotaThemeData dota)?
         light,
-    TResult Function(TopGMode mode, ColorScheme colorScheme,
-            SettingsThemeData settings, ChatThemeData chat, DotaThemeData dota)?
+    TResult Function(
+            TopGMode mode,
+            ColorScheme colorScheme,
+            CardTheme cardTheme,
+            SettingsThemeData settings,
+            ChatThemeData chat,
+            DotaThemeData dota)?
         dark,
     required TResult orElse(),
   }) =>
@@ -72,7 +103,9 @@ mixin _$TopGThemeData {
   }) =>
       throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of TopGThemeData
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $TopGThemeDataCopyWith<TopGThemeData> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -86,6 +119,7 @@ abstract class $TopGThemeDataCopyWith<$Res> {
   $Res call(
       {TopGMode mode,
       ColorScheme colorScheme,
+      CardTheme cardTheme,
       SettingsThemeData settings,
       ChatThemeData chat,
       DotaThemeData dota});
@@ -105,11 +139,14 @@ class _$TopGThemeDataCopyWithImpl<$Res, $Val extends TopGThemeData>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of TopGThemeData
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? mode = null,
     Object? colorScheme = null,
+    Object? cardTheme = null,
     Object? settings = null,
     Object? chat = null,
     Object? dota = null,
@@ -123,6 +160,10 @@ class _$TopGThemeDataCopyWithImpl<$Res, $Val extends TopGThemeData>
           ? _value.colorScheme
           : colorScheme // ignore: cast_nullable_to_non_nullable
               as ColorScheme,
+      cardTheme: null == cardTheme
+          ? _value.cardTheme
+          : cardTheme // ignore: cast_nullable_to_non_nullable
+              as CardTheme,
       settings: null == settings
           ? _value.settings
           : settings // ignore: cast_nullable_to_non_nullable
@@ -138,6 +179,8 @@ class _$TopGThemeDataCopyWithImpl<$Res, $Val extends TopGThemeData>
     ) as $Val);
   }
 
+  /// Create a copy of TopGThemeData
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $SettingsThemeDataCopyWith<$Res> get settings {
@@ -146,6 +189,8 @@ class _$TopGThemeDataCopyWithImpl<$Res, $Val extends TopGThemeData>
     });
   }
 
+  /// Create a copy of TopGThemeData
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $ChatThemeDataCopyWith<$Res> get chat {
@@ -154,6 +199,8 @@ class _$TopGThemeDataCopyWithImpl<$Res, $Val extends TopGThemeData>
     });
   }
 
+  /// Create a copy of TopGThemeData
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $DotaThemeDataCopyWith<$Res> get dota {
@@ -174,6 +221,7 @@ abstract class _$$TopGThemeDataLightImplCopyWith<$Res>
   $Res call(
       {TopGMode mode,
       ColorScheme colorScheme,
+      CardTheme cardTheme,
       SettingsThemeData settings,
       ChatThemeData chat,
       DotaThemeData dota});
@@ -194,11 +242,14 @@ class __$$TopGThemeDataLightImplCopyWithImpl<$Res>
       $Res Function(_$TopGThemeDataLightImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of TopGThemeData
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? mode = null,
     Object? colorScheme = null,
+    Object? cardTheme = null,
     Object? settings = null,
     Object? chat = null,
     Object? dota = null,
@@ -212,6 +263,10 @@ class __$$TopGThemeDataLightImplCopyWithImpl<$Res>
           ? _value.colorScheme
           : colorScheme // ignore: cast_nullable_to_non_nullable
               as ColorScheme,
+      cardTheme: null == cardTheme
+          ? _value.cardTheme
+          : cardTheme // ignore: cast_nullable_to_non_nullable
+              as CardTheme,
       settings: null == settings
           ? _value.settings
           : settings // ignore: cast_nullable_to_non_nullable
@@ -234,6 +289,7 @@ class _$TopGThemeDataLightImpl implements _TopGThemeDataLight {
   const _$TopGThemeDataLightImpl(
       {this.mode = TopGMode.light,
       this.colorScheme = TopGColorScheme.light,
+      this.cardTheme = TopGCardTheme.light,
       this.settings = const SettingsThemeData.light(),
       this.chat = const ChatThemeData.light(),
       this.dota = const DotaThemeData.light()});
@@ -246,6 +302,9 @@ class _$TopGThemeDataLightImpl implements _TopGThemeDataLight {
   final ColorScheme colorScheme;
   @override
   @JsonKey()
+  final CardTheme cardTheme;
+  @override
+  @JsonKey()
   final SettingsThemeData settings;
   @override
   @JsonKey()
@@ -256,7 +315,7 @@ class _$TopGThemeDataLightImpl implements _TopGThemeDataLight {
 
   @override
   String toString() {
-    return 'TopGThemeData.light(mode: $mode, colorScheme: $colorScheme, settings: $settings, chat: $chat, dota: $dota)';
+    return 'TopGThemeData.light(mode: $mode, colorScheme: $colorScheme, cardTheme: $cardTheme, settings: $settings, chat: $chat, dota: $dota)';
   }
 
   @override
@@ -267,6 +326,8 @@ class _$TopGThemeDataLightImpl implements _TopGThemeDataLight {
             (identical(other.mode, mode) || other.mode == mode) &&
             (identical(other.colorScheme, colorScheme) ||
                 other.colorScheme == colorScheme) &&
+            (identical(other.cardTheme, cardTheme) ||
+                other.cardTheme == cardTheme) &&
             (identical(other.settings, settings) ||
                 other.settings == settings) &&
             (identical(other.chat, chat) || other.chat == chat) &&
@@ -274,10 +335,12 @@ class _$TopGThemeDataLightImpl implements _TopGThemeDataLight {
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, mode, colorScheme, settings, chat, dota);
+  int get hashCode => Object.hash(
+      runtimeType, mode, colorScheme, cardTheme, settings, chat, dota);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of TopGThemeData
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$TopGThemeDataLightImplCopyWith<_$TopGThemeDataLightImpl> get copyWith =>
@@ -287,42 +350,72 @@ class _$TopGThemeDataLightImpl implements _TopGThemeDataLight {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(TopGMode mode, ColorScheme colorScheme,
-            SettingsThemeData settings, ChatThemeData chat, DotaThemeData dota)
+    required TResult Function(
+            TopGMode mode,
+            ColorScheme colorScheme,
+            CardTheme cardTheme,
+            SettingsThemeData settings,
+            ChatThemeData chat,
+            DotaThemeData dota)
         light,
-    required TResult Function(TopGMode mode, ColorScheme colorScheme,
-            SettingsThemeData settings, ChatThemeData chat, DotaThemeData dota)
+    required TResult Function(
+            TopGMode mode,
+            ColorScheme colorScheme,
+            CardTheme cardTheme,
+            SettingsThemeData settings,
+            ChatThemeData chat,
+            DotaThemeData dota)
         dark,
   }) {
-    return light(mode, colorScheme, settings, chat, dota);
+    return light(mode, colorScheme, cardTheme, settings, chat, dota);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(TopGMode mode, ColorScheme colorScheme,
-            SettingsThemeData settings, ChatThemeData chat, DotaThemeData dota)?
+    TResult? Function(
+            TopGMode mode,
+            ColorScheme colorScheme,
+            CardTheme cardTheme,
+            SettingsThemeData settings,
+            ChatThemeData chat,
+            DotaThemeData dota)?
         light,
-    TResult? Function(TopGMode mode, ColorScheme colorScheme,
-            SettingsThemeData settings, ChatThemeData chat, DotaThemeData dota)?
+    TResult? Function(
+            TopGMode mode,
+            ColorScheme colorScheme,
+            CardTheme cardTheme,
+            SettingsThemeData settings,
+            ChatThemeData chat,
+            DotaThemeData dota)?
         dark,
   }) {
-    return light?.call(mode, colorScheme, settings, chat, dota);
+    return light?.call(mode, colorScheme, cardTheme, settings, chat, dota);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(TopGMode mode, ColorScheme colorScheme,
-            SettingsThemeData settings, ChatThemeData chat, DotaThemeData dota)?
+    TResult Function(
+            TopGMode mode,
+            ColorScheme colorScheme,
+            CardTheme cardTheme,
+            SettingsThemeData settings,
+            ChatThemeData chat,
+            DotaThemeData dota)?
         light,
-    TResult Function(TopGMode mode, ColorScheme colorScheme,
-            SettingsThemeData settings, ChatThemeData chat, DotaThemeData dota)?
+    TResult Function(
+            TopGMode mode,
+            ColorScheme colorScheme,
+            CardTheme cardTheme,
+            SettingsThemeData settings,
+            ChatThemeData chat,
+            DotaThemeData dota)?
         dark,
     required TResult orElse(),
   }) {
     if (light != null) {
-      return light(mode, colorScheme, settings, chat, dota);
+      return light(mode, colorScheme, cardTheme, settings, chat, dota);
     }
     return orElse();
   }
@@ -363,6 +456,7 @@ abstract class _TopGThemeDataLight implements TopGThemeData {
   const factory _TopGThemeDataLight(
       {final TopGMode mode,
       final ColorScheme colorScheme,
+      final CardTheme cardTheme,
       final SettingsThemeData settings,
       final ChatThemeData chat,
       final DotaThemeData dota}) = _$TopGThemeDataLightImpl;
@@ -372,13 +466,18 @@ abstract class _TopGThemeDataLight implements TopGThemeData {
   @override
   ColorScheme get colorScheme;
   @override
+  CardTheme get cardTheme;
+  @override
   SettingsThemeData get settings;
   @override
   ChatThemeData get chat;
   @override
   DotaThemeData get dota;
+
+  /// Create a copy of TopGThemeData
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$TopGThemeDataLightImplCopyWith<_$TopGThemeDataLightImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -394,6 +493,7 @@ abstract class _$$TopGThemeDataDarkImplCopyWith<$Res>
   $Res call(
       {TopGMode mode,
       ColorScheme colorScheme,
+      CardTheme cardTheme,
       SettingsThemeData settings,
       ChatThemeData chat,
       DotaThemeData dota});
@@ -414,11 +514,14 @@ class __$$TopGThemeDataDarkImplCopyWithImpl<$Res>
       $Res Function(_$TopGThemeDataDarkImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of TopGThemeData
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? mode = null,
     Object? colorScheme = null,
+    Object? cardTheme = null,
     Object? settings = null,
     Object? chat = null,
     Object? dota = null,
@@ -432,6 +535,10 @@ class __$$TopGThemeDataDarkImplCopyWithImpl<$Res>
           ? _value.colorScheme
           : colorScheme // ignore: cast_nullable_to_non_nullable
               as ColorScheme,
+      cardTheme: null == cardTheme
+          ? _value.cardTheme
+          : cardTheme // ignore: cast_nullable_to_non_nullable
+              as CardTheme,
       settings: null == settings
           ? _value.settings
           : settings // ignore: cast_nullable_to_non_nullable
@@ -454,6 +561,7 @@ class _$TopGThemeDataDarkImpl implements _TopGThemeDataDark {
   const _$TopGThemeDataDarkImpl(
       {this.mode = TopGMode.dark,
       this.colorScheme = TopGColorScheme.dark,
+      this.cardTheme = TopGCardTheme.dark,
       this.settings = const SettingsThemeData.dark(),
       this.chat = const ChatThemeData.dark(),
       this.dota = const DotaThemeData.dark()});
@@ -466,6 +574,9 @@ class _$TopGThemeDataDarkImpl implements _TopGThemeDataDark {
   final ColorScheme colorScheme;
   @override
   @JsonKey()
+  final CardTheme cardTheme;
+  @override
+  @JsonKey()
   final SettingsThemeData settings;
   @override
   @JsonKey()
@@ -476,7 +587,7 @@ class _$TopGThemeDataDarkImpl implements _TopGThemeDataDark {
 
   @override
   String toString() {
-    return 'TopGThemeData.dark(mode: $mode, colorScheme: $colorScheme, settings: $settings, chat: $chat, dota: $dota)';
+    return 'TopGThemeData.dark(mode: $mode, colorScheme: $colorScheme, cardTheme: $cardTheme, settings: $settings, chat: $chat, dota: $dota)';
   }
 
   @override
@@ -487,6 +598,8 @@ class _$TopGThemeDataDarkImpl implements _TopGThemeDataDark {
             (identical(other.mode, mode) || other.mode == mode) &&
             (identical(other.colorScheme, colorScheme) ||
                 other.colorScheme == colorScheme) &&
+            (identical(other.cardTheme, cardTheme) ||
+                other.cardTheme == cardTheme) &&
             (identical(other.settings, settings) ||
                 other.settings == settings) &&
             (identical(other.chat, chat) || other.chat == chat) &&
@@ -494,10 +607,12 @@ class _$TopGThemeDataDarkImpl implements _TopGThemeDataDark {
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, mode, colorScheme, settings, chat, dota);
+  int get hashCode => Object.hash(
+      runtimeType, mode, colorScheme, cardTheme, settings, chat, dota);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of TopGThemeData
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$TopGThemeDataDarkImplCopyWith<_$TopGThemeDataDarkImpl> get copyWith =>
@@ -507,42 +622,72 @@ class _$TopGThemeDataDarkImpl implements _TopGThemeDataDark {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(TopGMode mode, ColorScheme colorScheme,
-            SettingsThemeData settings, ChatThemeData chat, DotaThemeData dota)
+    required TResult Function(
+            TopGMode mode,
+            ColorScheme colorScheme,
+            CardTheme cardTheme,
+            SettingsThemeData settings,
+            ChatThemeData chat,
+            DotaThemeData dota)
         light,
-    required TResult Function(TopGMode mode, ColorScheme colorScheme,
-            SettingsThemeData settings, ChatThemeData chat, DotaThemeData dota)
+    required TResult Function(
+            TopGMode mode,
+            ColorScheme colorScheme,
+            CardTheme cardTheme,
+            SettingsThemeData settings,
+            ChatThemeData chat,
+            DotaThemeData dota)
         dark,
   }) {
-    return dark(mode, colorScheme, settings, chat, dota);
+    return dark(mode, colorScheme, cardTheme, settings, chat, dota);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(TopGMode mode, ColorScheme colorScheme,
-            SettingsThemeData settings, ChatThemeData chat, DotaThemeData dota)?
+    TResult? Function(
+            TopGMode mode,
+            ColorScheme colorScheme,
+            CardTheme cardTheme,
+            SettingsThemeData settings,
+            ChatThemeData chat,
+            DotaThemeData dota)?
         light,
-    TResult? Function(TopGMode mode, ColorScheme colorScheme,
-            SettingsThemeData settings, ChatThemeData chat, DotaThemeData dota)?
+    TResult? Function(
+            TopGMode mode,
+            ColorScheme colorScheme,
+            CardTheme cardTheme,
+            SettingsThemeData settings,
+            ChatThemeData chat,
+            DotaThemeData dota)?
         dark,
   }) {
-    return dark?.call(mode, colorScheme, settings, chat, dota);
+    return dark?.call(mode, colorScheme, cardTheme, settings, chat, dota);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(TopGMode mode, ColorScheme colorScheme,
-            SettingsThemeData settings, ChatThemeData chat, DotaThemeData dota)?
+    TResult Function(
+            TopGMode mode,
+            ColorScheme colorScheme,
+            CardTheme cardTheme,
+            SettingsThemeData settings,
+            ChatThemeData chat,
+            DotaThemeData dota)?
         light,
-    TResult Function(TopGMode mode, ColorScheme colorScheme,
-            SettingsThemeData settings, ChatThemeData chat, DotaThemeData dota)?
+    TResult Function(
+            TopGMode mode,
+            ColorScheme colorScheme,
+            CardTheme cardTheme,
+            SettingsThemeData settings,
+            ChatThemeData chat,
+            DotaThemeData dota)?
         dark,
     required TResult orElse(),
   }) {
     if (dark != null) {
-      return dark(mode, colorScheme, settings, chat, dota);
+      return dark(mode, colorScheme, cardTheme, settings, chat, dota);
     }
     return orElse();
   }
@@ -583,6 +728,7 @@ abstract class _TopGThemeDataDark implements TopGThemeData {
   const factory _TopGThemeDataDark(
       {final TopGMode mode,
       final ColorScheme colorScheme,
+      final CardTheme cardTheme,
       final SettingsThemeData settings,
       final ChatThemeData chat,
       final DotaThemeData dota}) = _$TopGThemeDataDarkImpl;
@@ -592,13 +738,18 @@ abstract class _TopGThemeDataDark implements TopGThemeData {
   @override
   ColorScheme get colorScheme;
   @override
+  CardTheme get cardTheme;
+  @override
   SettingsThemeData get settings;
   @override
   ChatThemeData get chat;
   @override
   DotaThemeData get dota;
+
+  /// Create a copy of TopGThemeData
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$TopGThemeDataDarkImplCopyWith<_$TopGThemeDataDarkImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

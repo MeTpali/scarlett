@@ -1,0 +1,26 @@
+{
+    "avatar_id": 2,
+    "user_id": "8839b2f35462",
+    "has_story": false,
+    "temptation_count": 23,
+    "messages": [
+        {
+            "is_my": true,
+            "timestamp": "2023-10-22 12:00:00",
+            "text": "Добрый день! Не забудь про встречу в 15:00.",
+            "is_read": true
+        },
+        {
+            "is_my": false,
+            "timestamp": "2023-10-22 12:10:00",
+            "text": "Конечно, я помню!",
+            "is_read": true
+        },
+        {
+            "is_my": true,
+            "timestamp": "2023-10-22 12:15:00",
+            "text": "Отлично, до встречи!",
+            "is_read": false
+        }
+    ]
+}

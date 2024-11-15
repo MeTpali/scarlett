@@ -126,7 +126,9 @@ mixin _$ChatThemeData {
   }) =>
       throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ChatThemeData
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ChatThemeDataCopyWith<ChatThemeData> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -159,6 +161,8 @@ class _$ChatThemeDataCopyWithImpl<$Res, $Val extends ChatThemeData>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ChatThemeData
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -241,6 +245,8 @@ class __$$ChatThemeDataLightImplCopyWithImpl<$Res>
       $Res Function(_$ChatThemeDataLightImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ChatThemeData
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -384,7 +390,9 @@ class _$ChatThemeDataLightImpl implements _ChatThemeDataLight {
       splashColor,
       shadowColor);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ChatThemeData
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ChatThemeDataLightImplCopyWith<_$ChatThemeDataLightImpl> get copyWith =>
@@ -571,8 +579,11 @@ abstract class _ChatThemeDataLight implements ChatThemeData {
   Color get splashColor;
   @override
   Color get shadowColor;
+
+  /// Create a copy of ChatThemeData
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ChatThemeDataLightImplCopyWith<_$ChatThemeDataLightImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -605,6 +616,8 @@ class __$$ChatThemeDataDarkImplCopyWithImpl<$Res>
       $Res Function(_$ChatThemeDataDarkImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ChatThemeData
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -748,7 +761,9 @@ class _$ChatThemeDataDarkImpl implements _ChatThemeDataDark {
       splashColor,
       shadowColor);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ChatThemeData
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ChatThemeDataDarkImplCopyWith<_$ChatThemeDataDarkImpl> get copyWith =>
@@ -935,8 +950,11 @@ abstract class _ChatThemeDataDark implements ChatThemeData {
   Color get splashColor;
   @override
   Color get shadowColor;
+
+  /// Create a copy of ChatThemeData
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ChatThemeDataDarkImplCopyWith<_$ChatThemeDataDarkImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

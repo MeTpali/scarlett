@@ -1,0 +1,50 @@
+{
+    "avatar_id": 3,
+    "user_id": "2fdcc0341fbb",
+    "has_story": true,
+    "temptation_count": 57,
+    "messages": [
+        {
+            "is_my": false,
+            "timestamp": "2023-10-14 08:30:00",
+            "text": "Привет! Ты сможешь помочь с проектом?",
+            "is_read": true
+        },
+        {
+            "is_my": true,
+            "timestamp": "2023-10-14 08:32:00",
+            "text": "Привет! Конечно, расскажи, что нужно сделать.",
+            "is_read": true
+        },
+        {
+            "is_my": false,
+            "timestamp": "2023-10-14 08:35:00",
+            "text": "Нужно проверить код и исправить ошибки.",
+            "is_read": true
+        },
+        {
+            "is_my": true,
+            "timestamp": "2023-10-14 08:37:00",
+            "text": "Понял, сейчас посмотрю.",
+            "is_read": true
+        },
+        {
+            "is_my": false,
+            "timestamp": "2023-10-14 08:45:00",
+            "text": "Отлично, спасибо!",
+            "is_read": true
+        },
+        {
+            "is_my": true,
+            "timestamp": "2023-10-14 08:50:00",
+            "text": "Нашел пару проблем, нужно будет обсудить детали.",
+            "is_read": true
+        },
+        {
+            "is_my": false,
+            "timestamp": "2023-10-14 08:55:00",
+            "text": "Хорошо, напиши, когда будет удобно.",
+            "is_read": false
+        }
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "avatar_id": 3,
+    "user_id": "324f8d345ef2",
+    "has_story": false,
+    "temptation_count": 15,
+    "messages": [
+        {
+            "is_my": false,
+            "timestamp": "2023-10-20 09:00:00",
+            "text": "Доброе утро! Ты готов к встрече?",
+            "is_read": true
+        },
+        {
+            "is_my": true,
+            "timestamp": "2023-10-20 09:01:00",
+            "text": "Доброе! Да, я на месте.",
+            "is_read": true
+        },
+        {
+            "is_my": false,
+            "timestamp": "2023-10-20 09:02:00",
+            "text": "Отлично, начинаем через минуту.",
+            "is_read": true
+        }
+    ]
+}
