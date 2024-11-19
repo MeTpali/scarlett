@@ -23,7 +23,7 @@ dependencies:
   drag_and_drop_lists: ^0.4.1
   shared_preferences: ^2.3.2
   topg:
-    path: ../../features/topg
+    path: ../../topg
 
 dev_dependencies:
   flutter_test:

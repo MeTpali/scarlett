@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:i18n/s.dart';
+import 'package:topg/locale.dart';
 
 import '../di/photo_test_di.dart';
 import '../features/results/test_parameters_widget.dart';

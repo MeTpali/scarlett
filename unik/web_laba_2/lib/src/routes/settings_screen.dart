@@ -1,6 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:i18n/i18n.dart';
+import 'package:topg/locale.dart';
 import 'package:topg/topg.dart';
 
 @RoutePage()
@@ -34,9 +34,7 @@ class SettingsScreen extends StatelessWidget {
               SettingsTyle(
                 title: themeTitle,
                 icon: themeIcon,
-                onTap: () async {
-                  await TopG.toggleThemeOf(context);
-                },
+                onTap: () {},
               ),
               // Смена языка
               SettingsTyle(

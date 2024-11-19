@@ -27,9 +27,7 @@ dependencies:
   flutter_riverpod: ^2.5.1
   shared_preferences: ^2.2.2
   topg:
-    path: ../../features/topg
-  i18n:
-    path: ../../features/i18n
+    path: ../../topg
 
 dev_dependencies:
   flutter_test:
