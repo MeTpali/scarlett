@@ -2,7 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:i18n/i18n.dart';
+import 'package:topg/locale.dart';
 import 'package:pure_analog/di/pure_analog_di.dart';
 import 'package:pure_analog/features/chats/tile.dart';
 import 'package:pure_analog/features/incognito/payment_modal.dart';

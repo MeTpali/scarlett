@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:i18n/i18n.dart';
 import 'package:pure_analog/routes/router.dart';
+import 'package:topg/locale.dart';
 import 'package:topg/topg.dart';
 
 void main() async {

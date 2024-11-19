@@ -42,9 +42,7 @@ dependencies:
   dio: ^5.4.3+1
   font_awesome_flutter: ^10.7.0
   topg:
-    path: ../../../features/topg
-  i18n:
-    path: ../../../features/i18n
+    path: ../../../topg
 
 dev_dependencies:
   flutter_test:

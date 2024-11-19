@@ -4,7 +4,7 @@ import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:i18n/i18n.dart';
+import 'package:topg/locale.dart';
 
 import 'src/di/di.dart';
 import 'src/features/camera/manager.dart';

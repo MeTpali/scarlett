@@ -1,6 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:i18n/s.dart';
+import 'package:topg/locale.dart';
 import 'package:topg/topg.dart';
 
 import '../features/pick/widget.dart';

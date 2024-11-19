@@ -28,8 +28,8 @@ dependencies:
   camera: ^0.10.6
   video_player: ^2.8.6
   logger: ^2.2.0
-  i18n:
-    path: ../../features/i18n
+  topg:
+    path: ../../topg
 
 dev_dependencies:
   flutter_test:
