@@ -34,7 +34,7 @@ class Chat extends ConsumerWidget {
           icon: const Icon(Icons.chevron_left),
         ),
         actions: [
-          SettingsButton(
+          SettingsIconButton(
             onTap: () async {
               await context.router.push(const SettingsRoute());
             },

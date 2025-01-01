@@ -8,7 +8,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   await TopG.init();
-  await ScarlettLocalization.init();
+  await ScarlettLocale.init();
 
   runApp(
     ProviderScope(
@@ -27,7 +27,7 @@ class PureApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final topgTheme = TopGTheme.of(context);
-    return ScarlettLocalization(
+    return ScarlettLocale(
       builder: (locale) {
         return MaterialApp.router(
           title: 'Pure Analog',

@@ -17,7 +17,7 @@ class ChatSettingsScreen extends ConsumerWidget {
           title: Text(S.of(context).connectionSettings),
           centerTitle: true,
           actions: [
-            SettingsButton(
+            SettingsIconButton(
               onTap: () async {
                 await context.router.push(const SettingsRoute());
               },

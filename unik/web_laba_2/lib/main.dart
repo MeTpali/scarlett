@@ -10,7 +10,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   configureDependencies();
   await TopG.init();
-  await ScarlettLocalization.init();
+  await ScarlettLocale.init();
   runApp(
     const ProviderScope(
       child: TopG(
@@ -33,7 +33,7 @@ class _WebLaba2AppState extends State<WebLaba2App> {
   Widget build(BuildContext context) {
     final theme = TopGTheme.of(context);
     final colorTheme = theme.colorScheme;
-    return ScarlettLocalization(
+    return ScarlettLocale(
       builder: (locale) => MaterialApp.router(
         locale: locale,
         supportedLocales: S.supportedLocales,

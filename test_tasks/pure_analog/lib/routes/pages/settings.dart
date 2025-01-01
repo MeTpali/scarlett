@@ -53,9 +53,7 @@ class SettingsPage extends ConsumerWidget {
                   S.of(context).localeFull,
                   style: const TextStyle(color: TopGColors.blueCrayola),
                 ),
-                onTap: () async {
-                  await ScarlettLocalization.switchLocaleOf(context);
-                },
+                onTap: () async {},
               ),
             ],
           ),

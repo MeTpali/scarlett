@@ -30,6 +30,14 @@ class TopG extends StatefulWidget {
       throw FlutterError(_contextError);
     }
 
+    final modes = availableThemeModesOf(context);
+
+    if (!modes.contains(mode)) {
+      throw FlutterError(
+        'TopG of this context does not contain this mode ($mode).',
+      );
+    }
+
     await topgState.setThemeMode(mode);
   }
 

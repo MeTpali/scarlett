@@ -1,3 +1,4 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:topg/locale.dart';
@@ -9,8 +10,9 @@ import 'src/routes/app_router/app_router.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   configureDependencies();
+  getIt.get<Dio>();
   await TopG.init();
-  await ScarlettLocalization.init();
+  await ScarlettLocale.init();
   runApp(
     const ProviderScope(
       child: TopG(
@@ -33,7 +35,7 @@ class _DotaCounterPickAppState extends State<DotaCounterPickApp> {
   Widget build(BuildContext context) {
     final theme = TopGTheme.of(context);
     final colorTheme = theme.colorScheme;
-    return ScarlettLocalization(
+    return ScarlettLocale(
       builder: (locale) => MaterialApp.router(
         locale: locale,
         supportedLocales: S.supportedLocales,

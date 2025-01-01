@@ -17,7 +17,7 @@ class LogScreen extends ConsumerWidget {
           title: Text(S.of(context).savedMessages),
           centerTitle: true,
           actions: [
-            SettingsButton(
+            SettingsIconButton(
               onTap: () async {
                 await context.router.push(const SettingsRoute());
               },

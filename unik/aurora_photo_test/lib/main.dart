@@ -22,7 +22,8 @@ void main() async {
     getIt.get<Log>().e('Error: ${e.code}\n${e.description}');
   }
   await TopG.init();
-  await ScarlettLocalization.init();
+  await ScarlettLocale.init();
+
   runApp(
     const ProviderScope(
       child: TopG(
@@ -51,7 +52,7 @@ class _PhotoTestAppState extends State<PhotoTestApp> {
     final theme = TopGTheme.of(context);
     final colorTheme = theme.colorScheme;
 
-    return ScarlettLocalization(
+    return ScarlettLocale(
       builder: (locale) => MaterialApp.router(
         locale: locale,
         supportedLocales: S.supportedLocales,

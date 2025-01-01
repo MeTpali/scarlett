@@ -4,7 +4,7 @@ import 'package:injectable/injectable.dart';
 import '../features/log/log.dart';
 import 'log_interceptor.dart';
 
-const dotaClient = Named('TKSBPClient');
+const dotaClient = Named('DotaClient');
 
 Dio createDotaClient(Log logger) {
   final Dio client = Dio(
