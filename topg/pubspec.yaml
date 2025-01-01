@@ -21,6 +21,11 @@ dependencies:
   cupertino_icons: ^1.0.6
   extra_pedantic: ^4.0.0
   shared_preferences: ^2.3.2
+  geolocator: ^13.0.2
+  local_auth: ^2.3.0
+  just_audio: ^0.9.42
+  nfc_manager: ^3.5.0
+  
 
 dev_dependencies:
   flutter_test:

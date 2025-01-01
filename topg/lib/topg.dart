@@ -11,6 +11,7 @@ export 'src/settings/button.dart';
 export 'src/settings/settings_block.dart';
 export 'src/settings/settings_tyle.dart';
 export 'src/settings/settings_view.dart';
+export 'src/temporaries/bottom_sheet.dart';
 export 'src/theme/constants/constants.dart';
 export 'src/theme/constants/types.dart';
 export 'src/theme/theme_modes.dart';

@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 
 import '../../topg.dart';
 
-class SettingsButton extends StatelessWidget {
+class SettingsIconButton extends StatelessWidget {
   final VoidCallback onTap;
-  const SettingsButton({required this.onTap, super.key});
+  const SettingsIconButton({required this.onTap, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +14,7 @@ class SettingsButton extends StatelessWidget {
       onPressed: onTap,
       icon: Icon(
         Icons.settings,
-        // color: settingsTheme.buttonColor,
+        color: settingsTheme.buttonColor,
       ),
     );
   }

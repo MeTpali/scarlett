@@ -37,7 +37,12 @@ class SettingsScreen extends StatelessWidget {
               SettingsTyle(
                 title: themeTitle,
                 icon: themeIcon,
-                onTap: () async {},
+                onTap: () async {
+                  final mode = themeMode == TopGMode.light
+                      ? TopGMode.dark
+                      : TopGMode.light;
+                  await TopG.setThemeModeOf(context, mode);
+                },
               ),
               // Смена языка
               SettingsTyle(
@@ -47,13 +52,13 @@ class SettingsScreen extends StatelessWidget {
                   S.of(context).localeFull,
                   style: const TextStyle(color: TopGColors.blueCrayola),
                 ),
-                onTap: () async {
-                  await ScarlettLocalization.switchLocaleOf(context);
-                },
+                onTap: () async {},
               ),
               // Об авторе
               SettingsTyle(
-                title: 'Об авторе',
+                title: S.of(context).localeName == 'en'
+                    ? 'About author'
+                    : 'Об авторе',
                 icon: Icons.info_outline_rounded,
                 lastInBlock: true,
                 onTap: () async {
@@ -64,12 +69,14 @@ class SettingsScreen extends StatelessWidget {
           ),
           // Изменение героев
           SettingsBlock(
-            title: 'Heroes',
+            title: S.of(context).localeName == 'en' ? 'Heroes' : 'Герои',
             hasDivider: true,
             settingsList: [
               // Добавление героя
               SettingsTyle(
-                title: 'Добавление героя',
+                title: S.of(context).localeName == 'en'
+                    ? 'Adding a Hero'
+                    : 'Добавление героя',
                 icon: Icons.add,
                 onTap: () async {
                   await context.router.push(const AddHeroRoute());
@@ -77,7 +84,9 @@ class SettingsScreen extends StatelessWidget {
               ),
               // Изменение героя
               SettingsTyle(
-                title: 'Изменение героя',
+                title: S.of(context).localeName == 'en'
+                    ? 'Adding a Hero'
+                    : 'Changing hero',
                 icon: Icons.update,
                 onTap: () async {
                   await context.router.push(const UpdateHeroRoute());
@@ -85,7 +94,9 @@ class SettingsScreen extends StatelessWidget {
               ),
               // Удаление героя
               SettingsTyle(
-                title: 'Удаление героя',
+                title: S.of(context).localeName == 'en'
+                    ? 'Adding a Hero'
+                    : 'Deleting hero',
                 icon: Icons.delete,
                 lastInBlock: true,
                 onTap: () async {
@@ -96,32 +107,55 @@ class SettingsScreen extends StatelessWidget {
           ),
           // Изменение меты
           SettingsBlock(
-            title: 'Meta',
+            title: S.of(context).localeName == 'en' ? 'Meta' : 'Мета',
             hasDivider: true,
             settingsList: [
-              // Добавление героя
+              // Добавление записи в мету
               SettingsTyle(
-                title: 'Добавление мета',
+                title: S.of(context).localeName == 'en'
+                    ? 'Adding an entry'
+                    : 'Добавление записи',
                 icon: Icons.add,
                 onTap: () async {
                   await context.router.push(const AddMetaRoute());
                 },
               ),
-              // Изменение героя
+              // Изменение записи в мете
               SettingsTyle(
-                title: 'Изменение мета',
+                title: S.of(context).localeName == 'en'
+                    ? 'Changing an entry'
+                    : 'Изменение записи',
                 icon: Icons.update,
                 onTap: () async {
                   await context.router.push(const UpdateMetaRoute());
                 },
               ),
-              // Удаление героя
+              // Удаление записи из меты
               SettingsTyle(
-                title: 'Удаление мета',
+                title: S.of(context).localeName == 'en'
+                    ? 'Deleting an entry'
+                    : 'Удаление записи',
                 icon: Icons.delete,
                 lastInBlock: true,
                 onTap: () async {
                   await context.router.push(const DeleteMetaRoute());
+                },
+              ),
+            ],
+          ),
+          // Настройки сервера
+          SettingsBlock(
+            title: S.of(context).localeName == 'en' ? 'Server' : 'Сервер',
+            hasDivider: true,
+            settingsList: [
+              // Изменение адреса
+              SettingsTyle(
+                title: S.of(context).localeName == 'en'
+                    ? 'Change address'
+                    : 'Изменить адрес',
+                icon: Icons.add,
+                onTap: () async {
+                  await context.router.push(const AddMetaRoute());
                 },
               ),
             ],
