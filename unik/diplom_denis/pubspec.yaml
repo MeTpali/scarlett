@@ -1,0 +1,37 @@
+name: diplom_denis
+description: "A new Flutter project."
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.6.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+  topg:
+    path: ../../topg
+  riverpod: ^2.6.1
+  flutter_riverpod: ^2.6.1
+  injectable: ^2.5.0
+  auto_route: ^9.2.2
+  freezed: ^2.5.7
+  freezed_annotation: ^2.4.4
+  flutter_svg: ^2.0.16
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^5.0.0
+  build_runner: ^2.4.14
+  injectable_generator: ^2.6.2
+  auto_route_generator: ^9.0.0
+  json_serializable: ^6.8.0
+
+flutter:
+  uses-material-design: true
